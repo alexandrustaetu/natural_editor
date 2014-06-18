@@ -1,0 +1,7 @@
+#version 330
+
+uniform vec3 color_uniform;
+void main(){
+        gl_FragColor = vec4(color_uniform, 1); 
+
+}

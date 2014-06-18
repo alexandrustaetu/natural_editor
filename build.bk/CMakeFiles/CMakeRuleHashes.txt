@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+9f5017cc339e109b16287dff8e55600b external/freetype-2.5.2/CMakeFiles/dist

@@ -1,0 +1,19 @@
+layout(location = 0) in vec3 vertexPosition_modelspace;
+layout(location = 1) in vec3 instance_position;
+layout(location = 2) in vec3 instance_scale;
+layout(location = 3) in vec3 instance_color;
+
+out vec3 col;
+uniform mat4 MVP;
+
+void main(){
+        col  = instance_color;
+        vec3 point;
+
+        point.x = vertexPosition_modelspace.x * instance_scale.x;
+        point.y = vertexPosition_modelspace.y * instance_scale.y;
+        point.z = vertexPosition_modelspace.z * instance_scale.z;
+
+	gl_Position =  MVP * vec4(point.xyz+instance_position.xyz,1);
+}
+

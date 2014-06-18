@@ -1,0 +1,2489 @@
+2013-09-14  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Fix examples/Makefile.am for new versions of automake.
+
+	* examples/Makefile.am: Don't use make functions, such as addsuffix, in
+	check_SCRIPTS. New versions of automake (e.g. 1.13.4) expect to find only
+	a blank-separated list of filenames.
+	* .gitignore: With new versions of automake, 'make check' generates more
+	output files. Ignore them. Bug #678390.
+
+2013-09-06  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Manual: Add XIncludeStart and XIncludeEnd to the node type tree.
+
+	* docs/manual/libxml++_without_code.xml: Add XIncludeStart and XIncludeEnd
+	to the node type tree in the DOM Parser section. Should have been done when
+	those node types were added.
+
+2013-08-12  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Node: Move the null-pointer check to the constructor.
+
+	* libxml++/nodes/node.[h|cc]: Let the constructor throw xmlpp:internal_error
+	if impl_ == 0. Remove other null-pointer checks. Bug #705187.
+
+2013-08-02  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Update Doxyfile.in for doxygen 1.8.3.
+
+	* docs/reference/Doxyfile.in: Update for doxygen 1.8.3. Make it more similar
+	to the template file at mm-common/skeletonmm/doc/reference.
+	* libxml++/validators/schemavalidator.h: Fix the parameter name in a doxygen
+	@param comment.
+
+2013-08-02  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Parser: Add [set|get]_include_default_attributes().
+
+	* libxml++/parsers/parser.[h|cc]: Add [set|get]_include_default_attributes()
+	and [set|get]_parser_options().
+	* examples/dom_parser/main.cc: Add command option -a for testing
+	Parser::set_include_default_attributes().
+	* examples/dom_read_write/example.dtd:
+	* examples/dom_read_write/example.xml: Add an attribute with default value.
+	* examples/dom_read_write/main.cc: Add an optional call to
+	Parser::set_include_default_attributes(). Bug #701674.
+
+2013-07-31  Murray Cumming  <murrayc@murrayc.com>
+
+	Whitespace fix
+
+2013-07-31  Murray Cumming  <murrayc@murrayc.com>
+
+	Node: Improve some null-pointer checks
+
+	* libxml++/nodes/node.cc:
+	If we are going to check impl_ for null, we may as well do it
+	where it makes most sense. Note that we do not bother yet to check
+	for this in other functions. If we did this consistently we would
+	want a sensible way to respond to it, such as an exception.
+
+	Bug #705187 (Gaurav)
+
+2013-07-03  José Alburquerque  <jaalburquerque@gmail.com>
+
+	Move to a generated ChangeLog.
+
+2013-07-03  José Alburquerque  <jaalburquerque@gmail.com>
+
+	Include file for auto-generation of ChangeLog from right directory.
+
+	* Makefile.am:
+
+2013-07-02  José Alburquerque  <jaalburquerque@gmail.com>
+
+	Auto-generate the ChangeLog from the git log for 'make dist'.
+
+	* Makefile.am: Include the dist-changelog.am file copied in build/
+	from mm-common so that the ChangeLog is automatically generated from
+	the git commit messages on 'make dist'.
+
+2013-06-18  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Examples dom_parse_entities and dom_parser: Fix when LC_ALL=C.
+
+	* examples/testutilities.[h|cc]: New files with class CatchConvertError.
+	* examples/Makefile.am: Add testutilities.[h|cc].
+	* examples/dom_parse_entities/main.cc:
+	* examples/dom_parser/main.cc: Change some strings from Glib::ustring to
+	CatchConvertError before they are printed. It catches Glib::ConvertError
+	locally. 'make check' can pass even if the global locale does not support all
+	printed characters. Bug #702136.
+
+2012-11-04  Murray Cumming  <murrayc@murrayc.com>
+
+	2.36.0
+
+2012-10-25  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Element::set_namespace_declaration(): No error to set the same URI twice.
+
+	* libxml++/nodes/element.[h|cc]: Don't throw an exception from
+	set_namespace_declaration(), if a namespace prefix is assigned the same URI
+	twice. Bug #635846, comment 27.
+
+2012-10-10  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Require libxml-2.0 >= 2.7.3.
+
+	* configure.ac: Require libxml-2.0 >= 2.7.3.
+	Don't know if it's really necessary, but 2.7.2 from 2008-10-03 is the oldest
+	release available at ftp://xmlsoft.org/libxml2, and 2.7.2 contains a bug that
+	makes examples/import_node segfault.
+
+2012-10-10  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Parser::initialize_context(): Call xmlCtxtUseOptions().
+
+	* libxml++/parsers/parser.cc: initialize_context(): Call xmlCtxtUseOptions()
+	instead of setting context_->validate and replaceEntities.
+	xmlCtxtUseOptions() does that and more.
+
+2012-10-08  Murray Cumming  <murrayc@murrayc.com>
+
+	2.35.4
+
+2012-08-28  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Add XInclude processing.
+
+	* Makefile.am: Add XIncludeStart and XIncludeEnd nodes.
+	* examples/Makefile.am: Add dom_xinclude example.
+	* examples/README: Add dom_xinclude example and other missing examples.
+	* examples/dom_xinclude/example.xml:
+	* examples/dom_xinclude/include1.txt:
+	* examples/dom_xinclude/include2.xml:
+	* examples/dom_xinclude/main.cc: New files.
+	* libxml++/document.[h|cc]: Add process_xinclude().
+	* libxml++/libxml++.h: Add new header files.
+	* libxml++/nodes/node.cc: create_wrapper(): Create XIncludeStart and
+	XIncludeEnd nodes.
+	* libxml++/nodes/xincludeend.[h|cc]:
+	* libxml++/nodes/xincludestart.[h|cc]: New files.
+	* .gitignore: Ignore /examples/dom_xinclude/dom_xinclude. Bug #338521.
+
+2012-08-28  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Parser: Make it thread-safe.
+
+	* configure.ac: Require glibmm-2.4 >= 2.32.0.
+	* libxml++/parsers/parser.cc: Protect all accesses to extra_parser_data with
+	a Glib::Threads::Mutex. Bug #681467.
+
+2012-08-10  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Document: Make the Document(xmlDoc*) constructor public.
+
+	* libxml++/document.h: Make the Document(xmlDoc*) constructor public.
+	Remove friend declarations that become unnecessary. Bug #668980.
+
+2012-08-09  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Improve the DtdValidation and SchemaValidation example programs.
+
+	* examples/dtdvalidation/main.cc:
+	* examples/schemavalidation/main.cc: Print all information from all thrown
+	xmlpp exceptions.
+
+2012-08-09  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Validators: Improve the error handling.
+
+	* libxml++/validators/validator.[h|cc]:
+	* libxml++/validators/dtdvalidator.[h|cc]:
+	* libxml++/validators/schemavalidator.[h|cc]: Check more return codes from
+	libxml2 functions. Improve the description of member functions in the
+	reference documentation. Bug #635846.
+
+2012-08-07  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Add incremental parsing to the SaxParser example program.
+
+	* examples/sax_parser/main.cc: Uncomment and correct the code that shows
+	incremental parsing with SaxParser::parse_chunk().
+
+2012-08-07  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Parsers: Improve the error handling.
+
+	* libxml++/parsers/domparser.[h|cc]:
+	* libxml++/parsers/saxparser.[h|cc]:
+	* libxml++/parsers/textreader.[h|cc]: Check more return codes from libxml2
+	functions. Improve the description of errors in the reference documentation.
+	Bug #635846.
+
+2012-08-07  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Document, Element, Node: Remove unnecessary tests for null pointers.
+
+	* libxml++/document.cc:
+	* libxml++/nodes/element.cc:
+	* libxml++/nodes/node.cc: Remove tests for null pointer before calling
+	xmlFreeNode(), which does nothing if given a null pointer. These unnecessary
+	tests were newly added when error handling was improved. Bug #635846.
+
+2012-08-05  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Schema::set_document(): Create empty document.
+
+	* libxml++/schema.[h|cc]: set_document(): If the argument 'document' is 0,
+	create an empty document, as the documentation says.
+
+2012-08-05  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Document, Schema: Improve the error handling.
+
+	* libxml++/document.[h|cc]:
+	* libxml++/schema.[h|cc]: Check more return codes from libxml2 functions.
+	Improve the description of errors in the reference documentation. Bug #635846.
+
+2012-08-02  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Element, Node: Improve the error handling.
+
+	* libxml++/nodes/element.[h|cc]:
+	* libxml++/nodes/node.[h|cc]: Check more return codes from libxml2 functions.
+	Improve the description of errors in the reference documentation. Bug #635846.
+
+2012-06-21  Murray Cumming  <murrayc@murrayc.com>
+
+	2.35.3
+
+2012-06-19  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Add examples/Makefile.am. Let 'make check' run the examples.
+
+	* examples/Makefile.am: New file. Let 'make check' both compile and run the
+	example programs.
+	* Makefile.am: Call examples/Makefile. Move all 'examples' stuff to
+	examples/Makefile.am.
+	* configure.ac: Remove --enable-examples. Generate examples/Makefile.
+	* .gitignore: Ignore make-check-sh. Bug #678390.
+
+2012-06-19  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Example programs: Fix return codes and print errors on std::cerr.
+
+	* examples/*/main.cc: Return EXIT_FAILURE in case of failure. Print error
+	messages on std::cerr. The example programs can then be run by 'make check'.
+	Bug #678390.
+
+2012-04-20  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Node: Add functions eval_to_[boolean|number|string]().
+
+	* examples/dom_xpath/example.xml: Add an element with numeric value.
+	* examples/dom_xpath/main.cc: Add calls to the new functions.
+	* libxml++/nodes/node.[h|cc]:
+	Add the functions eval_to_[boolean|number|string](). Bug #316244.
+
+2012-04-19  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Node: Make the previous fix thread-safe.
+
+	* libxml++/nodes/node.cc: Delete the C++ wrapper of a deleted attribute node
+	without using xmlDeregisterNodeDefault. Bug #672992 comments 9-12.
+
+2012-04-19  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Node: Fix memory problems in import_node().
+
+	* libxml++/nodes/node.[h|cc]: Return added_node instead of imported_node,
+	which libxml2 may delete. Delete the C++ wrapper of a deleted attribute node.
+	* examples/import_node/example[1|2].xml:
+	* examples/import_node/main.cc: Import attributes and a text node which is
+	merged with an existing text node. Bug #672992.
+
+2012-04-12  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Define LIBXMLCPP_EXCEPTIONS_ENABLED unconditionally.
+
+	* configure.ac: Add AC_DEFINE([LIBXMLCPP_EXCEPTIONS_ENABLED],[1],...
+
+2012-03-30  Murray Cumming  <murrayc@murrayc.com>
+
+	Node: Check for a null pointer, to fix a scan-build warning.
+
+	* libxml++/nodes/node.cc: This seems unlikely.
+
+2012-03-22  Murray Cumming  <murrayc@murrayc.com>
+
+	2.35.2
+
+2012-03-21  Murray Cumming  <murrayc@murrayc.com>
+
+	Fix a warning found by clang++
+
+	* libxml++/parsers/textreader.h: PropertyReader is a class, not
+	a struct.
+
+2012-03-20  Murray Cumming  <murrayc@murrayc.com>
+
+	Remove the --disable-api-exceptions configure option.
+
+	And remove the #ifdefs and #else blocks from the code.
+	This is not used by anybody now, as far as I know, so this makes the
+	code easier to maintain.
+
+2012-03-20  Murray Cumming  <murrayc@murrayc.com>
+
+	A fix for the previous commit.
+
+	* libxml++/nodes/node.cc: get_first_child() const: Use the name
+	parameter.
+
+2012-03-19  Murray Cumming  <murrayc@murrayc.com>
+
+	Node: Add get_first_child().
+
+	* libxml++/nodes/node.[h|cc]: This is like get_children(),
+	but it returns only the first node, optionally returning
+	the first one with a certain name.
+	Based on a patch by Ilya Murav'jov in bug #648125 .
+
+2012-02-16  Murray Cumming  <murrayc@murrayc.com>
+
+	2.35.1
+
+2012-02-15  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Handle attributes with default values correctly.
+
+	* libxml++/attributedeclaration.[h|cc]:
+	* libxml++/attributenode.[h|cc]: New files.
+	* Makefile.am:
+	* libxml++/Makefile.am: Add the new files.
+	* libxml++/libxml++.h: Add the new .h files.
+	* docs/manual/libxml++_without_code.xml: Add AttributeDeclaration and
+	AttributeNode in the list of node classes.
+	* libxml++/attribute.[h|cc]: Make get_value() useful also for default values
+	(XML_ATTRIBUTE_DECL). Fix set_value() for attributes in a namespace.
+	* libxml++/nodes/element.[h|cc]: get_attribute(): Add description. Don't use
+	xmlHasProp(), it ignores namespace.
+	* libxml++/nodes/node.cc: get_namespace_prefix(), get_namespace_uri(),
+	set_namespace(), create_wrapper(): Add code for XML_ATTRIBUTE_DECL.
+	* examples/dom_parser/example.dtd: Add attribute 'title' with default value.
+	* examples/dom_parser/example.xml: Add attribute 'title' with explicit value.
+	Bug #669635.
+
+2012-02-15  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Node: Correct mis-spelt LIBXMLCPP_EXCEPTIONS_ENABLED.
+
+	* libxml++/nodes/node.h: Add some "@throws exception".
+	* libxml++/nodes/node.cc: Change LIBXMLCPP_EXCEPTIONS_ENABLE to
+	LIBXMLCPP_EXCEPTIONS_ENABLED in find_impl() and set_namespace().
+
+2012-02-15  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Improved handling of entity references and processing instructions.
+
+	* libxml++/nodes/entitydeclaration.[h|cc]: New files.
+	* Makefile.am:
+	* libxml++/Makefile.am: Add the new files.
+	* libxml++/libxml++.h: Add the new .h file.
+	* docs/manual/libxml++_without_code.xml: Add EntityDeclaration in the list
+	of node classes.
+	* libxml++/document.[h|cc]: Add add_processing_instruction().
+	* libxml++/nodes/element.[h|cc]: Add add_child_entity_reference() and
+	add_child_processing_instruction().
+	* libxml++/nodes/entityreference.h: Improve the description of
+	get_resolved_text() and get_original_text().
+	* libxml++/nodes/node.cc: get_namespace_prefix() and get_namespace_uri():
+	XML_ENTITY_DECL has no namespace. Don't try to find it.
+	create_wrapper(): Create an EntityDeclaration when type == XML_ENTITY_DECL.
+	free_wrappers(): Don't walk the child list when type == XML_ENTITY_REF_NODE.
+	* examples/dom_build/main.cc: Add entity declarations and references, and
+	processing instructions to the built xml file.
+	* examples/dom_parse_entities/example.dtd: Make it compatible with example.xml.
+	* examples/dom_parse_entities/example.xml: Add an entity definition that
+	contains entity references.
+	* examples/dom_parse_entities/main.cc: Print the parsed file both with and
+	without entity substitution.
+	* examples/dom_parser/example.dtd: Make it compatible with example.xml.
+	* examples/dom_parser/main.cc: Add command flag -E (Don't substitute entities).
+	Bug #669481
+
+2012-02-15  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Add some files to .gitignore.
+
+	* .gitignore: Add docs files that are copied from mm-common.
+	Add /MSVC_Net2010/libxml++/libxml++.rc and
+	/examples/dom_read_write/example_output.xml.
+
+2012-02-15  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Add @newin{2,36} to some new functions where it's missing.
+
+	* libxml++/exceptions/exception.h: Add @newin{2,36} to format_xml_error() and
+	format_xml_parser_error().
+	* libxml++/parsers/parser.h: Add @newin{2,36} to [set|get]_throw_messages().
+	Bug #304020.
+
+2012-02-10  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Make the schema validation example program work with no arguments.
+
+	* examples/schemavalidation/main.cc: Correct the test for number of arguments.
+
+2012-01-30  Kjell Ahlstedt  <kjell.ahlstedt@bredband.net>
+
+	Parser: Throw more detailed error messages.
+
+	* examples/dom_parser/main.cc: Add command parameters -v -e -t.
+	* libxml++/exceptions/exception.[h|cc]: Add format_xml_error() and
+	format_xml_parser_error().
+	* libxml++/parsers/domparser.cc: Call format_xml_error() and
+	format_xml_parser_error() to get more detailed messages in exceptions.
+	* libxml++/parsers/parser.[h|cc]: Add [set|get]_throw_messages() and (local in
+	.cc until ABI can be broken) on_parser_[error|warning](). Bug #304020.
+
+2012-01-30  Murray Cumming  <murrayc@murrayc.com>
+
+	Document: Make the Document(xmlDoc*) constructor protected.
+
+	* libxml++/document.h: This was requested in bug #668980 (A. Pignotti).
+
+2011-09-09  Murray Cumming  <murrayc@murrayc.com>
+
+	Document: write_to_*(): Make sure that we write UTF-8 out.
+
+	* libxml++/document.cc: Because the xmlDocDump*() functions use some other
+	encoding if you specify NULL, causing errors such as:
+	xmlEscapeEntities : char out of range
+
+2011-09-06  Murray Cumming  <murrayc@murrayc.com>
+
+	2.34.2
+
+2011-09-06  Mathias Lorente  <mathias.lorente@free.fr>
+
+	Node::create_new_child_node(): Use the default namespace if none is specified.
+
+	* libxml++/nodes/node.cc: This is better than just ignoring it.
+	Bug #656110
+
+2011-07-20  Murray Cumming  <murrayc@murrayc.com>
+
+	ContentNode::get_content(): Fix a documentation typo.
+
+	* libxml++/nodes/contentnode.h: Mention &gt; instead of &qt (a q
+	instead of a g, and no ;.).
+
+2011-07-20  Mathias Lorente  <mathias.lorente@free.fr>
+
+	Add Element::add_child_cdata().
+
+	* libxml++/nodes/element.[h|cc]: Add add_child_cdata(), using
+	xmlNewCDataBlock(), like the existing add_child_text().
+	* examples/sax_parser_build_dom/example.xml:
+	* examples/sax_parser_build_dom/svgparser.[h|cc]: Use the new API.
+
+2011-04-18  Murray Cumming  <murrayc@murrayc.com>
+
+	2.34.1
+
+2011-04-17  Murray Cumming  <murrayc@murrayc.com>
+
+	Fix distcheck.
+
+	* Makefile.am: Specify the full path to docbook-customisation.xsl,
+	which is apparently necessary with the autotools that I have here.
+
+2011-04-17  Murray Cumming  <murrayc@murrayc.com>
+
+	Fix the build with --enable-warnings=fatal.
+
+	* configure.ac: Use -no-long-long to avoid an (apparently new) compiler
+	warning about long long not being supported by C++98. glibmm already had
+	this option.
+
+2011-04-17  Murray Cumming  <murrayc@murrayc.com>
+
+	Do not require mm-common during the tarball build.
+
+	* configure.ac: Add a MM_CONFIG_DOCTOOL_DIR() call.
+
+2011-04-15  Murray Cumming  <murrayc@murrayc.com>
+
+	Really correct NEWS
+
+2011-04-15  Murray Cumming  <murrayc@murrayc.com>
+
+	Correct NEWS
+
+2011-04-15  Murray Cumming  <murrayc@murrayc.com>
+
+	2.34.0
+
+2011-02-24  Murray Cumming  <murrayc@murrayc.com>
+
+	Fix the build with the changed linker behaviour on Ubuntu Natty.
+
+	* Makefile.am: Link the examples to glibmm explicitly.
+
+2011-02-11  Murray Cumming  <murrayc@murrayc.com>
+
+	2.33.2
+
+2011-02-11  Murray Cumming  <murrayc@murrayc.com>
+
+	Node::remove_child(): Fix a use of deleted memory
+
+	* libxml++/nodes/node.cc:
+	Use a temporary variable to avoid accessing the node C++ instance after we
+	have deleted it. Valgrind foudn this.
+	Also remove the comment about the libxml deleting our C++ instance via a
+	callback, because we don't do that anymore.
+
+2010-11-26  Murray Cumming  <murrayc@murrayc.com>
+
+	Check some libxml function return values.
+
+	* libxml++/document.cc: do_write_to_stream():
+	* libxml++/schema.cc: set_document(): Check the results from
+	xmlSchemaNewDocParserCtxt() and xmlSaveFormatFileTo().
+	Bug #635846 (Markus Elfring).
+
+2010-11-22  Murray Cumming  <murrayc@murrayc.com>
+
+	Fix NEWS: 2.33.1 is _not_ stable.
+
+2010-11-18  Murray Cumming  <murrayc@murrayc.com>
+
+	2.33.1
+
+2010-11-14  Murray Cumming  <murrayc@murrayc.com>
+
+	free_wrappers(): Fix crash.
+
+	* libxml++/nodes/node.cc: free_wrappers(): Revert my change to check
+	xmlNode::properties for all types, because the layout of some structs
+	is apparently completely different (not really deriving fully), and this
+	caused a crash in examples/sax_parser/.
+	Added an explanatory comment.
+
+2010-11-14  Murray Cumming  <murrayc@murrayc.com>
+
+	Change the --enable-examples default to yes.
+
+	* configure.ac: Build the examples by default, so we at least check the
+	build more often. Disabling them is only useful for package building,
+	which is the less common case.
+
+2010-11-14  Murray Cumming  <murrayc@murrayc.com>
+
+	Moved create_wrapper() and free_wrappers() to Node.
+
+	* libxml++/document.[h|cc]:
+	* libxml++/nodes/node.[h|cc]: Moved create_wrapper() and free_wrappers()
+	to here from Document.
+	free_wrappers(): Never return inside the switch/case, so we check
+	xmlNode::properties for all struct types, and to avoid making the behaviour
+	non-obvious.
+	* libxml++/parsers/textreader.cc:
+	* libxml++/validators/dtdvalidator.cc:
+	* libxml++/nodes/element.cc: Adapted.
+
+2010-11-14  Alessandro Pignotti  <a.pignotti@sssup.it>
+
+	Make libxml++ compatible with libxml2 usage
+
+2010-11-08  Murray Cumming  <murrayc@murrayc.com>
+
+	Do not call xmlCleanupParser() because it is brutal.
+
+	* libxml++/document.cc: ~Init(): Do not call xmlCleanupParser() because it
+	breaks libxml generally and should only be called by an application
+	explicitly before it ends, for instance at the end of its main().
+
+2010-10-19  Murray Cumming  <murrayc@murrayc.com>
+
+	Added another TODO for when we can break ABI
+
+2010-10-19  Murray Cumming  <murrayc@murrayc.com>
+
+	Added a TODO for when we can break ABI
+
+2010-10-19  Knut Aksel Røysland  <knutroy@ifi.uio.no>
+
+	Node::get_parent(): Removed code duplication.
+
+	* libxml++/nodes/node.cc: get_parent() const: Use const_cast<> to call
+	the non-const version, instead of duplicating the code.
+
+2010-10-14  Murray Cumming  <murrayc@murrayc.com>
+
+	2.32.0
+
+2010-10-14  Murray Cumming  <murrayc@murrayc.com>
+
+	website: Change the mailing list location, because I moved it.
+
+	* docs/index.html: The mailing list is now at gnome.org.
+
+2010-10-03  Armin Burgmeier  <armin@arbur.net>
+
+	Add support for MSVC 2010 and 64 bit to MSVC project files
+
+2010-10-03  Armin Burgmeier  <armin@arbur.net>
+
+	* MSVC_Net2005/README:
+	* MSVC_Net2005/examples/dom_build/dom_build.vcproj:
+	* MSVC_Net2005/examples/dom_parse_entities/dom_parse_entities.vcproj:
+	* MSVC_Net2005/examples/dom_parser/dom_parser.vcproj:
+	* MSVC_Net2005/examples/dom_parser_raw/dom_parser_raw.vcproj:
+	* MSVC_Net2005/examples/dom_read_write/dom_read_write.vcproj:
+	* MSVC_Net2005/examples/dom_xpath/dom_xpath.vcproj:
+	* MSVC_Net2005/examples/dtdvalidation/dtdvalidation.vcproj:
+	* MSVC_Net2005/examples/import_node/import_node.vcproj:
+	* MSVC_Net2005/examples/sax_exception/sax_exception.vcproj:
+	* MSVC_Net2005/examples/sax_parser/sax_parser.vcproj:
+	* MSVC_Net2005/examples/sax_parser_build_dom/sax_parser_build_dom.vcproj:
+	* MSVC_Net2005/examples/sax_parser_entities/sax_parser_entities.vcproj:
+	* MSVC_Net2005/examples/schemavalidation/schemavalidation.vcproj:
+	* MSVC_Net2005/examples/textreader/textreader.vcproj:
+	* MSVC_Net2005/gendef/gendef.vcproj:
+	* MSVC_Net2005/libxml++.sln:
+	* MSVC_Net2005/libxml++/libxml++.vcproj:
+	* MSVC_Net2008/README:
+	* MSVC_Net2008/examples/dom_build/dom_build.vcproj:
+	* MSVC_Net2008/examples/dom_parse_entities/dom_parse_entities.vcproj:
+	* MSVC_Net2008/examples/dom_parser/dom_parser.vcproj:
+	* MSVC_Net2008/examples/dom_parser_raw/dom_parser_raw.vcproj:
+	* MSVC_Net2008/examples/dom_read_write/dom_read_write.vcproj:
+	* MSVC_Net2008/examples/dom_xpath/dom_xpath.vcproj:
+	* MSVC_Net2008/examples/dtdvalidation/dtdvalidation.vcproj:
+	* MSVC_Net2008/examples/import_node/import_node.vcproj:
+	* MSVC_Net2008/examples/sax_exception/sax_exception.vcproj:
+	* MSVC_Net2008/examples/sax_parser/sax_parser.vcproj:
+	* MSVC_Net2008/examples/sax_parser_build_dom/sax_parser_build_dom.vcproj:
+	* MSVC_Net2008/examples/sax_parser_entities/sax_parser_entities.vcproj:
+	* MSVC_Net2008/examples/schemavalidation/schemavalidation.vcproj:
+	* MSVC_Net2008/examples/textreader/textreader.vcproj:
+	* MSVC_Net2008/gendef/gendef.vcproj:
+	* MSVC_Net2008/libxml++.sln:
+	* MSVC_Net2008/libxml++/libxml++.vcproj:
+	* MSVC_Net2010/README:
+	* MSVC_Net2010/examples/dom_build/dom_build.vcxproj:
+	* MSVC_Net2010/examples/dom_build/dom_build.vcxproj.filters:
+	* MSVC_Net2010/examples/dom_parse_entities/dom_parse_entities.vcxproj:
+	* MSVC_Net2010/examples/dom_parse_entities/dom_parse_entities.vcxproj.filters:
+	* MSVC_Net2010/examples/dom_parser/dom_parser.vcxproj:
+	* MSVC_Net2010/examples/dom_parser/dom_parser.vcxproj.filters:
+	* MSVC_Net2010/examples/dom_parser_raw/dom_parser_raw.vcxproj:
+	* MSVC_Net2010/examples/dom_parser_raw/dom_parser_raw.vcxproj.filters:
+	* MSVC_Net2010/examples/dom_read_write/dom_read_write.vcxproj:
+	* MSVC_Net2010/examples/dom_read_write/dom_read_write.vcxproj.filters:
+	* MSVC_Net2010/examples/dom_xpath/dom_xpath.vcxproj:
+
+2010-06-13  Murray Cumming  <murrayc@murrayc.com>
+
+	Node::find(): Check xmlNode::type for a XML_NAMESPACE_DECL.
+
+	* libxml++/nodes/node.cc: find_impl(): if the xmlNode has type
+	XML_NAMESPACE_DECL then it is actually a xmlNs, which is not like a xmlNode
+	at all (thanks to the awful undocumented libxml++ system of struct
+	inheritance).
+	So we just igore these items. We need to decide what the caller really
+	expects.
+
+2010-06-13  Murray Cumming  <murrayc@murrayc.com>
+
+	Node::find(): Revert some of my previous change because it breaks some code.
+
+	* libxml++/nodes/node.cc: find_impl(): Restore the previous behaviour,
+	because the strange use of _private only seems to happen sometimes.
+
+2010-06-13  Murray Cumming  <murrayc@murrayc.com>
+
+	Node::find(): Cope with weird use of _private in xmlNodeSet.
+
+	* libxml++/nodes/node.cc: The xmlNodeSet seems to contain extra xmlNodes that
+	were never given to on_libxml_construct(). Those xmlNodes seem to abuse
+	private_, where we find our real xmlNodes containing our C++ Nodes.
+	This fixes bug #386013 (Max Kirillov) though it depends on undocumented
+	libxml behaviour.
+
+2010-06-13  Murray Cumming  <murrayc@murrayc.com>
+
+	Node::find(): Use libxml functions instead of direct C access.
+
+	* libxml++/nodes/node.cc: Use xmlXPathNodeSetIsEmpty(),
+	xmlXPathNodeSetGetLength() and xmlXPathNodeSetItem() instead of direct
+	xmlNodeSet struct access.
+
+2010-06-13  Murray Cumming  <murrayc@murrayc.com>
+
+	Manual: Use git.gnome.org as the link to the examples source code.
+
+	* docs/manual/libxml++_without_code.xml: Use git.gnome.org for the examples
+	url base, as we do in gtkmm-documentation.
+
+2010-06-13  Murray Cumming  <murrayc@murrayc.com>
+
+	Restore the mm-common make target and update a link.
+
+	* Makefile.am: Restore (and update) the post-html target that was lost when
+	we redid the build system for mm-common.
+	* docs/index.html: Change the link to the manual to point to its new location
+	at library.gnome.org.
+
+2010-05-04  Murray Cumming  <murrayc@murrayc.com>
+
+	2.30.1
+
+2010-05-04  Murray Cumming  <murrayc@murrayc.com>
+
+	Documentation: Don't hide undocumented API.
+
+	* docs/reference/Doxyfile.in: Use the same options as gtkmm (mostly).
+	In particular, don't hide undocumented API, such as NodeSet, to fix
+	bug #583412 (Hubert Figuiere).
+
+2010-05-04  Murray Cumming  <murrayc@murrayc.com>
+
+	Documentation: Improvements.
+
+	* libxml++/libxml++.h: Expand the main page text, linking to the tutorial
+	and to important classes.
+	* libxml++/parsers/domparser.h:
+	* libxml++/schema.h: Correct the class descriptions.
+	* libxml++/parsers/textreader.h: Add a class description.
+	* libxml++/nodes/element.h:
+	* libxml++/nodes/node.h:
+	* libxml++/parsers/saxparser.h:
+	* libxml++/validators/schemavalidator.h:
+	Correct @newin2p2* to @newin{2,*} now that we use mm-common.
+
+2010-04-27  David King  <davidk@openismus.com>
+
+	Further documentation main page improvements
+
+	* libxml++/libxml++.h: Some minor improvements.
+
+2010-04-23  David King  <davidk@openismus.com>
+
+	Fix typo in main page documentation
+
+2010-04-23  David King  <davidk@openismus.com>
+
+	Documentation main page improvements
+
+	* libxml++/libxml++.h: Add external links and compilation example.
+
+2010-04-18  Olav Vitters  <olav@vitters.nl>
+
+	Fix doap file
+
+2010-04-16  David King  <davidk@openismus.com>
+
+	Minor documentation update
+
+	* docs/index.html: Link to latest gnome.org resources.
+	* libxml++/libxml++.h: Add minimal documentation for main page.
+
+2010-04-06  Murray Cumming  <murrayc@murrayc.com>
+
+	.pc file: Add datarootdir.
+
+	* libxml++-2.6.pc.in: Add datarootdir and datadir, as in the gtkmm .pc.in
+	file, because I started seeing this warning when running autogen.sh in Glom:
+	Variable 'datarootdir' not defined in '/opt/gnome228/lib/pkgconfig/libxml++-2.6.pc'
+
+2010-04-03  Armin Burgmeier  <armin@arbur.net>
+
+	Add dom_parser_raw to MSVC solution files
+
+2010-04-03  Armin Burgmeier  <armin@arbur.net>
+
+	* MSVC_Net2005/libxml++.sln:
+	* MSVC_Net2008/libxml++.sln: Add dom_parser_raw project to the
+	solution files.
+
+2010-03-30  Murray Cumming  <murrayc@murrayc.com>
+
+	Stop exceptions when using std::cout and UTF-8.
+
+	* examples/*/main.cc: Initialize the global C and C++ locale to prevent
+	exceptions when ouputing a ustring (with non-ASCII UTF-8) to std::cout.
+	We don't see this problem when writing gtkmm apps because gtk_init() (via
+	Gtk::Main) initializes the C locale correctly.
+
+	Thanks to Daniel Elstner for the solution (he will document it properly
+	in the Glib::ustring API reference) and to Nic Reveles and others for
+	noticing the problem.
+
+2010-03-30  David King  <davidk@openismus.com>
+
+	Update pkg-config file
+
+	* libxml++-2.6.pc.in: Add documentation locations to pkg-config file.
+	Update other fields to use variables, rather than hardcoded values.
+
+2010-03-30  David King  <davidk@openismus.com>
+
+	Release 2.30.0
+
+2010-03-30  David King  <davidk@openismus.com>
+
+	Disable AM_MAINTAINER_MODE by default
+
+	* configure.ac: Pass the disable parameter to AM_MAINTAINER_MODE so
+	that tarball users do not need doxygen, mm-common, etc. if they modify
+	files. Maintainer mode is still enabled if running autogen.sh.
+
+2010-03-29  David King  <davidk@openismus.com>
+
+	Move a target outside a conditional block to fix the build
+
+	* Makefile.am: Move docs/manual/libxml++.xml target outside the
+	ENABLE_DOCUMENTATION conditional block.
+
+2010-03-29  David King  <amigadave@amigadave.com>
+
+	Use mm-common for reference documentation generation
+
+	* .gitignore: Update.
+
+	* Makefile.am: Remove SUBDIRS. Make examples build and documentation
+	build conditional. Build reference documentation with doc-reference.am
+	from mm-common. Add docs/manual/libxml++.pdf target, but do not enable
+	it by default. Add autogen.sh and docs/manual/insert_example_code.pl to
+	dist_noinst_SCRIPTS. Add docs/manual/html/*.html to
+	MAINTAINERCLEANFILES.
+
+	* autogen.sh: Add --enable-maintainer-mode to arguments passed to
+	configure.
+
+	* configure.ac: Add AM_MAINTAINER_MODE. Add a configure argument to
+	enable the build of the examples. Use mm-common macros to add a
+	configure argument to enable documentation, and use the glibmm
+	tagfile. Check for xmllint and db2latex for DTD validation of the
+	DocBook manual and building the PDF documentation, repectively. Remove
+	the last non-toplevel Makefiles from AC_CONFIG_FILES.
+
+	* docs/Makefile.am:
+	* docs/Makefile_web.am_fragment:
+	* docs/manual/Makefile.am:
+	* docs/reference/Makefile.am: Remove from repository, and move content
+	to Makefile.am.
+
+	* docs/manual/docbook-customisation.xsl: Add DocBook customisation
+	parameters.
+
+	* docs/manual/libxml++_without_code.xml: Make validate.
+
+	* docs/reference/Doxyfile.in: Update from mm-common.
+
+	* docs/reference/README: Remove empty file.
+
+	* examples/README: Mention the --enable-examples configure argument.
+
+2010-03-27  David King  <amigadave@amigadave.com>
+
+	Fix several compiler warnings
+
+	* examples/dom_build/main.cc:
+	* examples/dtdvalidation/main.cc:
+	* examples/import_node/main.cc:
+	* examples/sax_exception/main.cc:
+	* examples/sax_exception/my_parser.cc:
+	* examples/sax_parser/main.cc:
+	* examples/sax_parser/my_parser.cc:
+	* examples/sax_parser_build_dom/svgparser.cc:
+	* examples/sax_parser_entities/myparser.cc:
+	* examples/textreader/main.cc:
+	* libxml++/parsers/textreader.cc: Comment out unused parameters and
+	variables.
+
+	* libxml++/parsers/saxparser.cc: Fill in missing fields of
+	xmlSAXHandler struct.
+
+2010-03-27  David King  <davidk@openismus.com>
+
+	Refactor build system
+
+	* Makefile.am: Merge from subdir Makefile.am files, excluding doc.
+
+	* MSVC_Net2005/examples/dom_parser_raw/dom_parser_raw.vcproj:
+	* MSVC_Net2008/examples/dom_parser_raw/dom_parser_raw.vcproj: Add
+	missing Visual studio project files.
+
+	* MSVC_Net2005/examples/*/Makefile.am:
+	* MSVC_Net2005/examples/Makefile.am:
+	* MSVC_Net2005/gendef/Makefile.am:
+	* MSVC_Net2005/libxml++/Makefile.am:
+	* MSVC_Net2008/examples/*/Makefile.am:
+	* MSVC_Net2008/examples/Makefile.am:
+	* MSVC_Net2008/gendef/Makefile.am:
+	* MSVC_Net2008/libxml++/Makefile.am: Remove from repository, and move
+	content to Makefile.am, making the MSVC project file build
+	non-recursive.
+
+	* README: Update.
+
+	* autogen.sh: Copy from gtkmm.
+
+	* configure.in: Move to configure.ac.
+
+	* configure.ac: Require autoconf 2.59 and automake 1.9. Use new-style
+	AC_INIT() with bug-report link and homepage URL. Use mm-common for
+	initialisation of version variables. Require libtool 2.2.6 for much
+	faster builds. Use MM_ARG_ENABLE_WARNINGS to configure compiler
+	warning flags. Use MM_CHECK_PERL to check for the required Perl
+	version. Use AC_CONFIG_FILES rather than AC_OUTPUT. Update for
+	Makefile.am changes.
+
+	* config.h.in: Remove from repository, as autoheader is now used.
+
+	* */.cvsignore: Remove old files.
+
+	* doc/manual/Makefile.am: Use the correct Perl.
+
+	* doc/reference/Doxyfile.in:
+	* MSVC_Net2005/libxml++/libxml++.rc.in:
+	* MSVC_Net2008/libxml++/libxml++.rc.in: Use new-style variable names.
+
+	* examples/Makefile.am_fragment:
+	* examples/Makefile.am:
+	* examples/*/Makefile.am: Remove from repository, and move content to
+	Makefile.am, making the examples build non-recursive.
+
+	* .gitignore: Update.
+
+	* libxml++/Makefile.am:
+	* libxml++/*/Makefile.am: Remove from repository, and move content to
+	Makefile.am, making the libxml++ build non-recursive.
+
+	* libxml++.spec.in:
+	* INSTALL: Remove from repository.
+
+	* scripts/README:
+	* scripts/Makfile.am: Remove from repository.
+
+	* scripts/reduced.m4: Move to macros/reduced.m4
+
+2010-03-08  Murray Cumming  <murrayc@murrayc.com>
+
+	Use 0 instead of NULL.
+
+	* MSVC_Net2005/gendef/gendef.cc:
+	* MSVC_Net2008/gendef/gendef.cc:
+	* libxml++/attribute.cc:
+	* libxml++/document.cc:
+	* libxml++/io/outputbuffer.cc:
+	* libxml++/io/parserinputbuffer.cc:
+	* libxml++/nodes/node.cc:
+	* libxml++/parsers/domparser.cc:
+	* libxml++/parsers/parser.cc:
+	* libxml++/parsers/textreader.cc:
+	* libxml++/schema.cc:
+	* libxml++/schema.h: Do not use NULL. It is unwise in C++.
+
+2009-11-17  Murray Cumming  <murrayc@murrayc.com>
+
+	Fix typos.
+
+2009-07-27  Johannes Schmid  <jhs@gnome.org>
+
+	Fixed various bits to allow building with disabled exceptions
+
+2009-07-27  Johannes Schmid  <jhs@gnome.org>
+
+	New tarball release
+
+2009-06-24  Daniel Elstner  <danielk@openismus.com>
+
+	Add DOAP category and fix mbox resource
+
+2009-05-07  Murray Cumming  <murrayc@murrayc.com>
+
+	Fix the build without exceptions, hopefully.
+
+	* libxml++/parsers/textreader.cc: check_for_exceptions():
+	Add an ifdef so that this should build with exceptions disabled,
+	though there is no alternative API yet. Noticed by David King.
+
+2009-05-07  Murray Cumming  <murrayc@murrayc.com>
+
+	Whitespace corrections.
+
+2009-04-22  Jonathon Jongsma  <jonathon.jongsma@collabora.co.uk>
+
+	add doap file
+
+2009-04-21  Hubert Figuiere  <hub@figuiere.net>
+
+	add .doap and .gitignore
+
+2009-03-25  Hubert Figuiere  <hub@src.gnome.org>
+
+	add missingf bug# to the changelog
+
+	svn path=/trunk/; revision=200
+
+2009-03-25  Hubert Figuiere  <hub@src.gnome.org>
+
+	Fix some warnings triggered by -Wshadow.
+
+	* libxml++/parsers/saxparser.h: Fix some warnings triggered
+	by -Wshadow.
+
+	svn path=/trunk/; revision=199
+
+2009-03-25  Hubert Figuiere  <hub@src.gnome.org>
+
+	severity_ was not initialised at construction time.
+
+	* libxml++/parsers/textreader.cc: severity_ was not initialised
+	at construction time.
+
+	svn path=/trunk/; revision=198
+
+2009-03-16  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=197
+
+2009-03-03  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=196
+
+2009-03-02  Armin Burgmeier  <armin@openismus.com>
+
+	Removed the vsnprintf #define on Windows. This could conflict with another
+
+2009-03-02  Armin Burgmeier  <armin@openismus.com>
+
+	* libxml++/validators/validator.h:
+	* libxml++/parsers/parser.h: Removed the vsnprintf #define on Windows.
+	This could conflict with another define otherwise. Both MSVC and MinGW
+	have vsnprintf (without underscore) as well, and I verified libxml++
+	still compiles in both. If we still need the definition for some
+	reason, then we should re-add it into the source files, so that other
+	libraries don't conflict with our definition.
+
+	svn path=/trunk/; revision=195
+
+2009-01-09  Stef Walter  <stef-list@memberwebs.com>
+
+	Add setup_exceptions(), setting the on_libxml_error() callback, and call
+
+2009-01-09  Stef Walter  <stef-list@memberwebs.com>
+
+	* libxml++/parsers/textreader.[h|cc]: Add setup_exceptions(), setting 
+	the on_libxml_error() callback, and call it from the constructors.
+	check_for_exceptions(): Actually check some member variables and throw an 
+	exception if necessary.
+	This should fix bug #348006.
+	It breaks ABI because it adds member variables, but we decided that is 
+	OK because nobody could actually be using this class seriously before 
+	now because it had no error checking.
+
+	svn path=/trunk/; revision=194
+
+2008-12-22  Armin Burgmeier  <arminb@src.gnome.org>
+
+	Release 2.24.2
+
+	svn path=/trunk/; revision=192
+
+2008-12-22  Armin Burgmeier  <armin@openismus.com>
+
+	Set embedded_doc_ according to the embed parameter instead of always
+
+2008-12-20  Armin Burgmeier  <armin@openismus.com>
+
+	* libxml++/schema.cc (set_document): Set embedded_doc_ according to
+	the embed parameter instead of always setting it to false, so that we
+	actually release the document in release_underlying().
+	(release_underlying): Free the schema in all cases, also when the
+	document was not embedded, to avoid a memory leak.
+
+	* libxml++/validators/schemavalidator.cc (parse_file, parse_memory,
+	parse_document): Make sure not to leak the xmlSchemaParserCtxtPtr in
+	case of an exception. Bug #563321, Arjan Franzen.
+
+	svn path=/trunk/; revision=191
+
+2008-12-18  Armin Burgmeier  <armin@openismus.com>
+
+	Removed outdated MSVC6 project.
+
+2008-12-18  Armin Burgmeier  <armin@openismus.com>
+
+	* win32_msvc6/:
+	* Makefile.am:
+	* configure.in: Removed outdated MSVC6 project.
+
+	svn path=/trunk/; revision=190
+
+2008-12-12  Armin Burgmeier  <arminb@src.gnome.org>
+
+	libxml++ 2.24.1 release
+
+	svn path=/trunk/; revision=189
+
+2008-12-12  Armin Burgmeier  <armin@openismus.com>
+
+	Removed this generated file. It went in by accident.
+
+2008-12-12  Armin Burgmeier  <armin@openismus.com>
+
+	* MSVC_Net2008/examples/sax_parser/sax_parser.vcproj.HALLWA.Armin.user:
+	Removed this generated file. It went in by accident.
+
+	* MSVC_Net2008/exapmles/sax_parser/sax_parser.vcproj: Added the
+	example project file instead, which should have been added from the
+	beginning.
+
+	svn path=/trunk/; revision=188
+
+2008-12-12  Armin Burgmeier  <armin@openismus.com>
+
+	Added schema.cc and schemavalidator.cc to the project. Bug #563664 (Arjan
+
+2008-12-12  Armin Burgmeier  <armin@openismus.com>
+
+	* MSVC_Net2005/libxml++/libxml++.vcproj:
+	* MSVC_Net2008/libxml++/libxml++.vcproj: Added schema.cc and
+	schemavalidator.cc to the project. Bug #563664 (Arjan Franzen).
+
+	* MSVC_Net2005/examples/schemavalidation/schemavalidation.vcproj:
+	* MSVC_Net2005/examples/schemavalidation/Makefile.am:
+	* MSVC_Net2005/examples/Makefile.am:
+	* MSVC_Net2005/libxml++.sln: Added the schema validator example to the
+	MSVC8 solution file.
+
+	* MSVC_Net2008/examples/schemavalidation/schemavalidation.vcproj:
+	* MSVC_Net2008/examples/schemavalidation/Makefile.am:
+	* MSVC_Net2008/examples/Makefile.am:
+	* MSVC_Net2008/libxml++.sln: Added the schema validator example to the
+	MSVC9 solution file.
+
+	svn path=/trunk/; revision=187
+
+2008-12-12  Przemysław Grzegorczyk  <pgrzegorczyk@gmail.com>
+
+	Fix a typo to fix the build.
+
+2008-12-12  Przemysław Grzegorczyk  <pgrzegorczyk@gmail.com>
+
+	* libxml++/schema.cc: Fix a typo to fix the build.
+
+	svn path=/trunk/; revision=186
+
+2008-12-08  Murray Cumming  <murrayc@murrayc.com>
+
+	check_for_exception(): Use an auto_ptr<> to avoid leaking the exception,
+
+2008-12-08  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/validators/validator.cc: check_for_exception(): Use an 
+	auto_ptr<> to avoid leaking the exception, as in 
+	Parser::check_for_exception().
+	Bug #563321 (Arjan Franzen)
+
+	svn path=/trunk/; revision=185
+
+2008-12-05  Murray Cumming  <murrayc@murrayc.com>
+
+	release_underlying(): Use xmlSchemaFree() to avoid a leak, as suggested by
+
+2008-12-05  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/schema.cc: release_underlying(): Use xmlSchemaFree() 
+	to avoid a leak, as suggested by Balazs Tirpak. Bug #312216.
+
+	svn path=/trunk/; revision=184
+
+2008-10-09  Armin Burgmeier  <armin@openismus.com>
+
+	Adapt the new DLL naming convention.
+
+2008-10-09  Armin Burgmeier  <armin@openismus.com>
+
+	* MSVC_Net2005/*/*.vcproj: Adapt the new DLL naming convention.
+
+	* MSVC_Net2008/: Added project files for Visual Studio 2008.
+
+	* Makefile.am:
+	* configure.in: Added the new files to the distribution.
+
+	svn path=/trunk/; revision=183
+
+2008-09-21  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=182
+
+2008-08-18  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=181
+
+2008-08-16  Murray Cumming  <murrayc@murrayc.com>
+
+	get_value(): xmlGetNsProp() takes the namespace URI, not the prefix. Bug
+
+2008-08-16  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/attribute.cc: get_value(): xmlGetNsProp() takes the 
+	namespace URI, not the prefix.
+	Bug #547689 (Sergei Fedorov)
+
+	svn path=/trunk/; revision=180
+
+2008-08-14  Murray Cumming  <murrayc@murrayc.com>
+
+	Added an example using namespace prefixes, from bug #547689. Comment out
+
+2008-08-14  Murray Cumming  <murrayc@murrayc.com>
+
+	* examples/dom_parser/Makefile.am:
+	* examples/dom_parser/example_with_namespace.xml:
+	Added an example using namespace prefixes, from bug 
+	#547689.
+	* examples/dom_parser/main.cc: Comment out the call to set_validate(), 
+	because that example does not have a DTD.
+	Show the namespace prefixes in the output.
+	* libxml++/attribute.cc: get_value(): Use xmlGetNsProp() instead of 
+	xmlGetProp(), so we don't ignore the namespace prefix, so we get 
+	the correct value.
+	Bug #547689 (Sergei Fedorov)
+
+	svn path=/trunk/; revision=179
+
+2008-08-10  Armin Burgmeier  <armin@arbur.net>
+
+	Renamed from MSVC_Net2003.
+
+2008-08-10  Armin Burgmeier  <armin@arbur.net>
+
+	* MSVC_Net2005/: Renamed from MSVC_Net2003.
+
+	* MSVC_Net2005/libxml++/libxml++.vcproj: Link against libxml2.lib
+	instead of xml2.lib because that's how it is called in Tor's GTK+
+	bundle.
+
+	* MSVC_Net2005/libxml++/libxml++.rc.in: Removed "#include resource.h"
+	because there is no resource.h.
+
+	* MSVC_Net2005/libxml++/libxml++.sln: Build all examples by default.
+
+	* Makefile.am:
+	* configure.in: Adapt build files for the MSVC_Net2003 -> MSVC_Net2005
+	rename.
+
+	svn path=/trunk/; revision=178
+
+2008-06-12  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=177
+
+2008-05-05  Murray Cumming  <murrayc@murrayc.com>
+
+	Use parse_file() but leave the parse_chunk() version commented out, to
+
+2008-05-05  Murray Cumming  <murrayc@murrayc.com>
+
+	* examples/sax_parser/main.cc (main): Use parse_file() but leave 
+	the parse_chunk() version commented out, to simplify this example.
+	* examples/sax_parser/myparser.cc
+	Catch Glib::ConvertError exceptions when using std::cout, though 
+	libxml++ should really always supply valid UTF-8 to us.
+
+	svn path=/trunk/; revision=176
+
+2008-05-05  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version. I forgot to commit this at the time
+
+	svn path=/trunk/; revision=175
+
+2008-04-14  Armin Burgmeier  <armin@arbur.net>
+
+	Added a parse_chunk_raw() method and changed parse_chunk() to use it.
+
+2008-04-14  Armin Burgmeier  <armin@arbur.net>
+
+	* libxml++/parsers/saxparser.h:
+	* libxml++/parsers/saxparser.cc: Added a parse_chunk_raw() method and
+	changed parse_chunk() to use it.
+
+	svn path=/trunk/; revision=174
+
+2008-03-26  Murray Cumming  <murrayc@murrayc.com>
+
+	Corrected a filename to fix distcheck
+
+2008-03-26  Murray Cumming  <murrayc@murrayc.com>
+
+	* examples/schemavalidation/Makefile.am: Corrected a filename to 
+	fix distcheck
+	* libxml++/schema.h:
+	* libxml++/validators/schemavalidator.h: Added the newin2p24 doxygen 
+	keyword.
+
+	svn path=/trunk/; revision=173
+
+2008-03-26  Emilien KIA  <cursor@free.fr>
+
+	Added Schema class, similar to the existing Dtd class.
+
+2008-03-26  Emilien KIA  <cursor@free.fr>
+
+	* configure.in:
+	* libxml++/Makefile.am:
+	* libxml++/libxml++.h:
+	* libxml++/schema.cc:
+	* libxml++/schema.h: Added Schema class, similar to the existing Dtd 
+	class.
+	* libxml++/validators/Makefile.am:
+	* libxml++/validators/schemavalidator.cc
+	* libxml++/validators/schemavalidator.h: Added Schema validator class, 
+	similar to the existing DtdValidator class.
+
+	* examples/Makefile.am:
+	* examples/schemavalidation/: New example, similar to the 
+	existing dtdvalidation example.
+
+	Bug #312216.
+
+	svn path=/trunk/; revision=172
+
+2008-03-26  Murray Cumming  <murrayc@murrayc.com>
+
+	Fixed the post-html rule. Corrected some links. Corrected documentation
+
+2008-03-26  Murray Cumming  <murrayc@murrayc.com>
+
+	* docs/Makefile.am: Fixed the post-html rule.
+	* docs/index.html: Corrected some links.
+	* libxml++/nodes/node.h: Corrected documentation for the new methods 
+	from the previous commit.
+
+	svn path=/trunk/; revision=171
+
+2008-03-26  Murray Cumming  <murrayc@murrayc.com>
+
+	Added add_child_text() with a previous_node parameter, for adding between
+
+2008-03-26  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/nodes/element.cc:
+	* libxml++/nodes/element.h: Added add_child_text() with a previous_node 
+	parameter, for adding between existing nodes.
+	Added add_child_text_before() too.
+	* libxml++/nodes/node.cc:
+	* libxml++/nodes/node.h: Added add_child() with a previous_node 
+	parameter, for adding between existing nodes.
+	Added add_child_before() too.
+
+	* docs/index.html: Removed the license clarifications text because I 
+	always found it to be arbitrary and not very informative.
+	* docs/reference/Doxyfile.in: Added a newin2p24 doxygen keyword. 
+	* docs/reference/Makefile.am: Do not create a version-specific 
+	directory name for reference documentation. The Since: text and links 
+	in the documentation are enough to know what was in what version.
+
+	svn path=/trunk/; revision=170
+
+2008-03-07  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=167
+
+2008-03-07  Deng Xiyue  <murrayc@murrayc.com>
+
+	Add a destructor (does not break ABI because the base class already has a
+
+2008-03-07  Deng Xiyue  <murrayc@murrayc.com>
+
+	* libxml++/document.cc:
+	* libxml++/document.h: Add a destructor 
+	(does not break ABI because the base class already has a 
+	virtual destructor) that calls xmlCleanupParser to match the 
+	existing call to xmlInitParser() in the constructor. Fixes 
+	a memory leak.
+	Bug #501168 (Matt G.)
+
+	svn path=/trunk/; revision=166
+
+2008-01-17  Murray Cumming  <murrayc@src.gnome.org>
+
+	Corrected the ChangeLog.
+
+	svn path=/trunk/; revision=165
+
+2008-01-17  Murray Cumming  <murrayc@src.gnome.org>
+
+	2008-01-17  Martin Michlmayr  <tbm@cyrius.com>>
+
+	* libxml++/attribute.cc:
+	* libxml++/dtd.cc:
+	* libxml++/dtd.h:
+	* libxml++/io/ostreamoutputbuffer.h:
+	* libxml++/io/outputbuffer.h:
+	* libxml++/keepblanks.cc:
+	* libxml++/keepblanks.h:
+	* libxml++/libxml++.h:
+	* libxml++/nodes/cdatanode.cc:
+	* libxml++/nodes/cdatanode.h:
+	* libxml++/nodes/commentnode.cc:
+	* libxml++/nodes/commentnode.h:
+	* libxml++/nodes/contentnode.cc:
+	* libxml++/nodes/element.cc:
+	* libxml++/nodes/element.h:
+	* libxml++/nodes/entityreference.cc:
+	* libxml++/nodes/entityreference.h:
+	* libxml++/nodes/node.cc:
+	* libxml++/nodes/processinginstructionnode.cc:
+	* libxml++/nodes/processinginstructionnode.h:
+	* libxml++/nodes/textnode.cc:
+	* libxml++/nodes/textnode.h:
+	* libxml++/parsers/domparser.cc:
+	* libxml++/parsers/domparser.h:
+	* libxml++/parsers/parser.cc:
+	* libxml++/parsers/parser.h:
+	* libxml++/parsers/saxparser.cc:
+	* libxml++/parsers/textreader.h:
+	Correct the name of the files in their comment blocks, 
+	though this could just be removed instead.
+	Bug #510056.
+
+	svn path=/trunk/; revision=164
+
+2008-01-17  Murray Cumming  <murrayc@src.gnome.org>
+
+	2008-01-17  Martin Michlmayr  <tbm@cyrius.com>>
+
+	* libxml++/parsers/parser.cc:
+	* libxml++/parsers/textreader.h:
+	Added includes to fix the build with gcc 4.3 
+	pre-releases.
+	Bug #510053.
+
+	svn path=/trunk/; revision=163
+
+2007-08-30  Murray Cumming  <murrayc@murrayc.com>
+
+	When exceptions are disabled, assume that they are also disabled in glibmm
+
+2007-08-30  Murray Cumming  <murrayc@murrayc.com>
+
+	* examples/dom_parser_raw/main.cc: When exceptions are disabled, assume that they are also 
+	disabled in glibmm and then use the extra error parameter to Glib::convert(), to fix the 
+	build when using glibmm with disabled exceptions.
+	* docs/manual/Makefile.am: Use maintainer-clean instead of clean-local to delete the html, 
+	but this still seems to be deleted when building debian packages.
+
+	svn path=/trunk/; revision=162
+
+2007-08-29  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=161
+
+2007-08-29  Murray Cumming  <murrayc@murrayc.com>
+
+	distcheck fixes.
+
+2007-08-29  Murray Cumming  <murrayc@murrayc.com>
+
+	* scripts/Makefile.am: distcheck fixes.
+
+	svn path=/trunk/; revision=160
+
+2007-08-29  Murray Cumming  <murrayc@murrayc.com>
+
+	Added an --enable-api-exceptions configure option, which defines
+
+2007-08-29  Murray Cumming  <murrayc@murrayc.com>
+
+	* autogen.sh:
+	* Makefile.am:
+	* configure.in:
+	* scripts/Makefile.am:
+	* scripts/reduced.m4: Added an --enable-api-exceptions 
+	configure option, which defines LIBXMLCPP_EXCEPTIONS_ENABLED 
+	in libxml++config.h.
+	* examples/dom_build/main.cc:
+	* examples/dom_parse_entities/main.cc:
+	* examples/dom_parser/main.cc:
+	* examples/dom_parser_raw/main.cc:
+	* examples/dom_read_write/main.cc:
+	* examples/dom_xpath/main.cc:
+	* examples/dtdvalidation/main.cc:
+	* examples/import_node/main.cc:
+	* examples/sax_exception/main.cc:
+	* examples/sax_exception/myparser.cc:
+	* examples/sax_parser/main.cc:
+	* examples/sax_parser_build_dom/main.cc:
+	* examples/sax_parser_entities/main.cc:
+	* examples/textreader/main.cc:
+	* libxml++/document.cc:
+	* libxml++/exceptions/exception.cc:
+	* libxml++/exceptions/internal_error.cc:
+	* libxml++/exceptions/parse_error.cc:
+	* libxml++/exceptions/validity_error.cc:
+	* libxml++/io/outputbuffer.cc:
+	* libxml++/io/parserinputbuffer.cc:
+	* libxml++/libxml++config.h.in:
+	* libxml++/nodes/contentnode.cc:
+	* libxml++/nodes/element.cc:
+	* libxml++/nodes/node.cc:
+	* libxml++/parsers/domparser.cc:
+	* libxml++/parsers/parser.cc:
+	* libxml++/parsers/saxparser.cc:
+	* libxml++/parsers/textreader.cc:
+	* libxml++/validators/dtdvalidator.cc:
+	* libxml++/validators/validator.cc:
+	Put LIBXMLCPP_EXCEPTIONS_ENABLED ifdefs around uses of 
+	try, catch, and throw, so that libxml++ can build with 
+	CXXFLAGS=-fno-exceptions. However, we might still 
+	need some alternative error checking API.
+
+	svn path=/trunk/; revision=159
+
+2007-07-30  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=158
+
+2007-07-30  Stef Walter  <stef@memberwebs.com>
+
+	Added get_attribute_value(), to get a simple text value for an attribute,
+
+2007-07-30  Stef Walter  <stef@memberwebs.com>
+
+	* libxml++/nodes/element.cc:
+	* libxml++/nodes/element.h: Added get_attribute_value(), 
+	to get a simple text value for an attribute, as a 
+	convenience.
+
+2007-07-30  Murray Cumming  <murrayc@murrayc.com>
+
+	* docs/reference/Doxyfile.in: Added newin2p18, 
+	newin2p20, and newin2p22 tags.
+
+	This is the trunk branch for libxml++ 2.19/2.20.
+	See also the gnome-2-18 branch.
+
+	svn path=/trunk/; revision=157
+
+2007-07-30  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=155
+
+2007-07-25  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Fixed bug #447535
+
+	svn path=/trunk/; revision=154
+
+2007-06-10  Murray Cumming  <murrayc@murrayc.com>
+
+	Avoid accessing freed memory when the text nodes are merged by
+
+2007-06-10  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/document.cc:
+	* libxml++/nodes/element.cc: Avoid accessing freed memory 
+	when the text nodes are merged by xmlAddChild().
+
+	svn path=/trunk/; revision=153
+
+2007-03-05  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+	svn path=/trunk/; revision=152
+
+2007-02-10  Murray Cumming  <murrayc@murrayc.com>
+
+	Use std::string for file paths, because we can not know the encoding of
+
+2007-02-10  Murray Cumming  <murrayc@murrayc.com>
+
+	* examples/dom_parse_entities/main.cc:
+	* examples/dom_parser/main.cc:
+	* examples/dom_parser_raw/main.cc:
+	* examples/dom_read_write/main.cc:
+	* examples/dom_xpath/main.cc:
+	* examples/dtdvalidation/main.cc:
+	* examples/sax_parser/main.cc:
+	* examples/sax_parser_build_dom/main.cc:
+	* examples/sax_parser_entities/main.cc: Use std::string for file paths, 
+	because we can not know the encoding of file paths. std::string therefore 
+	means unknown encoding.
+
+	svn path=/trunk/; revision=151
+
+2007-02-06  Artur Wegele  <a.wegele@web.de>
+
+	Check for _MSC_VER instead of WIN32 before setting MSVC++ pragmas, because
+
+2007-02-06  Artur Wegele  <a.wegele@web.de>
+
+	* libxml++/parsers/parser.h:
+	* libxml++/validators/validator.h: Check for _MSC_VER instead 
+	of WIN32 before setting MSVC++ pragmas, because that is apparently 
+	more reliable. Bug #380110.
+
+	svn path=/trunk/; revision=150
+
+2006-12-21  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increase version
+
+2006-11-17  Stefan Walter  <stefw@src.gnome.org>
+
+	Node::get_next_sibling(), Node::get_previous_sibling(). Bug #351867
+
+	* libxml++/nodes/node.cc:
+	* libxml++/nodes/node.h: Node::get_next_sibling(),
+	Node::get_previous_sibling(). Bug #351867
+
+2006-11-17  Stefan Walter  <stefw@src.gnome.org>
+
+	libxml++/parsers/textreader.cc Clean up TextReader() data constructor
+
+	* libxml++/parsers/textreader.cc
+	* libxml++/parsers/textreader.h: Clean up TextReader() data
+	constructor signature. Removed '-1' as a special null terminated
+	value. This brings it inline with other parsers.
+
+2006-11-17  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increased version
+
+2006-11-11  Stefan Walter  <stefw@src.gnome.org>
+
+	Element::set_attribute(): Fix redeclaration of variable in if-block. Bug
+
+	* libxml++/nodes/element.cc: Element::set_attribute():
+	Fix redeclaration of variable in if-block. Bug #361950
+
+2006-11-11  Stefan Walter  <stefw@src.gnome.org>
+
+	libxml++/parsers/textreader.cc TextReader() can now parse memory buffers
+
+	* libxml++/parsers/textreader.cc
+	* libxml++/parsers/textreader.h: TextReader() can now parse memory
+	buffers as well as files. Bug #351215
+
+2006-11-11  Nate Nielsen  <nielsen@memberwebs.com>
+
+	Add Node::get_parent() Bug #351876
+
+2006-11-11  Nate Nielsen  <nielsen@memberwebs.com>
+
+	* libxml++/nodes/node.cc:
+	* libxml++/nodes/node.h: Add Node::get_parent() Bug #351876
+
+2006-04-24  Cedric Gustin  <cedric.gustin@gmail.com>
+
+	Disable autoheader. New file. Added comments about the difference between
+
+2006-04-24  Cedric Gustin  <cedric.gustin@gmail.com>
+
+	* configure.in: Disable autoheader.
+	* config.h.in: New file. Added comments about the difference
+	between config.h.in and libxml++config.h.in.
+
+2006-04-21  Cedric Gustin  <cedric.gustin@gmail.com>
+
+	Added libxml++config.h.in to EXTRA_DIST.
+
+2006-04-21  Cedric Gustin  <cedric.gustin@gmail.com>
+
+	* libxml++/Makefile.am: Added libxml++config.h.in to EXTRA_DIST.
+
+2006-04-21  Cedric Gustin  <cedric.gustin@gmail.com>
+
+	Updated for Visual Studio 2005. Added the /vd2 compiler flag (Bug
+
+2006-04-21  Cedric Gustin  <cedric.gustin@gmail.com>
+
+	* MSVC_Net2003/*.vcproj: Updated for Visual Studio 2005. Added the
+	/vd2 compiler flag (Bug #158040). Renamed target DLL to
+	xml++-2.6 to comply to the value returned by "pkg-config --libs
+	--msvc-syntax libxml++-2.6".
+	* MSVC_Net2003/libxml++.sln: Updated for Visual Studio 2005.
+	* MSVC_Net2003/gendef/gendef.cc: Redirect output of dumpbin to a
+	file.
+	* MSVC_Net2003/libxml++/Makefile.am: Get a local copy of the
+	libxml++config.h file created at configure time and distribute it
+	in the source tarball.
+	* libxml++/Makefile.am: Add -DLIBXMLPP_BUILD to the DEFS compiler
+	flags (switch between dllexport/dllimport on win32). Also install
+	libxml++config.h to $(prefix)/lib/libxml++-2.6/include.
+	* libxml++/*/*.Makefile.am: Add -DLIBXMLPP_BUILD to the DEFS
+	compiler flags (switch between dllexport/dllimport on win32).
+	* libxml++/exceptions/exception.h: Tag the xmlpp:exception classs
+	with LIBXMLPP_API to get rid of auto-import errors on win32
+	(mingw32/cygwin).
+	* libxml++/libxml++config.h.in: New file. Define LIBXMLPP_API and
+	switch between dllimport and dllexport on win32.
+	* libxml++-2.6.pc.in: Add ${libdir}/libxml++-2.6/include to Cflags
+	(for libxml++config.h).
+	* configure.in: Added test for a native win32 platform. Use the
+	ms-bitfields on this platform only. Added the libxml++config.h
+	configuration file.
+
+2006-03-13  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Updated version number
+
+2006-03-13  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* docs/index.html: Updated version number
+
+2006-03-13  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Prepared release 2.14.0
+
+2006-03-13  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* NEWS, configure.in: Prepared release 2.14.0
+
+2006-03-08  Murray Cumming  <murrayc@murrayc.com>
+
+	get_content() documentation: Replace the TODO because I know know that
+
+2006-03-08  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/nodes/contentnode.h: get_content() documentation:
+	Replace the TODO because I know know that apos is the fifth
+	predefined entity.
+	set_content(): Mention that the predefined entities are used
+	_where necessary_ because XML does not require use of quot or
+	apos in text nodes - just in attribute values.
+
+2006-01-14  Murray Cumming  <murrayc@src.gnome.org>
+
+	increase version
+
+2005-12-20  Murray Cumming  <murrayc@src.gnome.org>
+
+	Fix typo.
+
+2005-12-20  Murray Cumming  <murrayc@murrayc.com>
+
+	Mention pkg-config.
+
+2005-12-20  Murray Cumming  <murrayc@murrayc.com>
+
+	* docs/manual/libxml++_without_code.xml: Mention pkg-config.
+
+2005-12-16  Murray Cumming  <murrayc@murrayc.com>
+
+	Minor grammar fixes in documentation. Correct find() documentation
+
+2005-12-16  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/document.h: Minor grammar fixes in documentation.
+	* libxml++/nodes/node.h: Correct find() documentation slightly.
+
+2005-12-15  Robert Fleming  <fleming@cs.washington.edu>
+
+	Add find() overload that takes namespaces to register, using
+
+2005-12-15  Robert Fleming  <fleming@cs.washington.edu>
+
+	* libxml++/nodes/node.cc:
+	* libxml++/nodes/node.h: Add find() overload that
+	takes namespaces to register, using xmlXPathRegisterNs().
+	Bug #323935.
+
+2005-12-15  Murray Cumming  <murrayc@murrayc.com>
+
+	set_namespace(): Pass 0 to xmlSearchNs() for empty (default) namespaces,
+
+2005-12-15  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/nodes/node.cc: set_namespace(): Pass 0 to
+	xmlSearchNs() for empty (default) namespaces, instead of
+	an empty string, as we do elsewhere. This makes
+	Document::create_root_node() for when not specifying a
+	namespace. Bug #318186 from Erik Oestby.
+
+2005-12-15  Vadim Zeitlin  <vadim@wxwindows.org>
+
+	Fix paths so buildir!=srcdir builds work. Bug #319863.
+
+2005-12-15  Vadim Zeitlin  <vadim@wxwindows.org >
+
+	* docs/reference/Doxyfile.in: Fix paths so buildir!=srcdir
+	builds work. Bug #319863.
+
+2005-10-03  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	file defaultmake.inc was initially added on branch LIBXMLPP_BRANCH_1_0.
+
+2005-10-03  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	file libxmlpp_generic.mak was initially added on branch LIBXMLPP_BRANCH_1_0.
+
+2005-10-03  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	file makefile was initially added on branch LIBXMLPP_BRANCH_1_0.
+
+2005-10-03  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	file readme.txt was initially added on branch LIBXMLPP_BRANCH_1_0.
+
+2005-09-21  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Fixed include and .pc paths. Fixes #316827.
+
+2005-09-21  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* libxml++.spec.in: Fixed include and .pc paths. Fixes #316827.
+
+2005-09-08  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared 2.12 release.
+
+2005-08-26  Christophe de Vienne  <cdevienne@gmail.com>
+
+	Added xmlReadState "Reading" as suggested by Sebastian Moss.
+
+2005-08-26  Christophe de Vienne  <cdevienne@gmail.com>
+
+	* libxml++/parsers/textreader.h: Added xmlReadState "Reading" as
+	suggested by Sebastian Moss.
+
+2005-08-24  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared release 2.11.0
+
+2005-08-24  YS  <yselkowitz@users.sourceforge.net>
+
+	Changed link order to solve a link issue on cygwin. Bug #314419.
+
+	2005-08-25  YS <yselkowitz@users.sourceforge.net>
+
+	* libxml++/Makefile.am: Changed link order to solve a link issue
+	on cygwin. Bug #314419.
+
+2005-06-13  Marek Rouchal  <marek.rouchal@infineon.com>
+
+	Remove extra ;s. Bug #307481
+
+2005-06-13  Marek Rouchal  <marek.rouchal@infineon.com>
+
+	* libxml++/io/istreamparserinputbuffer.cc:
+	* libxml++/io/istreamparserinputbuffer.h:
+	* libxml++/io/parserinputbuffer.cc:
+	* libxml++/io/parserinputbuffer.h: Remove extra ;s.
+	Bug #307481
+
+2005-05-15  Murray Cumming  <murrayc@src.gnome.org>
+
+	Fixed the ChangeLog duplication.
+
+2005-05-15  Murray Cumming  <murrayc@murrayc.com>
+
+	Add comments about possibly deriving this from Node, though it needs
+
+	2005-05-15  Murray Cumming <murrayc@murrayc.com>
+
+	* libxml++/document.h: Add comments about possibly deriving this
+	from Node, though it needs investigation, and we can not do this
+	in the stable API.
+	* libxml++/nodes/node.cc: get_namespace(), get_namespace_prefix():
+	Return an empty string if the node is actually a Document, because
+	the underlying xmlDocument struct has no ns field. This should
+	prevent the crash in bug #161825.
+
+2005-05-15  Murray Cumming  <murrayc@murrayc.com>
+
+	Add link to the LGPL text.
+
+	2005-05-15  Murray Cumming <murrayc@murrayc.com>
+
+	* docs/index.html: Add link to the LGPL text.
+
+2005-04-24  Murray Cumming  <murrayc@murrayc.com>
+
+	parse_context(): Delete the context after, not before, checking it for an
+
+	2005-04-24  Murray Cumming <murrayc@murrayc.com>
+
+	* libxml++/parsers/domparser.cc: parse_context():
+	Delete the context after, not before, checking it for an error.
+	Bug #156352 from Jim Garrison.
+
+2005-04-24  Murray Cumming  <murrayc@murrayc.com>
+
+	SaxParserCallback::characters() Call on_characters(), not
+
+	2005-04-24  Murray Cumming <murrayc@murrayc.com>
+
+	* libxml++/parsers/saxparser.cc: SaxParserCallback::characters()
+	Call on_characters(), not on_cdata_block(), so that the correct
+	derived handler is called. Bug #301712 and patch from
+	Aaron Walker.
+
+2005-04-24  Murray Cumming  <murrayc@murrayc.com>
+
+	Remove -I for the include location of a config file, because we don't
+
+	2005-04-24  Murray Cumming <murrayc@murrayc.com>
+
+	* libxml++-2.6.pc.in: Remove -I for the include location of
+	a config file, because we don't install one. Bug #301727
+	from Aaron Walker.
+
+2005-03-15  Murray Cumming  <murrayc@murrayc.com>
+
+	set_entity_declaration(): Pass 0 instead of empty strings for the public
+
+2005-03-15  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/document.cc: set_entity_declaration(): Pass 0 instead
+	of empty strings for the public ID and system ID, if an empty
+	string is provided. This stops libxml from using a useless empty
+	string.
+
+2005-03-09  Cedric Gustin  <cedric.gustin@swing.be>
+
+	Add blank.cpp to EXTRA_DIST. Change name of PDB file to
+
+	2005-03-09  Cedric Gustin <cedric.gustin@swing.be>
+
+	* MSVC_Net2003/Makefile.am: Add blank.cpp to EXTRA_DIST.
+	* MSVC_Net2003/examples/*/*.vcproj: Change name of PDB file to
+	$(OutDir)/$(TargetName).pdb.
+
+2005-03-08  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Updated API ref.
+
+2005-03-08  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Added one more rule so the "make distcheck" works from a clean cvs working
+
+2005-03-08  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* docs/reference/Makefile.am: Added one more rule so the "make distcheck"
+	works from a clean cvs working copy.
+
+2005-03-08  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared release 2.10
+
+2005-03-08  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Added a few rules so that "make dist" generated the documentation if it's
+
+2005-03-08  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* docs/manual/Makefile.am, docs/reference/Makefile.am: Added a few rules
+	so that "make dist" generated the documentation if it's absent.
+
+2005-02-15  Murray Cumming  <murrayc@murrayc.com>
+
+	Added insert_example_code to EXTRA_DIST, though it should not be needed
+
+2005-02-15  Murray Cumming  <murrayc@murrayc.com>
+
+	* docs/manual/Makefule.am: Added insert_example_code to EXTRA_DIST,
+	though it should not be needed when building from a DIST anyway,
+	because we distribute the html.
+
+2005-02-13  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Removed README from EXTRA_DIST.
+
+2005-02-13  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* docs/manual/Makefile.am: Removed README from EXTRA_DIST.
+
+2005-02-11  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Fixed a little inefficency in find (#161925)
+
+2005-02-12  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* libxml++/nodes/node.cc: Fixed a little inefficency in find (#161925)
+
+2005-02-11  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Increased version.
+
+2005-02-11  Murray Cumming  <murrayc@murrayc.com>
+
+	Added manual. Use GLIBMM_CHECK_PERL to get the perl path, needed to insert
+
+2005-02-11  Murray Cumming  <murrayc@murrayc.com>
+
+	* docs/: Added manual.
+	* configure.in: Use GLIBMM_CHECK_PERL to get the perl path, needed
+	to insert the example code in the manual.
+	* docs/Makefile.am: Move the reference and manual into a docs folder
+	so that the docs and the examples have the same relative path.
+	* docs/index.html: Mention the manual and update the links.
+
+2005-02-11  Murray Cumming  <murrayc@murrayc.com>
+
+	do_write_to_string(): libml returns the number of bytes instead of the
+
+2005-02-11  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/document.cc: do_write_to_string(): libml returns the
+	number of bytes instead of the number of characters, so use the
+	appropriate ustring constructor, to avoid an exception later.
+	Bug found by Cyril Picard.
+	* docs/reference/Makefile.am: Install the reference documentation.
+	Distribute the built reference documentatoin, and Do not rebuild it
+	every time.
+	* docs/reference/Doxyfile.in: Generate doxygen tags so that other
+	documentation can link to the libxml++ documentation. Use the
+	libstdc++ and glibmm doxygen tags to link to their documentation,
+	for instance for Glib::ustring.
+
+2005-01-27  Cedric Gustin  <cedric.gustin@swing.be>
+
+	Updated for 2.8.0.
+
+	2005-01-26  Cedric Gustin <cedric.gustin@swing.be>
+
+	* MSVC_Net2003/README: Updated for 2.8.0.
+
+2005-01-26  Cedric Gustin  <cedric.gustin@swing.be>
+
+	parse micro version tags at configure time (for libxml++.rc). Added
+
+	2005-01-26  Cedric Gustin <cedric.gustin@swing.be>
+
+	* configure.in : parse micro version tags at configure time (for
+	libxml++.rc). Added support for shared libraries (DLL) on
+	win32. Added MSVC_Net2003 Makefiles.
+	* Makefile.am: Added MSVC_Net2003 subdir.
+	* libxml++/Makefile.am: Added linker flags for shared libraries
+	(DLL) on win32.
+	* examples/Makefile.am_fragment: Removed trailing slash in INCLUDES.
+	* MSVC_Net2003/*: Initial release.
+
+2004-12-25  Murray Cumming  <murrayc@src.gnome.org>
+
+	Increase version
+
+2004-12-25  Murray Cumming  <murrayc@murrayc.com>
+
+	Added parse_memory_raw() for libxml documents that are not utf8-encoded or
+
+2004-12-25  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/parsers/domparser.[h|cc], saxparser.[h|cc]: Added
+	parse_memory_raw() for libxml documents that are not utf8-encoded or
+	are encoded in an unknown encoding.
+	* examples/: Added dom_parser_raw() to test parsing of UCS2-encoded
+	text.
+
+2004-12-20  Murray Cumming  <murrayc@murrayc.com>
+
+	This is the HEAD branch, for gnome 2.9/2.10.
+
+2004-12-20  Murray Cumming  <murrayc@murrayc.com>
+
+	* This is the HEAD branch, for gnome 2.9/2.10.
+
+2004-12-18  Murray Cumming  <murrayc@murrayc.com>
+
+	Node::find(): Check the result of xmlXPathEval and throw an exception
+
+2004-12-18  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/nodes/node.cc: Node::find(): Check the result of
+	xmlXPathEval and throw an exception about invalid xpaths, instead of
+	crashing. Bug #161549 from Caleb Epstein.
+
+2004-12-18  Murray Cumming  <murrayc@murrayc.com>
+
+	parse_memory(), parse_chunk(), domparser.cc: parse_memory, parse_chunk():
+
+2004-12-18  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/parsers/saxparser.cc: parse_memory(), parse_chunk(),
+	domparser.cc: parse_memory, parse_chunk(): Use Glib::ustring::bytes()
+	to get the size of the array, not size() or length(), which gets
+	the number of utf8 characters. It might not even be utf8.
+	size() > 0. It is more efficient.
+
+2004-11-30  Murray Cumming  <murrayc@murrayc.com>
+
+	Removed an extra ; that g++ 3.4 complains about.
+
+2004-11-30  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/validator.h: Removed an extra ; that g++ 3.4 complains
+	about.
+
+2004-11-29  Murray Cumming  <murrayc@src.gnome.org>
+
+	I forgot to commit this NEWS change, I think.
+
+2004-09-14  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Changed the .so version number from GENERIC_LIBRARY_VERSION=2:1:1 to
+
+	Changed the .so version number from
+	GENERIC_LIBRARY_VERSION=2:1:1
+	to
+	GENERIC_LIBRARY_VERSION=2:1:0
+
+	to avoid re-linking issues. cf
+	http://sourceforge.net/mailarchive/forum.php?thread_id=5559194&forum_id=12784
+
+	for more informations.
+
+2004-09-14  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Don't exclude 2.6/* anymore.
+
+2004-09-14  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared release 2.8
+
+2004-09-13  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Added some clarifications on the LGPL license.
+
+2004-09-12  Murray Cumming  <murrayc@murrayc.com>
+
+	Add include for xmlreader.h. Correct (and uncomment) the code to read the
+
+2004-09-12  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/libxml++.h: Add include for xmlreader.h.
+	* examples/saxparser/myparser.cc, saxparser_entities/myparser.cc:
+	Correct (and uncomment) the code to read the attribute values.
+
+2004-09-06  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared release 2.7.1
+
+2004-08-13  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Fixed bug #150082.
+
+	2004-08-13  Christophe de Vienne <cdevienne@netcourrier.com>
+
+	* libxml++/parsers/domparser.cc, libxml++/parsers/parser.cc: Fixed
+	bug #150082.
+
+2004-07-02  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Added 2.7.0 tag.
+
+2004-06-24  Murray Cumming  <murrayc@.com>
+
+	Reverted the changes that made it install a 2.8 pc.in file, and which
+
+2004-06-24  Murray Cumming  <murrayc@.com>
+
+	* configure.in, Makefile.am, libxml++-2.*.pc.in: Reverted the changes
+	that made it install a 2.8 pc.in file, and which decreased the .so
+	name. 2.8 is not parallel-installable with 2.6, and this would only
+	have been a half-done transition if it was.
+
+2004-06-22  Murray Cumming  <murrayc@murrayc.com>
+
+	Added include of libxml/globals.h before include of libxml/xmlIO.h,
+
+2004-06-22  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/io/outputbuffer.cc, inputbuffer.cc:
+	Added include of libxml/globals.h before include of libxml/xmlIO.h,
+	because xmlIO.h needs the definition of
+	xmlParserInputBufferCreateFilenameFunc.
+
+2004-05-28  Christophe de Vienne  <cdevienne@netcourrier>
+
+	Integrated dtdvalidator patch proposed by Guillaume Arreckx. Modified a
+
+	2004-05-28  Christophe de Vienne <cdevienne@netcourrier>
+
+	* configure.in, examples/Makefile.am, examples/dtdvalidation/Makefile.am,
+	examples/dtdvalidation/example.dtd, examples/dtdvalidation/main.cc,
+	libxml++/Makefile.am, libxml++/dtd.[h|cc], libxml++/io/Makefile.am,
+	libxml++/io/istreamparserinputbuffer.[h|cc],
+	libxml++/io/parserinputbuffer.[h|cc],
+	libxml++/libxml++.h, libxml++/validators/Makefile.am,
+	libxml++/validators/dtdvalidator.[h|cc]
+	libxml++/validators/validator.[h|cc]:
+	Integrated dtdvalidator patch proposed by Guillaume Arreckx.
+	Modified a bit the patch:
+	- renamed *.cpp -> *.cc
+	- fixed a few comments which where copy/paste from other files
+	- replaced std::string with Glib::ustring
+	- Added Dtd::cobj, since the patch rely on it.
+	- added a validaty_error as suggested by jon
+
+2004-05-06  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared HEAD branch for version 2.7/2.8.
+
+2004-05-05  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared 2.6.1 release.
+
+2004-05-05  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Completed for 2.6.1 release.
+
+2004-05-05  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	Fixed set_content which used xmlNodeAddContent instead of
+
+2004-04-26  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	* libxml++/nodes/contentnode.cc: Fixed set_content which used xmlNodeAddContent
+	instead of xmlNodeSetContent (thanks to Marcello Orizi who outlined it).
+
+2004-05-05  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	One more (last one I hope) change about Glib::ustring instanciation from a
+
+2004-05-05  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* libxml++/parsers/saxparser.cc: One more (last one I hope) change
+	about Glib::ustring instanciation from a buffer + lenght. We now
+	use Glib::ustring::ustring(In begin, In end) constructor. Thanks to
+	Jonathan Wakely.
+
+2004-05-04  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Replaced again the use of Glib::ustring(const char*) constructor by
+
+2004-05-03  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* libxml++/parsers/saxparser.cc: Replaced again the use of
+	Glib::ustring(const char*) constructor by Glib::ustring(std::string).
+	Fixes #141824.
+
+2004-05-04  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	*** empty log message ***
+
+2004-05-04  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Replace the use of Glib::ustring(const char*, unsigned) constructor by
+
+2004-05-03  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* libxml++/parsers/saxparser.cc: Replace the use of
+	Glib::ustring(const char*, unsigned) constructor by Glib::ustring(const char*).
+	Fixes #141824.
+
+2004-05-04  Murray Cumming  <murrayc@murrayc@com>
+
+	Made it require glibmm-2.4, so that apps do not have to check for this
+
+2004-05-04  Murray Cumming  <murrayc@murrayc@com>
+
+	* libxml++-2.6.pc.in: Made it require glibmm-2.4, so that apps do not
+	have to check for this themselves.
+
+2004-04-13  Murray Cumming  <murrayc@murrayc.com>
+
+	Change library name to 2.6 instead of 2.5. Report the changed library
+
+2004-04-13  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/Makefile.am: Change library name to 2.6 instead of 2.5.
+	* libxml++-2.6.pc.in: Report the changed library name.
+
+2004-04-13  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Updated to 2.6.0.
+
+2004-04-13  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Updated dependencies and reference documentation links.
+
+2004-04-13  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Switched to version 2.6. Reset library version.
+
+2004-04-13  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Adapted Doxyfile to more recent version of Doxygen. The documentation is now published in a versionned directory on the website.
+
+2004-03-27  Murray Cumming  <murrayc@murrayc.com>
+
+	Correct constness of get_current_node(), so there is a const and non-const
+
+2004-03-27  Murray Cumming  <murrayc@murrayc.com>
+
+	* libxml++/parsers/textreader.[h|cc]: Correct constness of
+	get_current_node(), so there is a const and non-const version.
+
+2004-03-03  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	file api_export.h was initially added on branch LIBXMLPP_BRANCH_1_0.
+
+2004-03-02  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Prepared release 2.5.2 (2.6.0 beta1)
+
+2004-02-16  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	Check return value of xmlHasNsProp to fix issue #134390 (as reported by
+
+2004-02-16  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	* libxml++/nodes/element.cc: Check return value of xmlHasNsProp to
+	fix issue #134390 (as reported by John Coyle). Use xmlHasProp instead
+	of testing each attributes.
+
+2004-02-16  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Changed two remaining 1.0 to 2.6.
+
+2004-02-16  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	Added libxml-2.0 to Requires: and removed @LIBXML_LIBS@ from libs, as
+
+2004-02-16  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	* libxml++-2.6.pc.in: Added libxml-2.0 to Requires: and removed
+	@LIBXML_LIBS@ from libs, as suggested by Albert Chin.
+
+2004-02-16  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	Merged in patches from Albert Chin to get libxml++ build using the SUN,
+
+2004-02-16  Christophe de VIENNE  <cdevienne@netcourrier.com>
+
+	* libxml++/nodes/node.cc, libxml++/parsers/parser.h:
+	Merged in patches from Albert Chin to get libxml++ build using the SUN,
+	HP, SGI & AIX C++ compilers.
+
+2004-02-13  Jim Garrison  <garrison@case.edu>
+
+	Removed unnecessary semicolons
+
+2004-02-13  Jim Garrison  <garrison@case.edu>
+
+	* libxml++/attribute.h, libxml++/document.h, libxml++/dtd.h,
+	libxml++/io/ostreamoutputbuffer.[h|cc],
+	libxml++/io/outputbuffer.[h|cc], libxml++/keepblanks.[h|cc],
+	libxml++/nodes/node.h, libxml++/parsers/parser.h,
+	libxml++/parsers/saxparser.h, libxml++/parsers/textreader.[h|cc]:
+	Removed unnecessary semicolons
+
+2004-02-13  Jim Garrison  <garrison@src.gnome.org>
+
+	added cvsignore files
+
+2004-02-13  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Makefile of examples/textreader was forgotten in last commit.
+
+2004-02-09  Murray Cumming  <murrayc@src.gnome.org>
+
+	Corrected my email address, though I'm not really a libxml++ maintainer.
+
+2004-02-09  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	prepared release 2.5.1
+
+2004-02-09  Jim Garrison  <garrison@case.edu>
+
+	added Document::cobj() function
+
+2004-02-08  Jim Garrison  <garrison@case.edu>
+
+	* libxml++/document.[h|cc]: added Document::cobj() function
+
+2004-02-06  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Fixed issue #132014.
+
+2004-02-06  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* libxml++/parsers/sax_parser.cc: Fixed issue #132014.
+
+2004-02-06  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	Added TextReader interface. It is almost the patch which is here :
+
+2004-02-06  Christophe de Vienne  <cdevienne@netcourrier.com>
+
+	* libxml++/parsers/[Makefile.am|textreader.h|textreader.cc]: Added
+	TextReader interface. It is almost the patch which is here :
+	http://sourceforge.net/tracker/index.php?func=detail&aid=842730&group_id=12999&atid=312999
+	with Glib::ustring instead of std::string, and member functions names
+	changed to be consistent with other interfaces.
+	* configure.in, examples/Makefile.am, examples/textreader: Added an example
+	of TextReader interface.
+
+2004-02-05  Jim Garrison  <garrison@case.edu>
+
+	added create_root_node_by_import()
+
+2004-02-05  Jim Garrison  <garrison@case.edu>
+        * libxml++/document.[h|cc]: added create_root_node_by_import()
+
+2004-01-13  Christophe de Vienne  <cdevienne@alphacent.com>
+
+	Gives NULL strings instead of empty ones to xmlCreateIntSubset. Fixes
+
+2004-01-13  Christophe de Vienne  <cdevienne@alphacent.com>
+
+	* libxml++/io/document.cc: Gives NULL strings instead of empty ones to
+	xmlCreateIntSubset. Fixes issue #131329.
+
+2004-01-12  Christophe de Vienne  <cdevienne@alphacent.com>
+
+	* libxml++/io/outputbuffer.cc: Fix return value of xmlIO callbacks. (Fixes
+	issue #131018).
+
+2003-12-19  Murray Cumming  <murrayc@usa.net>
+
+	Added glibmm-2.4 to the pkg-config check. :string/Glib::ustring rename.
+
+2003-12-19  Murray Cumming  <murrayc@usa.net>
+
+	* configure.in: Added glibmm-2.4 to the pkg-config check.
+	* Used regexxer to do a complete std::string/Glib::ustring rename.
+	Everything seems to still work. I think the parse_chunk(stream)
+	stuff might need some attention/thought.
+
+2003-12-19  Murray Cumming  <murrayc@usa.net>
+
+	libxml++ has moved to the GNOME cvs.
+
+2003-12-19  Murray Cumming  <murrayc@usa.net>
+
+	* modulesets/gnome26.modules: libxml++ has moved to the GNOME cvs.
+
+2003-12-19  Murray Cumming  <murrayc@usa.net>
+
+	removed acinclude.m4 because we do not need it anymore because we do not
+
+2003-12-19  Murray Cumming  <murrayc@usa.net>
+
+	* removed acinclude.m4 because we do not need it anymore because
+	we do not need AM_LIBXML now that we use pkg-config.
+	* libxml++/Makefile.am: Generate a library with 2.5 in the name,
+	instead of 1.0
+	* configure.in: Change version to 2.5.0.
+	* examples/Makefile.am_fragment: Link to the new library name.
+	* Renamed libxml++-1.0.pc.in to libxml++-2.6.pc.in: and changed the
+	library name that pkg-config reports for --libs.
+	* So, this is now the libxml++ 2.6 API, with a library name of 2.5
+	while it is unstable. It is parallel-installable with libxml++ 1.0.
+
+2003-12-18  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	updated CVS repositery and bugtracker url.
+
+2003-12-18  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Initial import into gnome CVS repositery
+
+2003-12-18  Christophe de Vienne  <cdevienn@src.gnome.org>
+
+	Initial revision
+

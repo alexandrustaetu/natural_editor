@@ -1,0 +1,24 @@
+#include <freetype-gl.h>
+
+      // Text to be printed
+       wchar_t *text = L"A Quick Brown Fox Jumps Over The Lazy Dog 0123456789";
+
+       // Texture atlas to store individual glyphs
+       texture_atlas_t *atlas = texture_atlas_new( 512, 512, 1 );
+
+       // Build a new texture font from its description and size
+       texture_font_t *font = texture_font_new( atlas, "./Vera.ttf", 16 );
+
+       // Build a new vertex buffer (position, texture & color)
+       vertex_buffer_t *buffer= vertex_buffer_new( "v3i:t2f:c4f" );
+
+       // Where to start printing on screen
+       glm::vec2 pen = {0,0};
+
+       // Text color
+       glm::vec4 black = {0,0,0,1};
+
+       // Add text to the buffer
+       add_text( buffer, font, "Hello World !", text, &black, &pen );
+
+       vertex_buffer_render( buffer, GL_TRIANGLES, "vtc");

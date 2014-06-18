@@ -1,0 +1,1904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="94">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="Modules"
+                   displayName="Modules"
+                   projectFiles="true"
+                   root="/usr/share/cmake-2.8/Modules">
+      <itemPath>/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c</itemPath>
+      <itemPath>/usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp</itemPath>
+      <itemPath>/usr/share/cmake-2.8/Modules/CMakeCompilerABI.h</itemPath>
+    </logicalFolder>
+    <df root="." name="0">
+      <df name="build">
+        <df name="CMakeFiles">
+          <df name="2.8.12.2">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="common">
+        <df name="backed">
+          <in>file_helper.cpp</in>
+          <in>shapes_bk.cpp</in>
+          <in>test.cpp</in>
+        </df>
+        <df name="environment">
+          <in>world.cpp</in>
+        </df>
+        <df name="filesystem">
+          <in>directory.cpp</in>
+          <in>disk.cpp</in>
+        </df>
+        <df name="input">
+          <in>menu.cpp</in>
+          <in>mouse.cpp</in>
+        </df>
+        <df name="space">
+          <in>helper.cpp</in>
+          <in>object3d.cpp</in>
+          <in>physics.cpp</in>
+          <in>scene.cpp</in>
+          <in>text.cpp</in>
+        </df>
+        <in>controls.cpp</in>
+        <in>debug.cpp</in>
+        <in>handle.cpp</in>
+        <in>object3d.cpp</in>
+        <in>shader.cpp</in>
+        <in>shader_utils.cpp</in>
+        <in>startup.cpp</in>
+        <in>text.cpp</in>
+        <in>texture.cpp</in>
+        <in>types.cpp</in>
+      </df>
+      <df name="external">
+        <df name="bullet-2.81-rev2613">
+          <df name="src">
+            <df name="BulletCollision">
+              <df name="BroadphaseCollision">
+                <in>btAxisSweep3.cpp</in>
+                <in>btBroadphaseProxy.cpp</in>
+                <in>btCollisionAlgorithm.cpp</in>
+                <in>btDbvt.cpp</in>
+                <in>btDbvtBroadphase.cpp</in>
+                <in>btDispatcher.cpp</in>
+                <in>btMultiSapBroadphase.cpp</in>
+                <in>btOverlappingPairCache.cpp</in>
+                <in>btQuantizedBvh.cpp</in>
+                <in>btSimpleBroadphase.cpp</in>
+              </df>
+              <df name="CollisionDispatch">
+                <in>SphereTriangleDetector.cpp</in>
+                <in>btActivatingCollisionAlgorithm.cpp</in>
+                <in>btBox2dBox2dCollisionAlgorithm.cpp</in>
+                <in>btBoxBoxCollisionAlgorithm.cpp</in>
+                <in>btBoxBoxDetector.cpp</in>
+                <in>btCollisionDispatcher.cpp</in>
+                <in>btCollisionObject.cpp</in>
+                <in>btCollisionWorld.cpp</in>
+                <in>btCompoundCollisionAlgorithm.cpp</in>
+                <in>btConvex2dConvex2dAlgorithm.cpp</in>
+                <in>btConvexConcaveCollisionAlgorithm.cpp</in>
+                <in>btConvexConvexAlgorithm.cpp</in>
+                <in>btConvexPlaneCollisionAlgorithm.cpp</in>
+                <in>btDefaultCollisionConfiguration.cpp</in>
+                <in>btEmptyCollisionAlgorithm.cpp</in>
+                <in>btGhostObject.cpp</in>
+                <in>btInternalEdgeUtility.cpp</in>
+                <in>btManifoldResult.cpp</in>
+                <in>btSimulationIslandManager.cpp</in>
+                <in>btSphereBoxCollisionAlgorithm.cpp</in>
+                <in>btSphereSphereCollisionAlgorithm.cpp</in>
+                <in>btSphereTriangleCollisionAlgorithm.cpp</in>
+                <in>btUnionFind.cpp</in>
+              </df>
+              <df name="CollisionShapes">
+                <in>btBox2dShape.cpp</in>
+                <in>btBoxShape.cpp</in>
+                <in>btBvhTriangleMeshShape.cpp</in>
+                <in>btCapsuleShape.cpp</in>
+                <in>btCollisionShape.cpp</in>
+                <in>btCompoundShape.cpp</in>
+                <in>btConcaveShape.cpp</in>
+                <in>btConeShape.cpp</in>
+                <in>btConvex2dShape.cpp</in>
+                <in>btConvexHullShape.cpp</in>
+                <in>btConvexInternalShape.cpp</in>
+                <in>btConvexPointCloudShape.cpp</in>
+                <in>btConvexPolyhedron.cpp</in>
+                <in>btConvexShape.cpp</in>
+                <in>btConvexTriangleMeshShape.cpp</in>
+                <in>btCylinderShape.cpp</in>
+                <in>btEmptyShape.cpp</in>
+                <in>btHeightfieldTerrainShape.cpp</in>
+                <in>btMinkowskiSumShape.cpp</in>
+                <in>btMultiSphereShape.cpp</in>
+                <in>btMultimaterialTriangleMeshShape.cpp</in>
+                <in>btOptimizedBvh.cpp</in>
+                <in>btPolyhedralConvexShape.cpp</in>
+                <in>btScaledBvhTriangleMeshShape.cpp</in>
+                <in>btShapeHull.cpp</in>
+                <in>btSphereShape.cpp</in>
+                <in>btStaticPlaneShape.cpp</in>
+                <in>btStridingMeshInterface.cpp</in>
+                <in>btTetrahedronShape.cpp</in>
+                <in>btTriangleBuffer.cpp</in>
+                <in>btTriangleCallback.cpp</in>
+                <in>btTriangleIndexVertexArray.cpp</in>
+                <in>btTriangleIndexVertexMaterialArray.cpp</in>
+                <in>btTriangleMesh.cpp</in>
+                <in>btTriangleMeshShape.cpp</in>
+                <in>btUniformScalingShape.cpp</in>
+              </df>
+              <df name="Gimpact">
+                <in>btContactProcessing.cpp</in>
+                <in>btGImpactBvh.cpp</in>
+                <in>btGImpactCollisionAlgorithm.cpp</in>
+                <in>btGImpactQuantizedBvh.cpp</in>
+                <in>btGImpactShape.cpp</in>
+                <in>btGenericPoolAllocator.cpp</in>
+                <in>btTriangleShapeEx.cpp</in>
+                <in>gim_box_set.cpp</in>
+                <in>gim_contact.cpp</in>
+                <in>gim_memory.cpp</in>
+                <in>gim_tri_collision.cpp</in>
+              </df>
+              <df name="NarrowPhaseCollision">
+                <in>btContinuousConvexCollision.cpp</in>
+                <in>btConvexCast.cpp</in>
+                <in>btGjkConvexCast.cpp</in>
+                <in>btGjkEpa2.cpp</in>
+                <in>btGjkEpaPenetrationDepthSolver.cpp</in>
+                <in>btGjkPairDetector.cpp</in>
+                <in>btMinkowskiPenetrationDepthSolver.cpp</in>
+                <in>btPersistentManifold.cpp</in>
+                <in>btPolyhedralContactClipping.cpp</in>
+                <in>btRaycastCallback.cpp</in>
+                <in>btSubSimplexConvexCast.cpp</in>
+                <in>btVoronoiSimplexSolver.cpp</in>
+              </df>
+            </df>
+            <df name="BulletDynamics">
+              <df name="Character">
+                <in>btKinematicCharacterController.cpp</in>
+              </df>
+              <df name="ConstraintSolver">
+                <in>btConeTwistConstraint.cpp</in>
+                <in>btContactConstraint.cpp</in>
+                <in>btGearConstraint.cpp</in>
+                <in>btGeneric6DofConstraint.cpp</in>
+                <in>btGeneric6DofSpringConstraint.cpp</in>
+                <in>btHinge2Constraint.cpp</in>
+                <in>btHingeConstraint.cpp</in>
+                <in>btPoint2PointConstraint.cpp</in>
+                <in>btSequentialImpulseConstraintSolver.cpp</in>
+                <in>btSliderConstraint.cpp</in>
+                <in>btSolve2LinearConstraint.cpp</in>
+                <in>btTypedConstraint.cpp</in>
+                <in>btUniversalConstraint.cpp</in>
+              </df>
+              <df name="Dynamics">
+                <in>Bullet-C-API.cpp</in>
+                <in>btDiscreteDynamicsWorld.cpp</in>
+                <in>btRigidBody.cpp</in>
+                <in>btSimpleDynamicsWorld.cpp</in>
+              </df>
+              <df name="Vehicle">
+                <in>btRaycastVehicle.cpp</in>
+                <in>btWheelInfo.cpp</in>
+              </df>
+            </df>
+            <df name="BulletSoftBody">
+              <in>btDefaultSoftBodySolver.cpp</in>
+              <in>btSoftBody.cpp</in>
+              <in>btSoftBodyConcaveCollisionAlgorithm.cpp</in>
+              <in>btSoftBodyHelpers.cpp</in>
+              <in>btSoftBodyRigidBodyCollisionConfiguration.cpp</in>
+              <in>btSoftRigidCollisionAlgorithm.cpp</in>
+              <in>btSoftRigidDynamicsWorld.cpp</in>
+              <in>btSoftSoftCollisionAlgorithm.cpp</in>
+            </df>
+            <df name="LinearMath">
+              <in>btAlignedAllocator.cpp</in>
+              <in>btConvexHull.cpp</in>
+              <in>btConvexHullComputer.cpp</in>
+              <in>btGeometryUtil.cpp</in>
+              <in>btPolarDecomposition.cpp</in>
+              <in>btQuickprof.cpp</in>
+              <in>btSerializer.cpp</in>
+              <in>btVector3.cpp</in>
+            </df>
+          </df>
+        </df>
+        <df name="freetype-2.5.2">
+          <df name="src">
+            <df name="autofit">
+              <in>autofit.c</in>
+            </df>
+            <df name="base">
+              <in>ftadvanc.c</in>
+              <in>ftbbox.c</in>
+              <in>ftbitmap.c</in>
+              <in>ftcalc.c</in>
+              <in>ftcid.c</in>
+              <in>ftdbgmem.c</in>
+              <in>ftdebug.c</in>
+              <in>ftfstype.c</in>
+              <in>ftgasp.c</in>
+              <in>ftgloadr.c</in>
+              <in>ftglyph.c</in>
+              <in>ftgxval.c</in>
+              <in>ftinit.c</in>
+              <in>ftlcdfil.c</in>
+              <in>ftmm.c</in>
+              <in>ftobjs.c</in>
+              <in>ftotval.c</in>
+              <in>ftoutln.c</in>
+              <in>ftpatent.c</in>
+              <in>ftpfr.c</in>
+              <in>ftrfork.c</in>
+              <in>ftsnames.c</in>
+              <in>ftstream.c</in>
+              <in>ftstroke.c</in>
+              <in>ftsynth.c</in>
+              <in>ftsystem.c</in>
+              <in>fttrigon.c</in>
+              <in>fttype1.c</in>
+              <in>ftutil.c</in>
+              <in>ftwinfnt.c</in>
+              <in>ftxf86.c</in>
+            </df>
+            <df name="bdf">
+              <in>bdf.c</in>
+            </df>
+            <df name="bzip2">
+              <in>ftbzip2.c</in>
+            </df>
+            <df name="cache">
+              <in>ftcache.c</in>
+            </df>
+            <df name="cff">
+              <in>cff.c</in>
+            </df>
+            <df name="cid">
+              <in>type1cid.c</in>
+            </df>
+            <df name="gzip">
+              <in>ftgzip.c</in>
+            </df>
+            <df name="lzw">
+              <in>ftlzw.c</in>
+            </df>
+            <df name="pcf">
+              <in>pcf.c</in>
+            </df>
+            <df name="pfr">
+              <in>pfr.c</in>
+            </df>
+            <df name="psaux">
+              <in>psaux.c</in>
+            </df>
+            <df name="pshinter">
+              <in>pshinter.c</in>
+            </df>
+            <df name="psnames">
+              <in>psmodule.c</in>
+            </df>
+            <df name="raster">
+              <in>raster.c</in>
+            </df>
+            <df name="sfnt">
+              <in>sfnt.c</in>
+            </df>
+            <df name="smooth">
+              <in>smooth.c</in>
+            </df>
+            <df name="truetype">
+              <in>truetype.c</in>
+            </df>
+            <df name="type1">
+              <in>type1.c</in>
+            </df>
+            <df name="type42">
+              <in>type42.c</in>
+            </df>
+            <df name="winfonts">
+              <in>winfnt.c</in>
+            </df>
+          </df>
+        </df>
+        <df name="glew-1.9.0">
+          <df name="src">
+            <in>glew.c</in>
+          </df>
+        </df>
+        <df name="glfw-2.7.6">
+          <df name="lib">
+            <df name="x11">
+              <in>x11_enable.c</in>
+              <in>x11_fullscreen.c</in>
+              <in>x11_glext.c</in>
+              <in>x11_init.c</in>
+              <in>x11_joystick.c</in>
+              <in>x11_keysym2unicode.c</in>
+              <in>x11_thread.c</in>
+              <in>x11_time.c</in>
+              <in>x11_window.c</in>
+            </df>
+            <in>enable.c</in>
+            <in>fullscreen.c</in>
+            <in>glext.c</in>
+            <in>image.c</in>
+            <in>init.c</in>
+            <in>input.c</in>
+            <in>joystick.c</in>
+            <in>stream.c</in>
+            <in>tga.c</in>
+            <in>thread.c</in>
+            <in>time.c</in>
+            <in>window.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="tests">
+        <in>newtestclass.cpp</in>
+        <in>newtestclass1.cpp</in>
+        <in>newtestrunner.cpp</in>
+        <in>newtestrunner1.cpp</in>
+      </df>
+      <in>main.cpp</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>CMakeLists.txt</itemPath>
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-std=c++0x"/>
+      </flagsDictionary>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>build</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>build/natural</executablePath>
+          <cTool>
+            <commandLine>`cppunit-config --cflags`</commandLine>
+          </cTool>
+          <ccTool>
+            <standard>8</standard>
+            <commandLine>`cppunit-config --cflags`</commandLine>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="/usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="build/CMakeFiles/2.8.12.2/CompilerIdC/CMakeCCompilerId.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="build/CMakeFiles/2.8.12.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="common/backed/file_helper.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>/usr/include/libxml++-2.6</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>/usr/include/glibmm-2.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glibmm-2.4/include</pElem>
+            <pElem>/usr/include/sigc++-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/sigc++-2.0/include</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/lib/libxml++-2.6/include</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/backed/shapes_bk.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>/usr/include/libxml++-2.6</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>/usr/include/glibmm-2.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glibmm-2.4/include</pElem>
+            <pElem>/usr/include/sigc++-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/sigc++-2.0/include</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/lib/libxml++-2.6/include</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/backed/test.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool>
+          <incDir>
+            <pElem>common</pElem>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>/usr/include/libxml++-2.6</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>/usr/include/glibmm-2.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glibmm-2.4/include</pElem>
+            <pElem>/usr/include/sigc++-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/sigc++-2.0/include</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/lib/libxml++-2.6/include</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/controls.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/debug.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/environment/world.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="common/filesystem/directory.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="common/filesystem/disk.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="common/handle.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/input/menu.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/input/mouse.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="common/object3d.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool>
+          <incDir>
+            <pElem>common</pElem>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>/usr/include/libxml++-2.6</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>/usr/include/glibmm-2.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glibmm-2.4/include</pElem>
+            <pElem>/usr/include/sigc++-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/sigc++-2.0/include</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/lib/libxml++-2.6/include</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/shader.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/shader_utils.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/space/helper.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/libxml++-2.6</pElem>
+            <pElem>/usr/include/libxml2</pElem>
+            <pElem>/usr/include/glibmm-2.4</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glibmm-2.4/include</pElem>
+            <pElem>/usr/include/sigc++-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/sigc++-2.0/include</pElem>
+            <pElem>/usr/include/glib-2.0</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu/glib-2.0/include</pElem>
+            <pElem>/usr/lib/libxml++-2.6/include</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/space/object3d.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/space/physics.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/space/scene.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/space/text.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/startup.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/text.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/texture.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="common/types.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvt.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvtBroadphase.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDispatcher.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btOverlappingPairCache.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btQuantizedBvh.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btSimpleBroadphase.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/SphereTriangleDetector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBoxBoxDetector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionObject.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionWorld.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btGhostObject.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btInternalEdgeUtility.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btManifoldResult.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSimulationIslandManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btUnionFind.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBox2dShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBoxShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCapsuleShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCollisionShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCompoundShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConcaveShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConeShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvex2dShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexHullShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexInternalShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexPointCloudShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexPolyhedron.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCylinderShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btEmptyShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMinkowskiSumShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMultiSphereShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btOptimizedBvh.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btShapeHull.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btSphereShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStaticPlaneShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTetrahedronShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleBuffer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleCallback.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMesh.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMeshShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btUniformScalingShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btContactProcessing.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactBvh.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactQuantizedBvh.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactShape.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGenericPoolAllocator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btTriangleShapeEx.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_box_set.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_contact.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_memory.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_tri_collision.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btConvexCast.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkEpa2.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btRaycastCallback.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/Character/btKinematicCharacterController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btContactConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGearConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHinge2Constraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHingeConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSliderConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btTypedConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/Bullet-C-API.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btRigidBody.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btSimpleDynamicsWorld.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btRaycastVehicle.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btWheelInfo.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btDefaultSoftBodySolver.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBody.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyHelpers.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftRigidDynamicsWorld.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btAlignedAllocator.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btConvexHull.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btConvexHullComputer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btGeometryUtil.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btPolarDecomposition.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btQuickprof.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btSerializer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/bullet-2.81-rev2613/src/LinearMath/btVector3.cpp"
+            ex="false"
+            tool="1"
+            flavor2="8">
+      </item>
+      <item path="external/freetype-2.5.2/src/autofit/autofit.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftadvanc.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftbbox.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftbitmap.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftcalc.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftcid.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftdbgmem.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftdebug.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftfstype.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftgasp.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftgloadr.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftglyph.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftgxval.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftinit.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftlcdfil.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftmm.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftobjs.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftotval.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftoutln.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftpatent.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftpfr.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftrfork.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftsnames.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftstream.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftstroke.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftsynth.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftsystem.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/fttrigon.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/fttype1.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftutil.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftwinfnt.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/base/ftxf86.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/bdf/bdf.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/bzip2/ftbzip2.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/cache/ftcache.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/cff/cff.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/cid/type1cid.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/gzip/ftgzip.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/lzw/ftlzw.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/pcf/pcf.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/pfr/pfr.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/psaux/psaux.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/pshinter/pshinter.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/psnames/psmodule.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/raster/raster.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/sfnt/sfnt.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/smooth/smooth.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/truetype/truetype.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/type1/type1.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/type42/type42.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/freetype-2.5.2/src/winfonts/winfnt.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glew-1.9.0/src/glew.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/enable.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/fullscreen.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/glext.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/image.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/init.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/input.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/joystick.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/stream.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/tga.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/thread.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/time.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/window.c" ex="false" tool="0" flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_enable.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_fullscreen.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_glext.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_init.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_joystick.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_keysym2unicode.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_thread.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_time.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="external/glfw-2.7.6/lib/x11/x11_window.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <folder path="0/build">
+        <ccTool>
+          <incDir>
+            <pElem>common</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/common">
+        <ccTool>
+          <preprocessorList>
+            <Elem>GLEW_STATIC</Elem>
+            <Elem>TW_NO_DIRECT3D</Elem>
+            <Elem>TW_NO_LIB_PRAGMA</Elem>
+            <Elem>TW_STATIC</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/common/environment">
+        <ccTool>
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/common/filesystem">
+        <ccTool>
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/common/space">
+        <ccTool>
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/external">
+        <cTool>
+          <incDir>
+            <pElem>external/glfw-2.7.6/lib/x11</pElem>
+            <pElem>external/glfw-2.7.6/lib</pElem>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>GLEW_STATIC</Elem>
+            <Elem>TW_NO_DIRECT3D</Elem>
+            <Elem>TW_NO_LIB_PRAGMA</Elem>
+            <Elem>TW_STATIC</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_GLFW_HAS_DLOPEN</Elem>
+            <Elem>_GLFW_HAS_XRANDR</Elem>
+            <Elem>_UNIX</Elem>
+          </preprocessorList>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>external/glfw-2.7.6/lib/x11</pElem>
+            <pElem>external/glfw-2.7.6/lib</pElem>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>/src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>GLEW_STATIC</Elem>
+            <Elem>TW_NO_DIRECT3D</Elem>
+            <Elem>TW_NO_LIB_PRAGMA</Elem>
+            <Elem>TW_STATIC</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+            <Elem>_GLFW_HAS_DLOPEN</Elem>
+            <Elem>_GLFW_HAS_XRANDR</Elem>
+            <Elem>_UNIX</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/external/bullet-2.81-rev2613/src/BulletCollision">
+        <ccTool>
+          <incDir>
+            <pElem>build/external/bullet-2.81-rev2613/src/BulletCollision</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/external/bullet-2.81-rev2613/src/BulletDynamics">
+        <ccTool>
+          <incDir>
+            <pElem>build/external/bullet-2.81-rev2613/src/BulletDynamics</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/external/bullet-2.81-rev2613/src/BulletSoftBody">
+        <ccTool>
+          <incDir>
+            <pElem>build/external/bullet-2.81-rev2613/src/BulletSoftBody</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/external/bullet-2.81-rev2613/src/LinearMath">
+        <ccTool>
+          <incDir>
+            <pElem>build/external/bullet-2.81-rev2613/src/LinearMath</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/external/freetype-2.5.2">
+        <cTool>
+          <incDir>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>build/external/freetype-2.5.2/include</pElem>
+            <pElem>external/freetype-2.5.2/src/truetype</pElem>
+            <pElem>external/freetype-2.5.2/src/sfnt</pElem>
+            <pElem>external/freetype-2.5.2/src/autofit</pElem>
+            <pElem>external/freetype-2.5.2/src/smooth</pElem>
+            <pElem>external/freetype-2.5.2/src/raster</pElem>
+            <pElem>external/freetype-2.5.2/src/psaux</pElem>
+            <pElem>external/freetype-2.5.2/src/psnames</pElem>
+            <pElem>build/external/freetype-2.5.2</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>FT2_BUILD_LIBRARY</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="0/external/glew-1.9.0">
+        <cTool>
+          <incDir>
+            <pElem>build/external</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="0/external/glfw-2.7.6">
+        <cTool>
+          <incDir>
+            <pElem>build/external</pElem>
+          </incDir>
+        </cTool>
+      </folder>
+      <folder path="Modules">
+        <cTool>
+          <incDir>
+            <pElem>build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>common</pElem>
+            <pElem>build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="main.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>GLEW_STATIC</Elem>
+            <Elem>TW_NO_DIRECT3D</Elem>
+            <Elem>TW_NO_LIB_PRAGMA</Elem>
+            <Elem>TW_STATIC</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="tests/newtestclass.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>GLEW_STATIC</Elem>
+            <Elem>TW_NO_DIRECT3D</Elem>
+            <Elem>TW_NO_LIB_PRAGMA</Elem>
+            <Elem>TW_STATIC</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="tests/newtestclass1.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="tests/newtestrunner.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>external/glfw-2.7.6/include</pElem>
+            <pElem>external/glm-0.9.4.0</pElem>
+            <pElem>external/freetype-2.5.2/include</pElem>
+            <pElem>external/glew-1.9.0/include</pElem>
+            <pElem>external/bullet-2.81-rev2613/src</pElem>
+            <pElem>.</pElem>
+            <pElem>build</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>GLEW_STATIC</Elem>
+            <Elem>TW_NO_DIRECT3D</Elem>
+            <Elem>TW_NO_LIB_PRAGMA</Elem>
+            <Elem>TW_STATIC</Elem>
+            <Elem>_CRT_SECURE_NO_WARNINGS</Elem>
+          </preprocessorList>
+        </ccTool>
+      </item>
+      <item path="tests/newtestrunner1.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
