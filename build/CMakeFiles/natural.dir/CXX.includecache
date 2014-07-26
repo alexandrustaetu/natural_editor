@@ -1566,8 +1566,18 @@ common/filesystem/directory.hpp
 iostream
 -
 
+/home/alexander/projects/natural_editor/common/filesystem/disk.cpp
+common/filesystem/disk.hpp
+-
+
 /home/alexander/projects/natural_editor/common/input/menu.cpp
 common/input/menu.hpp
+-
+
+/home/alexander/projects/natural_editor/common/space/object3d.cpp
+object3d.hpp
+/home/alexander/projects/natural_editor/common/space/object3d.hpp
+iostream
 -
 
 /home/alexander/projects/natural_editor/common/space/object3d.hpp

@@ -13,5 +13,6 @@ void disk_node::update() {
     }
 }
 void disk_node::click() {
+    this->clicked = true;
     std::cout << "disk node clicked\n";
 }

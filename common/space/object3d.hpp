@@ -38,7 +38,7 @@ public:
         }
     };
 
-    void click() {
+    virtual void click() {
         std::cout << "clicked\n";
         this->clicked = true;
     };
