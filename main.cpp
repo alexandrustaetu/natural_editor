@@ -1,15 +1,15 @@
 #include <main.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-World * world = new World();
-TextRenderer * text = new TextRenderer(world->physics);
-Menu * menu = new Menu(text,world->physics);
+extern World * world;
+extern TextRenderer * text;
+extern Menu * menu;
 
 int main(void) {
     world->setMenu(menu);
     
     glm::mat4 IModelMatrix = glm::scale(glm::translate(glm::mat4(), glm::vec3(0.0f, 0.0f, 0.0f)), glm::vec3(1.0f, 1.0f, 1.0f)); // A bit to the left
-    Directory project_directory("/var/www/symphony-2", world->physics, text);
+    Directory project_directory("/var/www/symphony-2");
     
     do {
 
@@ -23,6 +23,7 @@ int main(void) {
         world->update();
         
         if (world->changed) {
+            std::cout << "world changed\n";
             project_directory.update();
             world->changed = false;
         }

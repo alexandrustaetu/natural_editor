@@ -1,18 +1,18 @@
-#ifndef ENVIRONMENT
+ #ifndef ENVIRONMENT
 #define ENVIRONMENT
 
+#include <common/debug.hpp>
 
-
-#include <common/space/physics.hpp>
 #include <chrono>
 #include <iostream>
 #include <memory>
-#include <common/space/object3d.hpp>
-#include <common/controls.hpp>
+
+
 // Include GLFW
 #include <GL/glfw.h>
 // Include GLEW
 #include <GL/glew.h>
+
 #include <common/input/menu.hpp>
 
 class World
@@ -25,7 +25,7 @@ public:
     void update();
     void ScreenPosToWorldRay();
     btDiscreteDynamicsWorld* physics;
-    GLDebugDrawer * physicsdebug;
+    NEGLDebugDrawer * physicsdebug;
     glm::mat4 ProjectionMatrix,ViewMatrix;
     bool changed;
     Menu * menu;

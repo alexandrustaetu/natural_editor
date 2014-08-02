@@ -1,12 +1,19 @@
 #include <common/filesystem/directory.hpp>
 #include <iostream>
+
+#include <common/space/text.hpp>
+extern TextRenderer * text;
+
 void Directory::recurse(std::shared_ptr<disk_node> tree_node) {
     if (tree_node && tree_node->show_children) {
         for (std::shared_ptr<disk_node> node_child : tree_node->children) {
-            if (!node_child) {
+            std::cout << tree_node->children.size()<< "in directory recurse" << node_child << std::endl;
+            if (node_child) {
                 node_child->margin.back = 0.3;
                 
                 if (node_child->parent){
+                    //problem here
+                    
                     //not that usefull now, already habe siblings and order
                     node_child->parent = node_child->parent->handle;
                     node_child->parent->children.push_back(node_child);
@@ -18,7 +25,7 @@ void Directory::recurse(std::shared_ptr<disk_node> tree_node) {
                     node_child->color = glm::vec3(255,0,0);
                 }
                 this->scene.AddElement(node_child);
-                this->text->addElement(node_child);
+                text->addElement(node_child);
                 this->scene.changeElement(node_child);
                 
             }
@@ -29,8 +36,7 @@ void Directory::recurse(std::shared_ptr<disk_node> tree_node) {
     }
 }
 
-Directory::Directory(std::string directory, btDiscreteDynamicsWorld* physics, TextRenderer * text) : path(directory), current_iteration(directory) {
-    this->text = text;
+Directory::Directory(std::string directory) : path(directory), current_iteration(directory) {
     std::vector<GLfloat> file_shape({
         -1.0f, -1.0f, -1.0f,
         -1.0f, -1.0f, 1.0f,
@@ -71,14 +77,13 @@ Directory::Directory(std::string directory, btDiscreteDynamicsWorld* physics, Te
     });
 
     this->scene.SetIndices(&file_shape);
-    this->scene.setPhysics(physics);
     this->root_directory = std::shared_ptr<disk_node>(new disk_node());
     this->root_directory->handle = this->root_directory->shared_from_this();
     this->root_directory->color = glm::vec3(255,255,255);
     this->current_parent = this->root_directory->handle;
     std::cout << this->root_directory->coords.x << this->root_directory->coords.y << this->root_directory->coords.z << "in directory root\n"; 
     this->scene.AddElement(this->root_directory);
-    this->text->addElement(this->root_directory);
+    text->addElement(this->root_directory);
     this->scene.changed = true;
 
     

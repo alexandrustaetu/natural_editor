@@ -1,12 +1,14 @@
 #include "scene.hpp"
 #include <iostream>
 #include <math.h>
+#include <common/environment/world.hpp>
+extern World * world;
 
 Scene::Scene() {
 }
 
 ArraysInstanced::ArraysInstanced() {
-
+    this->physics = world->physics;
 }
 
 void ArraysInstanced::SetIndices(std::vector<GLfloat> * pattern) {
@@ -125,9 +127,9 @@ void ArraysInstanced::draw(glm::mat4 * mvp) {
     glDisableVertexAttribArray(this->mvp_uniform);
 }
 
-void ArraysInstanced::setPhysics(btDiscreteDynamicsWorld* physics) {
-    this->physics = physics;
-}
+//void ArraysInstanced::setPhysics(btDiscreteDynamicsWorld* physics) {
+//    this->physics = physics;
+//}
 
 void ArraysInstanced::place(SpatialObjectExpanded object) {
     if (object->parent) {

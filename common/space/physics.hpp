@@ -2,7 +2,10 @@
 #define PHYSICS
 
 #include <common/space/helper.hpp>
-#include <common/debug.hpp>
+
+#include <LinearMath/btIDebugDraw.h>
+#include <btBulletDynamicsCommon.h>
+#include <BulletCollision/CollisionDispatch/btGhostObject.h>
 
 class Physics
 {

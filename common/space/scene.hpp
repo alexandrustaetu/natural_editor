@@ -122,7 +122,7 @@ public:
         element->handle = element->shared_from_this();
 
         this->place(element);
-        std::cout << element->coords.x << element->coords.y << element->coords.z << "in addelement\n";
+//        std::cout << element->coords.x << element->coords.y << element->coords.z << "in addelement\n";
         this->positions.push_back(element->coords);
         element->sceneIndex = this->positions.size() - 1;
         this->scales.push_back(glm::vec3(
@@ -143,7 +143,7 @@ public:
         this->changed = true;
     }
     void draw(glm::mat4 *);
-    void setPhysics(btDiscreteDynamicsWorld*);
+//    void setPhysics(btDiscreteDynamicsWorld*);
     void place(SpatialObjectExpanded);
 //    void changeElement(SpatialObjectExpanded);
     template <class T>

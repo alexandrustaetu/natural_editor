@@ -12,6 +12,12 @@ void disk_node::update() {
         Object3d::update(this->parent);
     }
 }
+
+void disk_node::doubleclick(){
+    std::cout << "disk node dclicked\n";
+    this->show_children = true;
+}
+
 void disk_node::click() {
     this->clicked = true;
     std::cout << "disk node clicked\n";

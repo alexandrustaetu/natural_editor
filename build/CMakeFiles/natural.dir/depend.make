@@ -69,6 +69,7 @@ CMakeFiles/natural.dir/common/controls.cpp.o: ../external/glm-0.9.4.0/glm/gtc/ma
 CMakeFiles/natural.dir/common/controls.cpp.o: ../common/controls.cpp
 CMakeFiles/natural.dir/common/controls.cpp.o: ../common/controls.hpp
 
+CMakeFiles/natural.dir/common/debug.cpp.o: .././common/debug.hpp
 CMakeFiles/natural.dir/common/debug.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.h
 CMakeFiles/natural.dir/common/debug.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
 CMakeFiles/natural.dir/common/debug.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
@@ -231,7 +232,6 @@ CMakeFiles/natural.dir/common/debug.cpp.o: ../external/glm-0.9.4.0/glm/core/_fix
 CMakeFiles/natural.dir/common/debug.cpp.o: ../external/glm-0.9.4.0/glm/core/setup.hpp
 CMakeFiles/natural.dir/common/debug.cpp.o: ../external/glm-0.9.4.0/glm/glm.hpp
 CMakeFiles/natural.dir/common/debug.cpp.o: ../common/debug.cpp
-CMakeFiles/natural.dir/common/debug.cpp.o: ../common/debug.hpp
 
 CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/controls.hpp
 CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/debug.hpp
@@ -242,8 +242,6 @@ CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/space/helper.
 CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/space/object3d.hpp
 CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/space/physics.hpp
 CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/space/scene.hpp
-CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/space/text.hpp
-CMakeFiles/natural.dir/common/environment/world.cpp.o: .././common/types.hpp
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.h
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
@@ -342,8 +340,6 @@ CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/bullet-2.81-r
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/bullet-2.81-rev2613/src/LinearMath/btVector3.h
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/bullet-2.81-rev2613/src/btBulletCollisionCommon.h
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/bullet-2.81-rev2613/src/btBulletDynamicsCommon.h
-CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/freetype-2.5.2/include/config/ftheader.h
-CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/freetype-2.5.2/include/ft2build.h
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/glew-1.9.0/include/GL/glew.h
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/glfw-2.7.6/include/GL/glfw.h
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../external/glm-0.9.4.0/glm/./core/_detail.hpp
@@ -418,9 +414,11 @@ CMakeFiles/natural.dir/common/environment/world.cpp.o: ../common/environment/wor
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../common/environment/world.hpp
 
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/debug.hpp
+CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/environment/world.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/filesystem/directory.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/filesystem/disk.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/handle.hpp
+CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/input/menu.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/shader.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/space/helper.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: .././common/space/object3d.hpp
@@ -529,6 +527,7 @@ CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/bullet-2.8
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/freetype-2.5.2/include/config/ftheader.h
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/freetype-2.5.2/include/ft2build.h
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/glew-1.9.0/include/GL/glew.h
+CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/glfw-2.7.6/include/GL/glfw.h
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/glm-0.9.4.0/glm/./core/_detail.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/glm-0.9.4.0/glm/./core/_fixes.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/glm-0.9.4.0/glm/./core/_swizzle.hpp
@@ -599,7 +598,6 @@ CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/glm-0.9.4.
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../external/glm-0.9.4.0/glm/gtc/type_ptr.inl
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../common/filesystem/directory.cpp
 
-CMakeFiles/natural.dir/common/filesystem/disk.cpp.o: .././common/debug.hpp
 CMakeFiles/natural.dir/common/filesystem/disk.cpp.o: .././common/filesystem/disk.hpp
 CMakeFiles/natural.dir/common/filesystem/disk.cpp.o: .././common/handle.hpp
 CMakeFiles/natural.dir/common/filesystem/disk.cpp.o: .././common/space/helper.hpp
@@ -775,7 +773,6 @@ CMakeFiles/natural.dir/common/filesystem/disk.cpp.o: ../common/filesystem/disk.c
 CMakeFiles/natural.dir/common/handle.cpp.o: ../common/handle.cpp
 CMakeFiles/natural.dir/common/handle.cpp.o: ../common/handle.hpp
 
-CMakeFiles/natural.dir/common/input/menu.cpp.o: .././common/debug.hpp
 CMakeFiles/natural.dir/common/input/menu.cpp.o: .././common/handle.hpp
 CMakeFiles/natural.dir/common/input/menu.cpp.o: .././common/input/menu.hpp
 CMakeFiles/natural.dir/common/input/menu.cpp.o: .././common/shader.hpp
@@ -963,7 +960,6 @@ CMakeFiles/natural.dir/common/shader.cpp.o: ../common/shader.hpp
 CMakeFiles/natural.dir/common/shader_utils.cpp.o: ../external/glew-1.9.0/include/GL/glew.h
 CMakeFiles/natural.dir/common/shader_utils.cpp.o: ../common/shader_utils.cpp
 
-CMakeFiles/natural.dir/common/space/object3d.cpp.o: .././common/debug.hpp
 CMakeFiles/natural.dir/common/space/object3d.cpp.o: .././common/handle.hpp
 CMakeFiles/natural.dir/common/space/object3d.cpp.o: .././common/space/helper.hpp
 CMakeFiles/natural.dir/common/space/object3d.cpp.o: .././common/space/physics.hpp
@@ -1135,7 +1131,6 @@ CMakeFiles/natural.dir/common/space/object3d.cpp.o: ../external/glm-0.9.4.0/glm/
 CMakeFiles/natural.dir/common/space/object3d.cpp.o: ../common/space/object3d.cpp
 CMakeFiles/natural.dir/common/space/object3d.cpp.o: ../common/space/object3d.hpp
 
-CMakeFiles/natural.dir/common/space/physics.cpp.o: .././common/debug.hpp
 CMakeFiles/natural.dir/common/space/physics.cpp.o: .././common/space/helper.hpp
 CMakeFiles/natural.dir/common/space/physics.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.h
 CMakeFiles/natural.dir/common/space/physics.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
@@ -1306,10 +1301,14 @@ CMakeFiles/natural.dir/common/space/physics.cpp.o: ../common/space/physics.cpp
 CMakeFiles/natural.dir/common/space/physics.cpp.o: ../common/space/physics.hpp
 
 CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/debug.hpp
+CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/environment/world.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/handle.hpp
+CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/input/menu.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/shader.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/space/helper.hpp
+CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/space/object3d.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/space/physics.hpp
+CMakeFiles/natural.dir/common/space/scene.cpp.o: .././common/space/scene.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.h
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
@@ -1409,6 +1408,7 @@ CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/bullet-2.81-rev2613
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/bullet-2.81-rev2613/src/btBulletCollisionCommon.h
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/bullet-2.81-rev2613/src/btBulletDynamicsCommon.h
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/glew-1.9.0/include/GL/glew.h
+CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/glfw-2.7.6/include/GL/glfw.h
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/glm-0.9.4.0/glm/./core/_detail.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/glm-0.9.4.0/glm/./core/_fixes.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../external/glm-0.9.4.0/glm/./core/_swizzle.hpp
@@ -1482,7 +1482,9 @@ CMakeFiles/natural.dir/common/space/scene.cpp.o: ../common/space/scene.cpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../common/space/scene.hpp
 
 CMakeFiles/natural.dir/common/space/text.cpp.o: .././common/debug.hpp
+CMakeFiles/natural.dir/common/space/text.cpp.o: .././common/environment/world.hpp
 CMakeFiles/natural.dir/common/space/text.cpp.o: .././common/handle.hpp
+CMakeFiles/natural.dir/common/space/text.cpp.o: .././common/input/menu.hpp
 CMakeFiles/natural.dir/common/space/text.cpp.o: .././common/shader.hpp
 CMakeFiles/natural.dir/common/space/text.cpp.o: .././common/space/helper.hpp
 CMakeFiles/natural.dir/common/space/text.cpp.o: .././common/space/object3d.hpp
@@ -1591,6 +1593,7 @@ CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/bullet-2.81-rev2613/
 CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/freetype-2.5.2/include/config/ftheader.h
 CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/freetype-2.5.2/include/ft2build.h
 CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/glew-1.9.0/include/GL/glew.h
+CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/glfw-2.7.6/include/GL/glfw.h
 CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/glm-0.9.4.0/glm/./core/_detail.hpp
 CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/glm-0.9.4.0/glm/./core/_fixes.hpp
 CMakeFiles/natural.dir/common/space/text.cpp.o: ../external/glm-0.9.4.0/glm/./core/_swizzle.hpp

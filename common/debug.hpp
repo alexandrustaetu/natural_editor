@@ -5,19 +5,17 @@
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 
-
-
 #include <LinearMath/btIDebugDraw.h>
 #include <btBulletDynamicsCommon.h>
 #include <BulletCollision/CollisionDispatch/btGhostObject.h>
 
-class GLDebugDrawer : public btIDebugDraw {
+class NEGLDebugDrawer : public btIDebugDraw {
     int m_debugMode;
 
 public:
 
-    GLDebugDrawer();
-    ~GLDebugDrawer();
+    NEGLDebugDrawer();
+    ~NEGLDebugDrawer();
 
     void drawLine(const btVector3& from, const btVector3& to, const btVector3& fromColor, const btVector3& toColor);
 

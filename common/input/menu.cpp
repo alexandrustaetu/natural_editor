@@ -1,10 +1,13 @@
 #include <common/input/menu.hpp>
+
+#include <common/space/text.hpp>
+extern TextRenderer * text;
+
 //void defaultMenu(){
 //    std::cout << "building default menu";
 //}
 
-Menu::Menu(TextRenderer * text,btDiscreteDynamicsWorld* physics){
-    this->text = text;
+Menu::Menu(){
     
     std::vector<GLfloat> file_shape({
         -1.0f, -1.0f, -1.0f,
@@ -46,7 +49,6 @@ Menu::Menu(TextRenderer * text,btDiscreteDynamicsWorld* physics){
     });
 
     this->scene.SetIndices(&file_shape);
-    this->scene.setPhysics(physics);
     
 }
 
@@ -63,12 +65,12 @@ void Menu::create(glm::vec3 * coords){
     props.position = RELATIVE;
     SpatialObjectExpanded option1 = std::make_shared<Object3dExpanded>(&props);
     this->spatial_construct->addChildren(option1);
-    this->text->label(option1,"new");
+    text->label(option1,"new");
     this->scene.AddElement(option1);
     
     SpatialObjectExpanded option2 = std::make_shared<Object3dExpanded>(&props);
     this->spatial_construct->addChildren(option2);
-    this->text->label(option2,"properties");
+    text->label(option2,"properties");
     this->scene.AddElement(option2);
 }
 

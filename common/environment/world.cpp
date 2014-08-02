@@ -1,5 +1,6 @@
 #include "world.hpp"
 #include <common/input/menu.hpp>
+#include <common/controls.hpp>
 
 
 double lastTime = glfwGetTime();
@@ -91,15 +92,18 @@ void World::mouse() {
         SpatialObjectExpanded u_poi;
         if (RayCallback.hasHit()){
             u_poi = *static_cast<SpatialObjectExpanded*> (RayCallback.m_collisionObject->getUserPointer());
+            std::cout << "||" << u_poi << "|| \n";
         };
         int time_from_last_click = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - this->mouse_r).count();
 
         if (this->out_origin == this->clicked_position) {
             if (time_from_last_click < 400) {
+                std::cout << "-dclick" << std::endl;
                 if (u_poi)u_poi->doubleclick();
                 this->changed = true;
             } else {
                 if (u_poi)u_poi->click();
+                std::cout << "-click" << std::endl;
                 this->changed = true;
             }
         }
@@ -219,7 +223,7 @@ World::World() : leftmouse_recorded(false), changed(false), view_width(1024), vi
     this->physics->getPairCache()->setInternalGhostPairCallback(ghostPairCallback);
 
     this->physics->setGravity(btVector3(0, -9.81f, 0));
-    GLDebugDrawer * physicsdebug = new GLDebugDrawer();
+    NEGLDebugDrawer * physicsdebug = new NEGLDebugDrawer();
     this->physicsdebug = physicsdebug;
     this->physicsdebug->setDebugMode(btIDebugDraw::DBG_DrawWireframe); // so does this
     this->physics->setDebugDrawer(this->physicsdebug);

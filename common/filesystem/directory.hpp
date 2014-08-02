@@ -4,11 +4,13 @@
 #include <memory>
 #include <common/filesystem/disk.hpp>
 #include <common/space/scene.hpp>
-#include <common/space/text.hpp>
+
+#include <common/environment/world.hpp>
+extern World * world;
 
 class Directory {
 public:
-    Directory(std::string,btDiscreteDynamicsWorld*,TextRenderer*);
+    Directory(std::string);
     ArraysInstanced scene;
     void update();
 private:
@@ -16,7 +18,6 @@ private:
     std::shared_ptr<disk_node> root_directory;
     std::shared_ptr<disk_node> current_parent;
     boost::filesystem::path path;
-    TextRenderer * text;
     boost::filesystem::recursive_directory_iterator current_iteration;
     std::string build_path(std::shared_ptr<disk_node>);
     void find_parent();

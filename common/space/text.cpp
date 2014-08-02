@@ -6,6 +6,9 @@
 #include <CGAL/Triangulation_face_base_with_info_2.h>
 #include <CGAL/Polygon_2.h>
 
+#include <common/environment/world.hpp>
+extern World * world;
+
 void Letter::Line(float x1, float y1, float x2, float y2) {
 
     this->myfile.open("/tmp/triangulation.dat", std::ios::app);
@@ -167,8 +170,8 @@ FT_Library ft;
 
 const char *fontfilename;
 
-Letter::Letter(const char character, btDiscreteDynamicsWorld* physics) : thickness(0) {
-    this->scene.setPhysics(physics);
+Letter::Letter(const char character) : thickness(0) {
+//    this->scene.setPhysics(world->physics);
     fontfilename = "OpenSans-Regular.ttf";
     std::cout << "\n\nchar initiated\n\n";
     if (FT_Init_FreeType(&ft)) {
@@ -539,12 +542,12 @@ void Letter::create_letter_faces(const char letter) {
     this->scene.SetIndices(&this->letter_points);
 }
 
-TextRenderer::TextRenderer(btDiscreteDynamicsWorld* physics) {
-    this->physics = physics;
+TextRenderer::TextRenderer() {
+    this->physics = world->physics;
     Object3dProperties props;
     props.has_physics = false;
     for (int i = 0; i < 127; i++) {
-        this->letters.push_back(new Letter(static_cast<char> (i), physics));
+        this->letters.push_back(new Letter(static_cast<char> (i)));
     }
     std::cout << this->letters.size();
 

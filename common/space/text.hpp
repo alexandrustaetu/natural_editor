@@ -1,3 +1,5 @@
+
+
 #ifndef TEXT3D
 #define TEXT3D
 #include <memory>
@@ -21,10 +23,13 @@
 //private:
 //};
 
+
+
+
 class Letter {
 public:
-    Letter(const char, btDiscreteDynamicsWorld*);
-    Letter();
+    Letter(const char);
+    Letter(){};
     ArraysInstanced scene;
     int thickness;
     int triangles;
@@ -45,7 +50,7 @@ private:
 
 class TextRenderer {
 public:
-    TextRenderer(btDiscreteDynamicsWorld*);
+    TextRenderer();
 
     template <class has_text >
     void addElement(std::shared_ptr<has_text> obj) {

@@ -1,23 +1,23 @@
-#include "debug.hpp"
-#include <boost/algorithm/string/replace.hpp>
-void escape(std::string *data) {
-    using boost::algorithm::replace_all;
-    replace_all(*data, "&", "&amp;");
-    replace_all(*data, "\"", "&quot;");
-    replace_all(*data, "\'", "&apos;");
-    replace_all(*data, "<", "&lt;");
-    replace_all(*data, ">", "&gt;");
-}
+#include <common/debug.hpp>
+//#include <boost/algorithm/string/replace.hpp>
+//void escape(std::string *data) {
+//    using boost::algorithm::replace_all;
+//    replace_all(*data, "&", "&amp;");
+//    replace_all(*data, "\"", "&quot;");
+//    replace_all(*data, "\'", "&apos;");
+//    replace_all(*data, "<", "&lt;");
+//    replace_all(*data, ">", "&gt;");
+//}
 
-GLDebugDrawer::GLDebugDrawer() {
+NEGLDebugDrawer::NEGLDebugDrawer() {
+    1;
+};
+
+NEGLDebugDrawer::~NEGLDebugDrawer() {
 
 };
 
-GLDebugDrawer::~GLDebugDrawer() {
-
-};
-
-void GLDebugDrawer::drawLine(const btVector3& from, const btVector3& to, const btVector3& fromColor, const btVector3& toColor) {
+void NEGLDebugDrawer::drawLine(const btVector3& from, const btVector3& to, const btVector3& fromColor, const btVector3& toColor) {
 
     glBegin(GL_LINES);
     glColor3f(1.0f, 0.04f, 0.0f);
@@ -27,22 +27,22 @@ void GLDebugDrawer::drawLine(const btVector3& from, const btVector3& to, const b
     glEnd();
 }
 
-void GLDebugDrawer::drawTriangle(const btVector3& a, const btVector3& b, const btVector3& c, const btVector3& color, btScalar alpha) {
+void NEGLDebugDrawer::drawTriangle(const btVector3& a, const btVector3& b, const btVector3& c, const btVector3& color, btScalar alpha) {
 }
 
-void GLDebugDrawer::drawSphere(const btVector3& p, btScalar radius, const btVector3& color) {
+void NEGLDebugDrawer::drawSphere(const btVector3& p, btScalar radius, const btVector3& color) {
 }
 
-void GLDebugDrawer::reportErrorWarning(const char* warningString) {
+void NEGLDebugDrawer::reportErrorWarning(const char* warningString) {
 }
 
-void GLDebugDrawer::draw3dText(const btVector3& location, const char* textString) {
+void NEGLDebugDrawer::draw3dText(const btVector3& location, const char* textString) {
 }
 
-void GLDebugDrawer::drawContactPoint(const btVector3& PointOnB, const btVector3& normalOnB, btScalar distance, int lifeTime, const btVector3& color) {
+void NEGLDebugDrawer::drawContactPoint(const btVector3& PointOnB, const btVector3& normalOnB, btScalar distance, int lifeTime, const btVector3& color) {
 }
 
-void GLDebugDrawer::drawLine(const btVector3& from, const btVector3& to, const btVector3& fromColor) {
+void NEGLDebugDrawer::drawLine(const btVector3& from, const btVector3& to, const btVector3& fromColor) {
 
     glBegin(GL_LINES);
     glColor3f(1.0f, 0.04f, 0.0f);
@@ -52,11 +52,11 @@ void GLDebugDrawer::drawLine(const btVector3& from, const btVector3& to, const b
     glEnd();
 }
 
-void GLDebugDrawer::setDebugMode(int debug_mode) {
+void NEGLDebugDrawer::setDebugMode(int debug_mode) {
     this->m_debugMode = debug_mode;
 }
 
-void GLDebugDrawer::SetMatrices(glm::mat4 pViewMatrix, glm::mat4 pProjectionMatrix) {
+void NEGLDebugDrawer::SetMatrices(glm::mat4 pViewMatrix, glm::mat4 pProjectionMatrix) {
     glUseProgram(0); // Use Fixed-function pipeline (no shaders)
     glMatrixMode(GL_MODELVIEW);
     glLoadMatrixf(&pViewMatrix[0][0]);

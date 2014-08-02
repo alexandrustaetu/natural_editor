@@ -47,8 +47,9 @@ public:
         std::cout << this->handle << std::endl;
     };
 
-    void doubleclick() {
+    virtual void doubleclick() {
         this->show_children = true;
+        std::cout << "show children" << std::endl;
     };
 
     template <class T2>

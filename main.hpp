@@ -1,5 +1,5 @@
 // Include standard headers
-
+#define DEBUG_ENABLED 1
 #include <stdio.h>
 #include <memory>
 #include <stdlib.h>
@@ -38,18 +38,23 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
+
 #include <common/handle.hpp>
+#include <common/debug.hpp>
+NEGLDebugDrawer * physicsdebug = new NEGLDebugDrawer();
 #include <common/space/physics.hpp>
 #include <common/space/scene.hpp>
-#include <common/environment/world.hpp>
-#include <common/space/text.hpp>
 #include <common/input/menu.hpp>
-
+#include <common/environment/world.hpp>
+World * world = new World();
+#include <common/space/text.hpp>
+TextRenderer * text = new TextRenderer();
+Menu * menu = new Menu();
 
 
 #include <common/filesystem/disk.hpp>
 #include <common/filesystem/directory.hpp>
-#include <common/debug.hpp>
+
 
 
 #include <common/shader.hpp>

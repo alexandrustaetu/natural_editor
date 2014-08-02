@@ -22,6 +22,7 @@ public:
     std::shared_ptr<disk_node> parent;
     void update();
     void click();
+    void doubleclick();
 
 };
 
