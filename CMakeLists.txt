@@ -77,6 +77,10 @@ add_executable(natural
 	main.cpp
 	common/handle.cpp
 	common/handle.hpp
+#	common/filesystem/file.hpp
+#	common/filesystem/file.cpp
+	common/text/word.cpp
+	common/text/word.hpp
 	common/filesystem/disk.hpp
 	common/filesystem/disk.cpp
 	common/filesystem/directory.hpp
@@ -96,8 +100,10 @@ add_executable(natural
 	common/environment/world.hpp
 	common/space/scene.cpp
 	common/space/scene.hpp
-	common/space/text.cpp
-	common/space/text.hpp
+	common/text/canvas.cpp
+	common/text/canvas.hpp
+	common/text/text.cpp
+	common/text/text.hpp
 	common/texture.cpp
 	common/texture.hpp
 	

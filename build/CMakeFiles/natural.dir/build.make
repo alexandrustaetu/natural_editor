@@ -98,9 +98,32 @@ CMakeFiles/natural.dir/common/handle.cpp.o.provides: CMakeFiles/natural.dir/comm
 
 CMakeFiles/natural.dir/common/handle.cpp.o.provides.build: CMakeFiles/natural.dir/common/handle.cpp.o
 
+CMakeFiles/natural.dir/common/text/word.cpp.o: CMakeFiles/natural.dir/flags.make
+CMakeFiles/natural.dir/common/text/word.cpp.o: ../common/text/word.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/text/word.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/text/word.cpp.o -c /home/alexander/projects/natural_editor/common/text/word.cpp
+
+CMakeFiles/natural.dir/common/text/word.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/natural.dir/common/text/word.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/alexander/projects/natural_editor/common/text/word.cpp > CMakeFiles/natural.dir/common/text/word.cpp.i
+
+CMakeFiles/natural.dir/common/text/word.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/natural.dir/common/text/word.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/alexander/projects/natural_editor/common/text/word.cpp -o CMakeFiles/natural.dir/common/text/word.cpp.s
+
+CMakeFiles/natural.dir/common/text/word.cpp.o.requires:
+.PHONY : CMakeFiles/natural.dir/common/text/word.cpp.o.requires
+
+CMakeFiles/natural.dir/common/text/word.cpp.o.provides: CMakeFiles/natural.dir/common/text/word.cpp.o.requires
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/word.cpp.o.provides.build
+.PHONY : CMakeFiles/natural.dir/common/text/word.cpp.o.provides
+
+CMakeFiles/natural.dir/common/text/word.cpp.o.provides.build: CMakeFiles/natural.dir/common/text/word.cpp.o
+
 CMakeFiles/natural.dir/common/filesystem/disk.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/filesystem/disk.cpp.o: ../common/filesystem/disk.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/filesystem/disk.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/filesystem/disk.cpp.o -c /home/alexander/projects/natural_editor/common/filesystem/disk.cpp
 
@@ -123,7 +146,7 @@ CMakeFiles/natural.dir/common/filesystem/disk.cpp.o.provides.build: CMakeFiles/n
 
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o: ../common/filesystem/directory.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/filesystem/directory.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/filesystem/directory.cpp.o -c /home/alexander/projects/natural_editor/common/filesystem/directory.cpp
 
@@ -146,7 +169,7 @@ CMakeFiles/natural.dir/common/filesystem/directory.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/natural.dir/common/debug.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/debug.cpp.o: ../common/debug.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/debug.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/debug.cpp.o -c /home/alexander/projects/natural_editor/common/debug.cpp
 
@@ -169,7 +192,7 @@ CMakeFiles/natural.dir/common/debug.cpp.o.provides.build: CMakeFiles/natural.dir
 
 CMakeFiles/natural.dir/common/shader.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/shader.cpp.o: ../common/shader.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/shader.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/shader.cpp.o -c /home/alexander/projects/natural_editor/common/shader.cpp
 
@@ -192,7 +215,7 @@ CMakeFiles/natural.dir/common/shader.cpp.o.provides.build: CMakeFiles/natural.di
 
 CMakeFiles/natural.dir/common/controls.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/controls.cpp.o: ../common/controls.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/controls.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/controls.cpp.o -c /home/alexander/projects/natural_editor/common/controls.cpp
 
@@ -215,7 +238,7 @@ CMakeFiles/natural.dir/common/controls.cpp.o.provides.build: CMakeFiles/natural.
 
 CMakeFiles/natural.dir/common/space/object3d.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/space/object3d.cpp.o: ../common/space/object3d.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/space/object3d.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/space/object3d.cpp.o -c /home/alexander/projects/natural_editor/common/space/object3d.cpp
 
@@ -238,7 +261,7 @@ CMakeFiles/natural.dir/common/space/object3d.cpp.o.provides.build: CMakeFiles/na
 
 CMakeFiles/natural.dir/common/space/physics.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/space/physics.cpp.o: ../common/space/physics.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/space/physics.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/space/physics.cpp.o -c /home/alexander/projects/natural_editor/common/space/physics.cpp
 
@@ -261,7 +284,7 @@ CMakeFiles/natural.dir/common/space/physics.cpp.o.provides.build: CMakeFiles/nat
 
 CMakeFiles/natural.dir/common/environment/world.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/environment/world.cpp.o: ../common/environment/world.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/environment/world.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/environment/world.cpp.o -c /home/alexander/projects/natural_editor/common/environment/world.cpp
 
@@ -284,7 +307,7 @@ CMakeFiles/natural.dir/common/environment/world.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/natural.dir/common/space/scene.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/space/scene.cpp.o: ../common/space/scene.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/space/scene.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/space/scene.cpp.o -c /home/alexander/projects/natural_editor/common/space/scene.cpp
 
@@ -305,32 +328,55 @@ CMakeFiles/natural.dir/common/space/scene.cpp.o.provides: CMakeFiles/natural.dir
 
 CMakeFiles/natural.dir/common/space/scene.cpp.o.provides.build: CMakeFiles/natural.dir/common/space/scene.cpp.o
 
-CMakeFiles/natural.dir/common/space/text.cpp.o: CMakeFiles/natural.dir/flags.make
-CMakeFiles/natural.dir/common/space/text.cpp.o: ../common/space/text.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_12)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/space/text.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/space/text.cpp.o -c /home/alexander/projects/natural_editor/common/space/text.cpp
+CMakeFiles/natural.dir/common/text/canvas.cpp.o: CMakeFiles/natural.dir/flags.make
+CMakeFiles/natural.dir/common/text/canvas.cpp.o: ../common/text/canvas.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/text/canvas.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/text/canvas.cpp.o -c /home/alexander/projects/natural_editor/common/text/canvas.cpp
 
-CMakeFiles/natural.dir/common/space/text.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/natural.dir/common/space/text.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/alexander/projects/natural_editor/common/space/text.cpp > CMakeFiles/natural.dir/common/space/text.cpp.i
+CMakeFiles/natural.dir/common/text/canvas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/natural.dir/common/text/canvas.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/alexander/projects/natural_editor/common/text/canvas.cpp > CMakeFiles/natural.dir/common/text/canvas.cpp.i
 
-CMakeFiles/natural.dir/common/space/text.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/natural.dir/common/space/text.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/alexander/projects/natural_editor/common/space/text.cpp -o CMakeFiles/natural.dir/common/space/text.cpp.s
+CMakeFiles/natural.dir/common/text/canvas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/natural.dir/common/text/canvas.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/alexander/projects/natural_editor/common/text/canvas.cpp -o CMakeFiles/natural.dir/common/text/canvas.cpp.s
 
-CMakeFiles/natural.dir/common/space/text.cpp.o.requires:
-.PHONY : CMakeFiles/natural.dir/common/space/text.cpp.o.requires
+CMakeFiles/natural.dir/common/text/canvas.cpp.o.requires:
+.PHONY : CMakeFiles/natural.dir/common/text/canvas.cpp.o.requires
 
-CMakeFiles/natural.dir/common/space/text.cpp.o.provides: CMakeFiles/natural.dir/common/space/text.cpp.o.requires
-	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/text.cpp.o.provides.build
-.PHONY : CMakeFiles/natural.dir/common/space/text.cpp.o.provides
+CMakeFiles/natural.dir/common/text/canvas.cpp.o.provides: CMakeFiles/natural.dir/common/text/canvas.cpp.o.requires
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/canvas.cpp.o.provides.build
+.PHONY : CMakeFiles/natural.dir/common/text/canvas.cpp.o.provides
 
-CMakeFiles/natural.dir/common/space/text.cpp.o.provides.build: CMakeFiles/natural.dir/common/space/text.cpp.o
+CMakeFiles/natural.dir/common/text/canvas.cpp.o.provides.build: CMakeFiles/natural.dir/common/text/canvas.cpp.o
+
+CMakeFiles/natural.dir/common/text/text.cpp.o: CMakeFiles/natural.dir/flags.make
+CMakeFiles/natural.dir/common/text/text.cpp.o: ../common/text/text.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_14)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/text/text.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/text/text.cpp.o -c /home/alexander/projects/natural_editor/common/text/text.cpp
+
+CMakeFiles/natural.dir/common/text/text.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/natural.dir/common/text/text.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/alexander/projects/natural_editor/common/text/text.cpp > CMakeFiles/natural.dir/common/text/text.cpp.i
+
+CMakeFiles/natural.dir/common/text/text.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/natural.dir/common/text/text.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/alexander/projects/natural_editor/common/text/text.cpp -o CMakeFiles/natural.dir/common/text/text.cpp.s
+
+CMakeFiles/natural.dir/common/text/text.cpp.o.requires:
+.PHONY : CMakeFiles/natural.dir/common/text/text.cpp.o.requires
+
+CMakeFiles/natural.dir/common/text/text.cpp.o.provides: CMakeFiles/natural.dir/common/text/text.cpp.o.requires
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/text.cpp.o.provides.build
+.PHONY : CMakeFiles/natural.dir/common/text/text.cpp.o.provides
+
+CMakeFiles/natural.dir/common/text/text.cpp.o.provides.build: CMakeFiles/natural.dir/common/text/text.cpp.o
 
 CMakeFiles/natural.dir/common/texture.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/texture.cpp.o: ../common/texture.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/texture.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/texture.cpp.o -c /home/alexander/projects/natural_editor/common/texture.cpp
 
@@ -353,7 +399,7 @@ CMakeFiles/natural.dir/common/texture.cpp.o.provides.build: CMakeFiles/natural.d
 
 CMakeFiles/natural.dir/common/shader_utils.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/shader_utils.cpp.o: ../common/shader_utils.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/shader_utils.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/shader_utils.cpp.o -c /home/alexander/projects/natural_editor/common/shader_utils.cpp
 
@@ -376,7 +422,7 @@ CMakeFiles/natural.dir/common/shader_utils.cpp.o.provides.build: CMakeFiles/natu
 
 CMakeFiles/natural.dir/common/input/menu.cpp.o: CMakeFiles/natural.dir/flags.make
 CMakeFiles/natural.dir/common/input/menu.cpp.o: ../common/input/menu.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_15)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/natural.dir/common/input/menu.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/natural.dir/common/input/menu.cpp.o -c /home/alexander/projects/natural_editor/common/input/menu.cpp
 
@@ -401,6 +447,7 @@ CMakeFiles/natural.dir/common/input/menu.cpp.o.provides.build: CMakeFiles/natura
 natural_OBJECTS = \
 "CMakeFiles/natural.dir/main.cpp.o" \
 "CMakeFiles/natural.dir/common/handle.cpp.o" \
+"CMakeFiles/natural.dir/common/text/word.cpp.o" \
 "CMakeFiles/natural.dir/common/filesystem/disk.cpp.o" \
 "CMakeFiles/natural.dir/common/filesystem/directory.cpp.o" \
 "CMakeFiles/natural.dir/common/debug.cpp.o" \
@@ -410,7 +457,8 @@ natural_OBJECTS = \
 "CMakeFiles/natural.dir/common/space/physics.cpp.o" \
 "CMakeFiles/natural.dir/common/environment/world.cpp.o" \
 "CMakeFiles/natural.dir/common/space/scene.cpp.o" \
-"CMakeFiles/natural.dir/common/space/text.cpp.o" \
+"CMakeFiles/natural.dir/common/text/canvas.cpp.o" \
+"CMakeFiles/natural.dir/common/text/text.cpp.o" \
 "CMakeFiles/natural.dir/common/texture.cpp.o" \
 "CMakeFiles/natural.dir/common/shader_utils.cpp.o" \
 "CMakeFiles/natural.dir/common/input/menu.cpp.o"
@@ -420,6 +468,7 @@ natural_EXTERNAL_OBJECTS =
 
 natural: CMakeFiles/natural.dir/main.cpp.o
 natural: CMakeFiles/natural.dir/common/handle.cpp.o
+natural: CMakeFiles/natural.dir/common/text/word.cpp.o
 natural: CMakeFiles/natural.dir/common/filesystem/disk.cpp.o
 natural: CMakeFiles/natural.dir/common/filesystem/directory.cpp.o
 natural: CMakeFiles/natural.dir/common/debug.cpp.o
@@ -429,7 +478,8 @@ natural: CMakeFiles/natural.dir/common/space/object3d.cpp.o
 natural: CMakeFiles/natural.dir/common/space/physics.cpp.o
 natural: CMakeFiles/natural.dir/common/environment/world.cpp.o
 natural: CMakeFiles/natural.dir/common/space/scene.cpp.o
-natural: CMakeFiles/natural.dir/common/space/text.cpp.o
+natural: CMakeFiles/natural.dir/common/text/canvas.cpp.o
+natural: CMakeFiles/natural.dir/common/text/text.cpp.o
 natural: CMakeFiles/natural.dir/common/texture.cpp.o
 natural: CMakeFiles/natural.dir/common/shader_utils.cpp.o
 natural: CMakeFiles/natural.dir/common/input/menu.cpp.o
@@ -467,6 +517,7 @@ CMakeFiles/natural.dir/build: natural
 
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/main.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/handle.cpp.o.requires
+CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/text/word.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/filesystem/disk.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/filesystem/directory.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/debug.cpp.o.requires
@@ -476,7 +527,8 @@ CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/space/object3d.cp
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/space/physics.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/environment/world.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/space/scene.cpp.o.requires
-CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/space/text.cpp.o.requires
+CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/text/canvas.cpp.o.requires
+CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/text/text.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/texture.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/shader_utils.cpp.o.requires
 CMakeFiles/natural.dir/requires: CMakeFiles/natural.dir/common/input/menu.cpp.o.requires

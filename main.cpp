@@ -4,12 +4,13 @@
 extern World * world;
 extern TextRenderer * text;
 extern Menu * menu;
+extern Directory * project_directory;
 
 int main(void) {
     world->setMenu(menu);
     
     glm::mat4 IModelMatrix = glm::scale(glm::translate(glm::mat4(), glm::vec3(0.0f, 0.0f, 0.0f)), glm::vec3(1.0f, 1.0f, 1.0f)); // A bit to the left
-    Directory project_directory("/var/www/symphony-2");
+    
     
     do {
 
@@ -23,13 +24,13 @@ int main(void) {
         world->update();
         
         if (world->changed) {
-            std::cout << "world changed\n";
-            project_directory.update();
+            std::cout << "[main.cpp][main]world changed\n";
+            project_directory->update();
             world->changed = false;
         }
 
         glm::mat4 MVP = world->ProjectionMatrix * world->ViewMatrix * IModelMatrix;
-        project_directory.scene.draw(&MVP);
+        project_directory->scene.draw(&MVP);
         text->draw(&MVP);
         menu->scene.draw(&MVP);
 

@@ -27,6 +27,10 @@ public:
     dimensions dimension;
     std::vector<std::shared_ptr<Object3d> > children;
     std::shared_ptr<Object3d> parent;
+    
+    void setCoords(glm::vec3 * coords){
+        this->coords = coords;
+    }
 
     template <class T2>
     void update(std::shared_ptr<T2>) {
@@ -38,9 +42,14 @@ public:
         }
     };
 
+    void changeColor(glm::vec3 color){
+        this->color = color;
+        std::cout << "[common/space/object3d.cpp][Object3d::changeColor] color changed" << std::endl;
+    }
+    
     virtual void click() {
         std::cout << "clicked\n";
-        this->clicked = true;
+//        this->clicked = true;
     };
 
     void rightclick() {
@@ -77,9 +86,8 @@ public:
         }
     };
 
-
-//    Object3d(Object3dProperties *);
-
+    
+    
     Object3d(Object3dProperties * props) : siblings_count(0), visible(true), position(ABSOLUTE) {
         this->position = props->position;
         this->coords = props->coords;

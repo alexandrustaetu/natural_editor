@@ -1,6 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/natural.dir/main.cpp.o"
   "CMakeFiles/natural.dir/common/handle.cpp.o"
+  "CMakeFiles/natural.dir/common/text/word.cpp.o"
   "CMakeFiles/natural.dir/common/filesystem/disk.cpp.o"
   "CMakeFiles/natural.dir/common/filesystem/directory.cpp.o"
   "CMakeFiles/natural.dir/common/debug.cpp.o"
@@ -10,7 +11,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/natural.dir/common/space/physics.cpp.o"
   "CMakeFiles/natural.dir/common/environment/world.cpp.o"
   "CMakeFiles/natural.dir/common/space/scene.cpp.o"
-  "CMakeFiles/natural.dir/common/space/text.cpp.o"
+  "CMakeFiles/natural.dir/common/text/canvas.cpp.o"
+  "CMakeFiles/natural.dir/common/text/text.cpp.o"
   "CMakeFiles/natural.dir/common/texture.cpp.o"
   "CMakeFiles/natural.dir/common/shader_utils.cpp.o"
   "CMakeFiles/natural.dir/common/input/menu.cpp.o"

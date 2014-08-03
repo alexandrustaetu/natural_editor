@@ -1,6 +1,6 @@
 #include <common/input/menu.hpp>
 
-#include <common/space/text.hpp>
+#include <common/text/text.hpp>
 extern TextRenderer * text;
 
 //void defaultMenu(){

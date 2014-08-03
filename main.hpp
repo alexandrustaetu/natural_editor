@@ -47,14 +47,17 @@ NEGLDebugDrawer * physicsdebug = new NEGLDebugDrawer();
 #include <common/input/menu.hpp>
 #include <common/environment/world.hpp>
 World * world = new World();
-#include <common/space/text.hpp>
+#include <common/text/word.cpp>
+#include <common/text/text.hpp>
 TextRenderer * text = new TextRenderer();
 Menu * menu = new Menu();
+//#include <common/filesystem/file.hpp>
+//File * file = new File();
 
 
 #include <common/filesystem/disk.hpp>
 #include <common/filesystem/directory.hpp>
-
+Directory * project_directory = new Directory("/var/www/symphony-2");
 
 
 #include <common/shader.hpp>

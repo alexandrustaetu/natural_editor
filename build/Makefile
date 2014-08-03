@@ -480,29 +480,77 @@ common/space/scene.cpp.s:
 	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/scene.cpp.s
 .PHONY : common/space/scene.cpp.s
 
-common/space/text.o: common/space/text.cpp.o
-.PHONY : common/space/text.o
+common/text/canvas.o: common/text/canvas.cpp.o
+.PHONY : common/text/canvas.o
 
 # target to build an object file
-common/space/text.cpp.o:
-	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/text.cpp.o
-.PHONY : common/space/text.cpp.o
+common/text/canvas.cpp.o:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/canvas.cpp.o
+.PHONY : common/text/canvas.cpp.o
 
-common/space/text.i: common/space/text.cpp.i
-.PHONY : common/space/text.i
+common/text/canvas.i: common/text/canvas.cpp.i
+.PHONY : common/text/canvas.i
 
 # target to preprocess a source file
-common/space/text.cpp.i:
-	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/text.cpp.i
-.PHONY : common/space/text.cpp.i
+common/text/canvas.cpp.i:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/canvas.cpp.i
+.PHONY : common/text/canvas.cpp.i
 
-common/space/text.s: common/space/text.cpp.s
-.PHONY : common/space/text.s
+common/text/canvas.s: common/text/canvas.cpp.s
+.PHONY : common/text/canvas.s
 
 # target to generate assembly for a file
-common/space/text.cpp.s:
-	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/text.cpp.s
-.PHONY : common/space/text.cpp.s
+common/text/canvas.cpp.s:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/canvas.cpp.s
+.PHONY : common/text/canvas.cpp.s
+
+common/text/text.o: common/text/text.cpp.o
+.PHONY : common/text/text.o
+
+# target to build an object file
+common/text/text.cpp.o:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/text.cpp.o
+.PHONY : common/text/text.cpp.o
+
+common/text/text.i: common/text/text.cpp.i
+.PHONY : common/text/text.i
+
+# target to preprocess a source file
+common/text/text.cpp.i:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/text.cpp.i
+.PHONY : common/text/text.cpp.i
+
+common/text/text.s: common/text/text.cpp.s
+.PHONY : common/text/text.s
+
+# target to generate assembly for a file
+common/text/text.cpp.s:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/text.cpp.s
+.PHONY : common/text/text.cpp.s
+
+common/text/word.o: common/text/word.cpp.o
+.PHONY : common/text/word.o
+
+# target to build an object file
+common/text/word.cpp.o:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/word.cpp.o
+.PHONY : common/text/word.cpp.o
+
+common/text/word.i: common/text/word.cpp.i
+.PHONY : common/text/word.i
+
+# target to preprocess a source file
+common/text/word.cpp.i:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/word.cpp.i
+.PHONY : common/text/word.cpp.i
+
+common/text/word.s: common/text/word.cpp.s
+.PHONY : common/text/word.s
+
+# target to generate assembly for a file
+common/text/word.cpp.s:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/word.cpp.s
+.PHONY : common/text/word.cpp.s
 
 common/texture.o: common/texture.cpp.o
 .PHONY : common/texture.o
@@ -603,9 +651,15 @@ help:
 	@echo "... common/space/scene.o"
 	@echo "... common/space/scene.i"
 	@echo "... common/space/scene.s"
-	@echo "... common/space/text.o"
-	@echo "... common/space/text.i"
-	@echo "... common/space/text.s"
+	@echo "... common/text/canvas.o"
+	@echo "... common/text/canvas.i"
+	@echo "... common/text/canvas.s"
+	@echo "... common/text/text.o"
+	@echo "... common/text/text.i"
+	@echo "... common/text/text.s"
+	@echo "... common/text/word.o"
+	@echo "... common/text/word.i"
+	@echo "... common/text/word.s"
 	@echo "... common/texture.o"
 	@echo "... common/texture.i"
 	@echo "... common/texture.s"

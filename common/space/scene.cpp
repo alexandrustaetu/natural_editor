@@ -76,30 +76,6 @@ void ArraysInstanced::SetIndices(std::vector<GLfloat> * pattern) {
     this->points_count = pattern->size();
 }
 
-//void ArraysInstanced::AddElement(SpatialObjectExpanded element) {
-//    element->handle = element->shared_from_this();
-//
-//    this->place(element);
-//    this->positions.push_back(element->coords);
-//    element->sceneIndex = this->positions.size()-1;
-//    this->scales.push_back(glm::vec3(
-//            element->dimension.width,
-//            element->dimension.height,
-//            element->dimension.depth
-//            ));
-//    this->colors.push_back(element->color);
-//    
-//    if(element->physics){
-//        element->physics->rigidBody->translate(btVector3(element->coords.x,element->coords.y,element->coords.z));
-//        btTransform pos = element->physics->rigidBody->getWorldTransform();
-//        element->physics->rigidBody->activate(true);
-//        this->physics->addRigidBody(element->physics->rigidBody);
-//        element->physics->rigidBody->setUserPointer(&element->handle);
-//    }
-//    
-//    this->changed = true;
-//}
-
 void ArraysInstanced::draw(glm::mat4 * mvp) {
 
     if (this->changed) {

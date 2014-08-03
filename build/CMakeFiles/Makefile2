@@ -61,12 +61,12 @@ CMAKE_BINARY_DIR = /home/alexander/projects/natural_editor/build
 # All Build rule for target.
 CMakeFiles/natural.dir/all: external/CMakeFiles/GLEW_190.dir/all
 CMakeFiles/natural.dir/all: external/CMakeFiles/GLFW_276.dir/all
-CMakeFiles/natural.dir/all: external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 CMakeFiles/natural.dir/all: external/bullet-2.81-rev2613/src/BulletDynamics/CMakeFiles/BulletDynamics.dir/all
+CMakeFiles/natural.dir/all: external/bullet-2.81-rev2613/src/BulletCollision/CMakeFiles/BulletCollision.dir/all
 CMakeFiles/natural.dir/all: external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/all
 	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/depend
 	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  91 92 93 94 95 96 97 98 99 100
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  90 91 92 93 94 95 96 97 98 99 100
 	@echo "Built target natural"
 .PHONY : CMakeFiles/natural.dir/all
 
@@ -76,7 +76,7 @@ all: CMakeFiles/natural.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/natural.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/projects/natural_editor/build/CMakeFiles 95
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/projects/natural_editor/build/CMakeFiles 96
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/natural.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/projects/natural_editor/build/CMakeFiles 0
 .PHONY : CMakeFiles/natural.dir/rule
@@ -129,7 +129,7 @@ external/preinstall: external/bullet-2.81-rev2613/src/LinearMath/preinstall
 external/CMakeFiles/GLEW_190.dir/all:
 	$(MAKE) -f external/CMakeFiles/GLEW_190.dir/build.make external/CMakeFiles/GLEW_190.dir/depend
 	$(MAKE) -f external/CMakeFiles/GLEW_190.dir/build.make external/CMakeFiles/GLEW_190.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  73
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  72
 	@echo "Built target GLEW_190"
 .PHONY : external/CMakeFiles/GLEW_190.dir/all
 
@@ -164,7 +164,7 @@ clean: external/CMakeFiles/GLEW_190.dir/clean
 external/CMakeFiles/GLFW_276.dir/all:
 	$(MAKE) -f external/CMakeFiles/GLFW_276.dir/build.make external/CMakeFiles/GLFW_276.dir/depend
 	$(MAKE) -f external/CMakeFiles/GLFW_276.dir/build.make external/CMakeFiles/GLFW_276.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  74 75 76 77 78 79 80 81 82 83 84 85 86
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  73 74 75 76 77 78 79 80 81 82 83 84 85
 	@echo "Built target GLFW_276"
 .PHONY : external/CMakeFiles/GLFW_276.dir/all
 
@@ -214,7 +214,7 @@ external/bullet-2.81-rev2613/src/BulletSoftBody/preinstall:
 external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all:
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/build.make external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/depend
 	$(MAKE) -f external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/build.make external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  68 69 70 71 72
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  68 69 70 71
 	@echo "Built target BulletSoftBody"
 .PHONY : external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
 
@@ -224,7 +224,7 @@ all: external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.d
 
 # Build rule for subdir invocation for target.
 external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/projects/natural_editor/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/projects/natural_editor/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexander/projects/natural_editor/build/CMakeFiles 0
 .PHONY : external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeFiles/BulletSoftBody.dir/rule
@@ -364,7 +364,7 @@ external/bullet-2.81-rev2613/src/LinearMath/preinstall:
 external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/all:
 	$(MAKE) -f external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/build.make external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/depend
 	$(MAKE) -f external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/build.make external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  87 88 89 90
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/alexander/projects/natural_editor/build/CMakeFiles  86 87 88 89
 	@echo "Built target LinearMath"
 .PHONY : external/bullet-2.81-rev2613/src/LinearMath/CMakeFiles/LinearMath.dir/all
 

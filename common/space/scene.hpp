@@ -21,6 +21,7 @@ public:
     ArraysInstanced();
     void SetIndices(std::vector<GLfloat> * pattern);
     //    void AddElement(SpatialObjectExpanded) {};
+
     template <class T>
     void place(T object) {
         if (object->parent) {
@@ -122,7 +123,7 @@ public:
         element->handle = element->shared_from_this();
 
         this->place(element);
-//        std::cout << element->coords.x << element->coords.y << element->coords.z << "in addelement\n";
+        std::cout << "[void AddElement][common/space/scene.hpp] element coords x" << element->coords.x << std::endl;
         this->positions.push_back(element->coords);
         element->sceneIndex = this->positions.size() - 1;
         this->scales.push_back(glm::vec3(
@@ -130,24 +131,28 @@ public:
                 element->dimension.height,
                 element->dimension.depth
                 ));
+
         this->colors.push_back(element->color);
         if (element->physics) {
             element->physics->rigidBody->translate(btVector3(element->coords.x, element->coords.y, element->coords.z));
             btTransform pos = element->physics->rigidBody->getWorldTransform();
             element->physics->rigidBody->activate(true);
             this->physics->addRigidBody(element->physics->rigidBody);
-            
+
             element->physics->rigidBody->setUserPointer(&element->handle);
         }
 
         this->changed = true;
     }
     void draw(glm::mat4 *);
-//    void setPhysics(btDiscreteDynamicsWorld*);
+    //    void setPhysics(btDiscreteDynamicsWorld*);
     void place(SpatialObjectExpanded);
-//    void changeElement(SpatialObjectExpanded);
+    //    void changeElement(SpatialObjectExpanded);
+
     template <class T>
     void changeElement(T element) {
+        std::cout << "[void changeElement][common/space/scene.hpp] element index: " << element->sceneIndex << std::endl;
+        std::cout << "[void changeElement][common/space/scene.hpp] positions size: " << this->positions.size() << std::endl;
         this->positions[element->sceneIndex] = element->coords;
         this->scales[element->sceneIndex] = glm::vec3(
                 element->dimension.width,

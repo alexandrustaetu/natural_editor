@@ -190,6 +190,8 @@
               </df>
               <df name="space">
               </df>
+              <df name="text">
+              </df>
             </df>
             <df name="tests">
             </df>
@@ -597,6 +599,8 @@
           <in>directory.hpp</in>
           <in>disk.cpp</in>
           <in>disk.hpp</in>
+          <in>file.cpp</in>
+          <in>file.hpp</in>
         </df>
         <df name="input">
           <in>menu.cpp</in>
@@ -613,8 +617,14 @@
           <in>physics.hpp</in>
           <in>scene.cpp</in>
           <in>scene.hpp</in>
+        </df>
+        <df name="text">
+          <in>canvas.cpp</in>
+          <in>canvas.hpp</in>
           <in>text.cpp</in>
           <in>text.hpp</in>
+          <in>word.cpp</in>
+          <in>word.hpp</in>
         </df>
         <in>controls.cpp</in>
         <in>controls.hpp</in>
