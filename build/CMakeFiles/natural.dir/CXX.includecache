@@ -18,6 +18,18 @@ btBulletDynamicsCommon.h
 BulletCollision/CollisionDispatch/btGhostObject.h
 -
 
+.././common/environment/debug_frame.hpp
+common/debug.hpp
+-
+chrono
+-
+iostream
+-
+memory
+-
+vector
+-
+
 .././common/environment/world.hpp
 common/debug.hpp
 -
@@ -34,32 +46,6 @@ GL/glew.h
 common/input/menu.hpp
 -
 
-.././common/filesystem/directory.hpp
-boost/filesystem.hpp
--
-memory
--
-common/filesystem/disk.hpp
--
-common/space/scene.hpp
--
-common/environment/world.hpp
--
-
-.././common/filesystem/disk.hpp
-vector
--
-common/handle.hpp
--
-common/space/object3d.hpp
--
-memory
--
-iostream
--
-common/space/scene.hpp
--
-
 .././common/handle.hpp
 vector
 -
@@ -67,8 +53,6 @@ memory
 -
 
 .././common/input/menu.hpp
-common/space/object3d.hpp
--
 common/space/scene.hpp
 -
 
@@ -83,17 +67,13 @@ glm/gtc/quaternion.hpp
 -
 
 .././common/space/object3d.hpp
-GL/glew.h
--
-glm/glm.hpp
--
-memory
--
 common/handle.hpp
 -
 common/space/physics.hpp
 -
 common/space/helper.hpp
+-
+common/environment/debug_frame.hpp
 -
 
 .././common/space/physics.hpp
@@ -113,8 +93,8 @@ glm/glm.hpp
 -
 glm/gtc/type_ptr.hpp
 -
-object3d.hpp
-.././common/space/object3d.hpp
+common/space/object3d.hpp
+-
 vector
 -
 memory
@@ -122,20 +102,6 @@ memory
 common/shader.hpp
 -
 common/space/helper.hpp
--
-
-.././common/text/canvas.hpp
-vector
--
-common/handle.hpp
--
-common/space/object3d.hpp
--
-memory
--
-iostream
--
-common/space/scene.hpp
 -
 
 .././common/text/text.hpp
@@ -154,22 +120,6 @@ GL/glew.h
 fstream
 -
 common/space/scene.hpp
--
-
-.././common/text/word.hpp
-vector
--
-common/handle.hpp
--
-common/space/object3d.hpp
--
-memory
--
-iostream
--
-common/space/scene.hpp
--
-common/text/canvas.hpp
 -
 
 .././common/types.hpp
@@ -1472,19 +1422,19 @@ type_ptr.inl
 
 ../external/glm-0.9.4.0/glm/gtc/type_ptr.inl
 
-/home/alexander/projects/natural_editor/common/filesystem/disk.cpp
-common/filesystem/disk.hpp
--
-common/text/word.hpp
--
-fstream
--
-boost/algorithm/string.hpp
--
-common/text/canvas.hpp
--
+/home/alexander/projects/natural_editor/common/text/text.cpp
 common/text/text.hpp
 -
-common/filesystem/directory.hpp
+iostream
+-
+CGAL/Exact_predicates_inexact_constructions_kernel.h
+-
+CGAL/Constrained_Delaunay_triangulation_2.h
+-
+CGAL/Triangulation_face_base_with_info_2.h
+-
+CGAL/Polygon_2.h
+-
+common/environment/world.hpp
 -
 

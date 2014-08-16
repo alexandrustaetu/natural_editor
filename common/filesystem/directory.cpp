@@ -7,13 +7,22 @@ extern TextRenderer * text;
 void Directory::recurse(std::shared_ptr<disk_node> tree_node) {
     
     if (tree_node && tree_node->show_children && !tree_node->active) {
+        std::cout << "in recurse";
         tree_node->active = 1;
         
         std::cout << "[Directory::recurse][common/filesystem/directory.cpp] node name:" << tree_node->name << std::endl;
         std::cout << "[Directory::recurse][common/filesystem/directory.cpp] node children count:" << tree_node->children.size() << std::endl;
         
-        for (std::shared_ptr<disk_node> node_child : tree_node->children) {
-            
+//        for (std::shared_ptr<disk_node> node_child : tree_node->children) {
+        int test = 0;
+        for (int i = 0; i < tree_node->children.size(); i++) {
+            std::cout << "[Directory::recurse][common/filesystem/directory.cpp] node name:" << tree_node->name << std::endl;
+            std::cout << "[Directory::recurse][common/filesystem/directory.cpp] node children count:" << tree_node->children.size() << std::endl;
+//            if(test++>10){exit(0);};
+            std::cout << "iterating children";
+            std::cout << i;
+//            exit(0);
+            std::shared_ptr<disk_node> node_child = tree_node->children[i];
             if (node_child) {
 
                 std::cout << "[Directory::recurse][common/filesystem/directory.cpp] node children name:" << node_child->name << std::endl;
@@ -25,7 +34,7 @@ void Directory::recurse(std::shared_ptr<disk_node> tree_node) {
                     
                     //not that usefull now, already habe siblings and order
                     node_child->parent = node_child->parent->handle;
-                    node_child->parent->children.push_back(node_child);
+//                    node_child->parent->children.push_back(node_child);
                 }
                 node_child->siblings_count = tree_node->children.size();
                 node_child->order = std::find(tree_node->children.begin(), tree_node->children.end(), node_child) - tree_node->children.begin();
@@ -48,46 +57,10 @@ void Directory::recurse(std::shared_ptr<disk_node> tree_node) {
 }
 
 Directory::Directory(std::string directory):dir(directory), path(directory), current_iteration(directory) {
-    std::vector<GLfloat> file_shape({
-        -1.0f, -1.0f, -1.0f,
-        -1.0f, -1.0f, 1.0f,
-        -1.0f, 1.0f, 1.0f,
-        1.0f, 1.0f, -1.0f,
-        -1.0f, -1.0f, -1.0f,
-        -1.0f, 1.0f, -1.0f,
-        1.0f, -1.0f, 1.0f,
-        -1.0f, -1.0f, -1.0f,
-        1.0f, -1.0f, -1.0f,
-        1.0f, 1.0f, -1.0f,
-        1.0f, -1.0f, -1.0f,
-        -1.0f, -1.0f, -1.0f,
-        -1.0f, -1.0f, -1.0f,
-        -1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f, -1.0f,
-        1.0f, -1.0f, 1.0f,
-        -1.0f, -1.0f, 1.0f,
-        -1.0f, -1.0f, -1.0f,
-        -1.0f, 1.0f, 1.0f,
-        -1.0f, -1.0f, 1.0f,
-        1.0f, -1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f, -1.0f, -1.0f,
-        1.0f, 1.0f, -1.0f,
-        1.0f, -1.0f, -1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f, -1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        1.0f, 1.0f, -1.0f,
-        -1.0f, 1.0f, -1.0f,
-        1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f, -1.0f,
-        -1.0f, 1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f,
-        -1.0f, 1.0f, 1.0f,
-        1.0f, -1.0f, 1.0f
-    });
+    extern std::vector<GLfloat> cube_shape;
 
-    this->scene.SetIndices(&file_shape);
+
+    this->scene.SetIndices(&cube_shape);
     this->root_directory = std::shared_ptr<disk_node>(new disk_node());
     this->root_directory->handle = this->root_directory->shared_from_this();
     this->root_directory->color = glm::vec3(255,255,255);

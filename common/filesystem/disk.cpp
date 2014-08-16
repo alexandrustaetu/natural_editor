@@ -45,6 +45,7 @@ void disk_node::click() {
     this->dimension.width = .03f;
     this->dimension.height = .01f;
     this->dimension.depth = .003f;
+    this->scale = glm::vec3(.03,.01,.003);
     this->scene->changeElement(this);
     std::cout << "[common/filesystem/disk.cpp][disk_node::click] node name:" << this->name << std::endl;
     std::cout << "[common/filesystem/disk.cpp][disk_node::click] node pointer:" << this << std::endl;
@@ -53,26 +54,46 @@ void disk_node::click() {
 void disk_node::open(std::string filePath) {
     
     std::shared_ptr<Canvas> canvas = std::shared_ptr<Canvas>(new Canvas());
+    canvas->handle = canvas->shared_from_this();
     
+    Word3dProperties * wordToCanvas = new Word3dProperties();
+    wordToCanvas->parent = canvas->handle;
     
     std::string line;
 
     std::ifstream myfile(filePath);
     if (myfile.is_open()) {
+        GLfloat posy = 0;
         while (getline(myfile, line)) {
+            
+            posy -= 0.005;
+            
             std::cout << line << '\n';
             
             std::vector<std::string> strs;
             boost::split(strs, line, boost::is_any_of("\t "));
-            
+            GLfloat posx = 0;
+            bool first = true;
             for(std::string & wordstring : strs){
                 std::cout << wordstring << std::endl;
+                posx += 0.1;
                 
-                
-                std::shared_ptr<Word> word = std::shared_ptr<Word>(new Word());
+                std::shared_ptr<Word> word = std::shared_ptr<Word>(new Word(wordToCanvas));
+                word->next_line = first;
+                first = false;
                 word->handle = word->shared_from_this();
                 word->name = wordstring;
-                word->parent = canvas->handle;
+                std::cout << word->parent->coords.x << std::endl;
+                
+                
+//                std::cout << word->parent->coords.y << std::endl;
+//                std::cout << word->parent->coords.z << std::endl;
+//                exit(0);
+//                word->coords.y = posy;
+//                word->coords.x = posx;
+                std::cout << "{" << word->dimension.width << "}" << std::endl;
+                text->addElement(word);
+                word->update();
                 text->addElement(word);
             }
             

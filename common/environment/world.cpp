@@ -1,7 +1,7 @@
 #include "world.hpp"
 #include <common/input/menu.hpp>
 #include <common/controls.hpp>
-
+extern NEGLDebugDrawer * physicsdebug;
 
 double lastTime = glfwGetTime();
 int nbFrames = 0;
@@ -155,6 +155,7 @@ void World::update() {
     this->ViewMatrix = getViewMatrix();
     this->physicsdebug->SetMatrices(this->ViewMatrix, this->ProjectionMatrix);
     this->physics->stepSimulation(1 / 60, 7);
+    //physicsdebug->debugDrawWorld();
     this->physics->debugDrawWorld();
     benchmark();
 }
@@ -225,7 +226,7 @@ World::World() : leftmouse_recorded(false), changed(false), view_width(1024), vi
     this->physics->setGravity(btVector3(0, -9.81f, 0));
     NEGLDebugDrawer * physicsdebug = new NEGLDebugDrawer();
     this->physicsdebug = physicsdebug;
-    this->physicsdebug->setDebugMode(btIDebugDraw::DBG_DrawWireframe); // so does this
+//    this->physicsdebug->setDebugMode(btIDebugDraw::DBG_DrawWireframe); // so does this
     this->physics->setDebugDrawer(this->physicsdebug);
 
 }

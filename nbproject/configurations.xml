@@ -29,6 +29,7 @@
           <in>test.cpp</in>
         </df>
         <df name="environment">
+          <in>debug_frame.cpp</in>
           <in>world.cpp</in>
         </df>
         <df name="filesystem">
@@ -517,13 +518,13 @@
           </incDir>
         </ccTool>
       </item>
+      <item path="common/environment/debug_frame.cpp" ex="false" tool="1" flavor2="8">
+      </item>
       <item path="common/environment/world.cpp" ex="false" tool="1" flavor2="8">
       </item>
       <item path="common/filesystem/directory.cpp" ex="false" tool="1" flavor2="8">
       </item>
       <item path="common/filesystem/disk.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
       </item>
       <item path="common/filesystem/file.cpp" ex="false" tool="1" flavor2="8">
       </item>
@@ -672,8 +673,6 @@
         </ccTool>
       </item>
       <item path="common/text/canvas.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
       </item>
       <item path="common/text/text.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -684,8 +683,6 @@
         </ccTool>
       </item>
       <item path="common/text/word.cpp" ex="false" tool="1" flavor2="8">
-        <ccTool flags="0">
-        </ccTool>
       </item>
       <item path="common/texture.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">

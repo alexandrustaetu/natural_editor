@@ -7,6 +7,9 @@ extern Menu * menu;
 extern Directory * project_directory;
 
 int main(void) {
+
+    Grid * grid = new Grid();
+
     world->setMenu(menu);
     
     glm::mat4 IModelMatrix = glm::scale(glm::translate(glm::mat4(), glm::vec3(0.0f, 0.0f, 0.0f)), glm::vec3(1.0f, 1.0f, 1.0f)); // A bit to the left
@@ -34,6 +37,8 @@ int main(void) {
         text->draw(&MVP);
         menu->scene.draw(&MVP);
 
+        grid->draw(&MVP);
+
         glfwSwapBuffers();
 
     }// Check if the ESC key was pressed or the window was closed
@@ -44,10 +49,7 @@ int main(void) {
 
     glfwTerminate();
 
-    
-    
-//    GLuint file_lines_buffer;
-//        glGenBuffers(1, &file_lines_buffer);
+//          points of a rectangle visibile to initial view
 //        static const GLfloat test_vertex_data[] = {
 //            -0.1f, -0.1f, 1.0f,
 //            0.1f, -0.1f, 1.0f,
@@ -64,14 +66,6 @@ int main(void) {
 //        glBindBuffer(GL_ARRAY_BUFFER, tbuffer);
 //        glBufferData(GL_ARRAY_BUFFER, sizeof (test_vertex_data), test_vertex_data, GL_STATIC_DRAW);
 //
-//        std::vector<GLfloat> file_lines;
-//
-//        GLuint linesbuffer;
-//        glGenBuffers(1, &linesbuffer);
-//
-//
-//        ///////////////////////////instancing////////////////////////////////////////
-//
 //        //create shaders
 //        GLuint box_shader = LoadShaders("box.vertexshader", "box.fragmentshader");
 //
@@ -87,23 +81,8 @@ int main(void) {
 //        glUniformMatrix4fv(mvp_uniform, 1, GL_FALSE, &MVP[0][0]);
 //        glDrawArrays(GL_TRIANGLES, 0, 6);
 //        glDisableVertexAttribArray(0);
-//
-//        glBindBuffer(GL_ARRAY_BUFFER, linesbuffer);
-//        glEnableVertexAttribArray(0);
-//        glVertexAttribPointer(
-//                0, 3, GL_FLOAT, GL_FALSE, 0, (void*) 0);
-//
-//        glUniformMatrix4fv(mvp_uniform, 1, GL_FALSE, &MVP[0][0]);
-//
-//        glDrawArrays(GL_LINES, 0, file_lines.size() / 3);
-//        glDisableVertexAttribArray(0);
-    
-    
-    
-    
-    
-    
-    
+
+
     return 0;
 }
 

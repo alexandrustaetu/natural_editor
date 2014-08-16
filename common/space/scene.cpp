@@ -14,7 +14,9 @@ ArraysInstanced::ArraysInstanced() {
 void ArraysInstanced::SetIndices(std::vector<GLfloat> * pattern) {
 
     this->shader = LoadShaders("instancing.vertexshader", "instancing.fragmentshader");
-
+    this->borders_shader = LoadShaders("box.vertexshader", "box.fragmentshader");
+        
+    
     glUseProgram(this->shader);
 
     this->mvp_uniform = glGetUniformLocation(this->shader, "MVP");
@@ -33,6 +35,10 @@ void ArraysInstanced::SetIndices(std::vector<GLfloat> * pattern) {
     glGenBuffers(1, &this->colors_buffer);
     glBindBuffer(GL_ARRAY_BUFFER, this->colors_buffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->colors.size(), this->colors.data(), GL_STATIC_DRAW);
+
+    glGenBuffers(1, &this->borders_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, this->borders_buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->borders.size(), this->borders.data(), GL_STATIC_DRAW);
 
 
     glGenVertexArrays(1, &this->vao);
@@ -77,16 +83,8 @@ void ArraysInstanced::SetIndices(std::vector<GLfloat> * pattern) {
 }
 
 void ArraysInstanced::draw(glm::mat4 * mvp) {
-
-    if (this->changed) {
-        glBindBuffer(GL_ARRAY_BUFFER, this->positions_buffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->positions.size(), this->positions.data(), GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, this->scales_buffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->scales.size(), this->scales.data(), GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, this->colors_buffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->colors.size(), this->colors.data(), GL_STATIC_DRAW);
-        this->changed = false;
-    }
+    
+    this->updateSceneData();
 
     glUseProgram(this->shader);
 
@@ -101,6 +99,38 @@ void ArraysInstanced::draw(glm::mat4 * mvp) {
             3, GL_FLOAT, GL_FALSE, 0, (void*) 0);
     glDrawArraysInstanced(GL_TRIANGLES, 0, this->points_count/3, this->positions.size());
     glDisableVertexAttribArray(this->mvp_uniform);
+    
+    this->drawBorders(mvp);
+}
+
+void ArraysInstanced::updateSceneData() {
+    if (this->changed) {
+        glBindBuffer(GL_ARRAY_BUFFER, this->borders_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->borders.size(), this->borders.data(), GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, this->positions_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->positions.size(), this->positions.data(), GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, this->scales_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->scales.size(), this->scales.data(), GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, this->colors_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->colors.size(), this->colors.data(), GL_STATIC_DRAW);
+        this->changed = false;
+    }
+}
+
+void ArraysInstanced::drawBorders(glm::mat4 * mvp) {
+        
+        GLuint mvp_uniform = glGetUniformLocation(this->borders_shader, "MVP");
+        glUseProgram(this->borders_shader);
+
+        glBindBuffer(GL_ARRAY_BUFFER, this->borders_buffer);
+        glEnableVertexAttribArray(0);
+        glVertexAttribPointer(
+                0, 3, GL_FLOAT, GL_FALSE, 0, (void*) 0);
+
+        glUniformMatrix4fv(mvp_uniform, 1, GL_FALSE, glm::value_ptr(*mvp) );
+      
+        glDrawArrays(GL_LINES, 0, this->borders.size() );
+        glDisableVertexAttribArray(0);
 }
 
 //void ArraysInstanced::setPhysics(btDiscreteDynamicsWorld* physics) {

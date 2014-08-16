@@ -94,10 +94,15 @@ add_executable(natural
 	
 	common/space/object3d.cpp
 	common/space/object3d.hpp
-	common/space/physics.cpp
+        common/space/grid.cpp
+        common/space/grid.hpp
+        common/space/physics.cpp
 	common/space/physics.hpp
 	common/environment/world.cpp
 	common/environment/world.hpp
+	common/environment/debug_frame.cpp
+	common/environment/debug_frame.hpp
+	common/environment/debug_world_helper.hpp
 	common/space/scene.cpp
 	common/space/scene.hpp
 	common/text/canvas.cpp

@@ -1,13 +1,15 @@
 #ifndef OBJECT3D
 #define OBJECT3D
-// Include GLEW
-#include <GL/glew.h>
-#include <glm/glm.hpp>
 
-#include <memory>
 #include <common/handle.hpp>
 #include <common/space/physics.hpp>
 #include <common/space/helper.hpp>
+
+
+#include <common/environment/debug_frame.hpp>
+
+class DebugFrame;
+extern DebugFrame * debugFrame;
 
 template <class T>
 class Object3d : virtual public virtual_handle
@@ -19,7 +21,7 @@ public:
     };
     bool has_physics, visible, show_children, clicked;
     std::shared_ptr<Object3d> handle;
-    glm::vec3 origin, destination, coords, color;
+    glm::vec3 origin, destination, coords, color, scale;
     margins margin;
     int position;
     int siblings_count, order, sceneIndex;
@@ -27,10 +29,11 @@ public:
     dimensions dimension;
     std::vector<std::shared_ptr<Object3d> > children;
     std::shared_ptr<Object3d> parent;
-    
-    void setCoords(glm::vec3 * coords){
+    std::shared_ptr<Object3d> group;
+
+    void setCoords(glm::vec3 * coords) {
         this->coords = coords;
-    }
+    };
 
     template <class T2>
     void update(std::shared_ptr<T2>) {
@@ -42,14 +45,17 @@ public:
         }
     };
 
-    void changeColor(glm::vec3 color){
+    template <class T2>
+    void setGroup(std::shared_ptr<T2>);
+
+    void changeColor(glm::vec3 color) {
         this->color = color;
         std::cout << "[common/space/object3d.cpp][Object3d::changeColor] color changed" << std::endl;
-    }
-    
+    };
+
     virtual void click() {
         std::cout << "clicked\n";
-//        this->clicked = true;
+        //        this->clicked = true;
     };
 
     void rightclick() {
@@ -86,22 +92,25 @@ public:
         }
     };
 
-    
-    
     Object3d(Object3dProperties * props) : siblings_count(0), visible(true), position(ABSOLUTE) {
-        this->position = props->position;
+
         this->coords = props->coords;
+        this->destination = props->destination;
+
+        this->position = props->position;
+
+        this->origin = props->origin;
+
         this->color = props->color;
         if (props->has_physics) {
             this->physics = std::shared_ptr<Physics>(new Physics(props));
         }
         this->dimension = props->dimension;
+        this->scale = props->scale;
         this->show_children = props->show_children;
-    }
-
-    std::shared_ptr<T> shared_from_this() {
-        return std::dynamic_pointer_cast<T>(virtual_handle::shared_from_this());
-    }
+    };
+//    template <class T2>
+    std::shared_ptr<T> shared_from_this();
 
 };
 
@@ -112,11 +121,43 @@ public:
     Object3dExpanded() {
     };
     //template <class T>
+
     Object3dExpanded(Object3dProperties * props)
-    : Object3d(props)
-    {
+    : Object3d(props) {
     };
 };
+
+
+#ifndef DEBUGFRAME
+#define DEBUGFRAME
+//    DebugFrame * debugFrame = new DebugFrame();
+#endif
+extern std::shared_ptr<Object3dExpanded> DebugFrame;   
+
+template <class T>
+template <class T2>
+void Object3d<T>::setGroup(std::shared_ptr<T2> group) {
+    int a {1};
+//    std::shared_ptr<Object3d<T> > n = static_cast<std::shared_ptr<Object3d<T> > >(group); 
+//    std::static_cast<int*>("aaa");
+//    std::static_cast<Object3d<T> (DebugFrame);
+    
+//    this->group = group;
+};
+
+
+template <class T>
+//template <class T2>
+std::shared_ptr<T> Object3d<T>::shared_from_this() {
+
+    std::shared_ptr<T> objectHandle = std::dynamic_pointer_cast<T>(virtual_handle::shared_from_this());
+    
+//    int zuzu = std::static_cast<int>(DebugFrame);
+//    this->setGroup(DebugFrame);
+    //        debugFrame->registerObject( this);
+
+    return objectHandle;
+}
 
 
 //typedef std::shared_ptr<Object3d> SpatialObject;
@@ -126,5 +167,6 @@ typedef std::shared_ptr<Object3dExpanded> SpatialObjectExpanded;
 template <class T>
 using SpatialObject = std::shared_ptr<Object3d<T> >;
 
+typedef std::vector<std::shared_ptr<SpatialObjectExpanded> > Object3dVector;
 
 #endif

@@ -20,7 +20,7 @@ NEGLDebugDrawer::~NEGLDebugDrawer() {
 void NEGLDebugDrawer::drawLine(const btVector3& from, const btVector3& to, const btVector3& fromColor, const btVector3& toColor) {
 
     glBegin(GL_LINES);
-    glColor3f(1.0f, 0.04f, 0.0f);
+    glColor3f(1.0f, 1.04f, 0.0f);
     glVertex3d(from.getX(), from.getY(), from.getZ());
     glColor3f(1.0f, 0.04f, 0.0f);
     glVertex3d(to.getX(), to.getY(), to.getZ());

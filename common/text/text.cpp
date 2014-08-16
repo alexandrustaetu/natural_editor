@@ -9,6 +9,9 @@
 #include <common/environment/world.hpp>
 extern World * world;
 
+//Need to have scales in the sharder. trial and error, have the size of the rendered text match the size of the c++ text(borders)
+#define TEXT_SIZE 100000;
+
 void Letter::Line(float x1, float y1, float x2, float y2) {
 
     this->myfile.open("/tmp/triangulation.dat", std::ios::app);
@@ -191,9 +194,11 @@ void Letter::create_letter_faces(const char letter) {
     int start_point = 0;
     if (FT_Load_Char(this->face, letter, FT_LOAD_DEFAULT))
         exit(3);
-    this->offsetx = (GLfloat)g->metrics.horiBearingX;
-    this->height = (GLfloat)g->metrics.horiAdvance;
-    this->width = (GLfloat)g->metrics.vertAdvance;
+    this->offsetx = (GLfloat)g->metrics.horiBearingX / TEXT_SIZE;
+    this->height = (GLfloat)g->metrics.height / TEXT_SIZE;
+    this->width = (GLfloat)g->metrics.width / TEXT_SIZE;
+
+
     for (int current_contour = 0; current_contour < g->outline.n_contours; current_contour++) {
 
         Polygon_2 polygon;
@@ -271,269 +276,286 @@ void Letter::create_letter_faces(const char letter) {
         if (fit->info().in_domain()) {
             this->triangles++;
 
-            this->letter_points.push_back(fit->vertex(0)->point().x());
-            this->letter_points.push_back(fit->vertex(0)->point().y());
+            GLfloat p1x = fit->vertex(0)->point().x();
+            GLfloat p1y = fit->vertex(0)->point().y();
+
+            GLfloat p2x = fit->vertex(1)->point().x();
+            GLfloat p2y = fit->vertex(1)->point().y();
+
+            GLfloat p3x = fit->vertex(2)->point().x();
+            GLfloat p3y = fit->vertex(2)->point().y();
+
+            //Center the opengl shape to the c++ shape
+            p1x /= TEXT_SIZE;p1x -=this->width/2;
+            p1y /= TEXT_SIZE;p1y -=this->height/2;
+            p2x /= TEXT_SIZE;p2x -=this->width/2;
+            p2y /= TEXT_SIZE;p2y -=this->height/2;
+            p3x /= TEXT_SIZE;p3x -=this->width/2;
+            p3y /= TEXT_SIZE;p3y -=this->height/2;
+
+            this->letter_points.push_back(p1x);
+            this->letter_points.push_back(p1y);
             this->letter_points.push_back(this->thickness);
-            this->letter_points.push_back(fit->vertex(1)->point().x());
-            this->letter_points.push_back(fit->vertex(1)->point().y());
+            this->letter_points.push_back(p2x);
+            this->letter_points.push_back(p2y);
             this->letter_points.push_back(this->thickness);
-            this->letter_points.push_back(fit->vertex(2)->point().x());
-            this->letter_points.push_back(fit->vertex(2)->point().y());
+            this->letter_points.push_back(p3x);
+            this->letter_points.push_back(p3y);
             this->letter_points.push_back(this->thickness);
-            this->letter_points.push_back(fit->vertex(2)->point().x());
-            this->letter_points.push_back(fit->vertex(2)->point().y());
+            this->letter_points.push_back(p3x);
+            this->letter_points.push_back(p3y);
             this->letter_points.push_back(0.0f);
-            this->letter_points.push_back(fit->vertex(1)->point().x());
-            this->letter_points.push_back(fit->vertex(1)->point().y());
+            this->letter_points.push_back(p2x);
+            this->letter_points.push_back(p2y);
             this->letter_points.push_back(0.0f);
-            this->letter_points.push_back(fit->vertex(0)->point().x());
-            this->letter_points.push_back(fit->vertex(0)->point().y());
+            this->letter_points.push_back(p1x);
+            this->letter_points.push_back(p1y);
             this->letter_points.push_back(0.0f);
 
 
             if (this->thickness != 0.0f) {
                 //sides
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(0.0f);
-
-
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
-                this->letter_points.push_back(0.0f);
-
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
-                this->letter_points.push_back(0.0f);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(0.0f);
 
 
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(0.0f);
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(0.0f);
 
 
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(1)->point().x());
-                this->letter_points.push_back(fit->vertex(1)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p2x);
+                this->letter_points.push_back(p2y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(0.0f);
 
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(2)->point().x());
-                this->letter_points.push_back(fit->vertex(2)->point().y());
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
                 this->letter_points.push_back(this->thickness);
-                this->letter_points.push_back(fit->vertex(0)->point().x());
-                this->letter_points.push_back(fit->vertex(0)->point().y());
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
+                this->letter_points.push_back(0.0f);
+
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p3x);
+                this->letter_points.push_back(p3y);
+                this->letter_points.push_back(this->thickness);
+                this->letter_points.push_back(p1x);
+                this->letter_points.push_back(p1y);
                 this->letter_points.push_back(0.0f);
             }
         }
@@ -579,7 +601,7 @@ void TextRenderer::label(SpatialObjectExpanded object,std::string name){
 //    this->name = name;
     
     for(char& c : name) {
-       width += this->letters[static_cast<int> (c)]->width/(GLfloat)MIN_FACTOR;
+       width += this->letters[static_cast<int> (c)]->width;
     }
     std::cout << width << std::endl;
 //    this->spatial_construct = std::make_shared<Object3d>(&props);

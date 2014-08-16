@@ -240,6 +240,30 @@ common/debug.cpp.s:
 	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/debug.cpp.s
 .PHONY : common/debug.cpp.s
 
+common/environment/debug_frame.o: common/environment/debug_frame.cpp.o
+.PHONY : common/environment/debug_frame.o
+
+# target to build an object file
+common/environment/debug_frame.cpp.o:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/environment/debug_frame.cpp.o
+.PHONY : common/environment/debug_frame.cpp.o
+
+common/environment/debug_frame.i: common/environment/debug_frame.cpp.i
+.PHONY : common/environment/debug_frame.i
+
+# target to preprocess a source file
+common/environment/debug_frame.cpp.i:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/environment/debug_frame.cpp.i
+.PHONY : common/environment/debug_frame.cpp.i
+
+common/environment/debug_frame.s: common/environment/debug_frame.cpp.s
+.PHONY : common/environment/debug_frame.s
+
+# target to generate assembly for a file
+common/environment/debug_frame.cpp.s:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/environment/debug_frame.cpp.s
+.PHONY : common/environment/debug_frame.cpp.s
+
 common/environment/world.o: common/environment/world.cpp.o
 .PHONY : common/environment/world.o
 
@@ -407,6 +431,30 @@ common/shader_utils.s: common/shader_utils.cpp.s
 common/shader_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/shader_utils.cpp.s
 .PHONY : common/shader_utils.cpp.s
+
+common/space/grid.o: common/space/grid.cpp.o
+.PHONY : common/space/grid.o
+
+# target to build an object file
+common/space/grid.cpp.o:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/grid.cpp.o
+.PHONY : common/space/grid.cpp.o
+
+common/space/grid.i: common/space/grid.cpp.i
+.PHONY : common/space/grid.i
+
+# target to preprocess a source file
+common/space/grid.cpp.i:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/grid.cpp.i
+.PHONY : common/space/grid.cpp.i
+
+common/space/grid.s: common/space/grid.cpp.s
+.PHONY : common/space/grid.s
+
+# target to generate assembly for a file
+common/space/grid.cpp.s:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/space/grid.cpp.s
+.PHONY : common/space/grid.cpp.s
 
 common/space/object3d.o: common/space/object3d.cpp.o
 .PHONY : common/space/object3d.o
@@ -621,6 +669,9 @@ help:
 	@echo "... common/debug.o"
 	@echo "... common/debug.i"
 	@echo "... common/debug.s"
+	@echo "... common/environment/debug_frame.o"
+	@echo "... common/environment/debug_frame.i"
+	@echo "... common/environment/debug_frame.s"
 	@echo "... common/environment/world.o"
 	@echo "... common/environment/world.i"
 	@echo "... common/environment/world.s"
@@ -642,6 +693,9 @@ help:
 	@echo "... common/shader_utils.o"
 	@echo "... common/shader_utils.i"
 	@echo "... common/shader_utils.s"
+	@echo "... common/space/grid.o"
+	@echo "... common/space/grid.i"
+	@echo "... common/space/grid.s"
 	@echo "... common/space/object3d.o"
 	@echo "... common/space/object3d.i"
 	@echo "... common/space/object3d.s"

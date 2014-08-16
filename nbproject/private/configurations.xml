@@ -591,6 +591,9 @@
           <in>test.hpp</in>
         </df>
         <df name="environment">
+          <in>debug_frame.cpp</in>
+          <in>debug_frame.hpp</in>
+          <in>debug_world_helper.hpp</in>
           <in>world.cpp</in>
           <in>world.hpp</in>
         </df>
@@ -18584,7 +18587,6 @@
         <in>newtestrunner.cpp</in>
         <in>newtestrunner1.cpp</in>
       </df>
-      <in>LICENSE</in>
       <in>main.cpp</in>
       <in>main.hpp</in>
     </df>

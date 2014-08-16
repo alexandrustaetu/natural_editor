@@ -69,19 +69,33 @@ public:
         props.margin.bottom = 0;
         obj->dimension.width = 0.00;
 
+        //increase the width of the parent . This will help when printing labels
         for (char& c : obj->name) {
-            obj->dimension.width += this->letters[static_cast<int> (c)]->width / (GLfloat) MIN_FACTOR;
+            //converting the letter to asci int
+            int letter_int = static_cast<int> (c);
+            if(letter_int > 127){
+                //if we do not have the letter loaded in the memory, replace it with "|"
+                letter_int = 124;
+            }
+            obj->dimension.width += this->letters[letter_int]->width;
         }
+
+        //Center the element
         props.coords.x -= obj->dimension.width / 2;
 
 
         for (char& c : obj->name) {
-            props.coords.x += (this->letters[static_cast<int> (c)]->width / (GLfloat) MIN_FACTOR) - (this->letters[static_cast<int> (c)]->offsetx / (GLfloat) MIN_FACTOR);
 
-            props.dimension.width = 1 / (GLfloat) MIN_FACTOR;
-            props.dimension.height = 1 / (GLfloat) MIN_FACTOR;
-            SpatialObjectExpanded obj = std::make_shared<Object3dExpanded>(&props);
-            this->letters[static_cast<int> (c)]->scene.AddElement(obj);
+            Letter * letter =this->letters[static_cast<int> (c)];
+
+            props.coords.x += letter->width - letter->offsetx;
+
+            props.dimension.width = letter->width;
+            props.dimension.height = letter->height;
+            props.scale = glm::vec3(1,1,1);
+
+            SpatialObjectExpanded obj1 = std::make_shared<Object3dExpanded>(&props);
+            letter->scene.AddElement(obj1);
         }
     };
     void draw(glm::mat4 * mvp);

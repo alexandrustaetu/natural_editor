@@ -1,7 +1,7 @@
 #ifndef DEBUG
 #define DEBUG
 
-// Include GLEW
+//// Include GLEW
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 

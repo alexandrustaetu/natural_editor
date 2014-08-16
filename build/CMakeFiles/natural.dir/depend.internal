@@ -233,9 +233,175 @@ CMakeFiles/natural.dir/common/debug.cpp.o
  ../external/glm-0.9.4.0/glm/core/setup.hpp
  ../external/glm-0.9.4.0/glm/glm.hpp
  /home/alexander/projects/natural_editor/common/debug.cpp
+CMakeFiles/natural.dir/common/environment/debug_frame.cpp.o
+ .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvt.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDispatcher.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btQuantizedBvh.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionConfiguration.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionCreateFunc.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionObject.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionWorld.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btGhostObject.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btManifoldResult.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBoxShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCapsuleShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCollisionMargin.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCollisionShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCompoundShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConcaveShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConeShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexHullShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexInternalShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCylinderShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btEmptyShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMultiSphereShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btOptimizedBvh.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btSphereShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStaticPlaneShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStridingMeshInterface.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTetrahedronShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleCallback.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleInfoMap.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMesh.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMeshShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btUniformScalingShape.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h
+ ../external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btContactSolverInfo.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGearConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHinge2Constraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHingeConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btJacobianEntry.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSliderConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSolverBody.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSolverConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btTypedConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btUniversalConstraint.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btActionInterface.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btDynamicsWorld.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btRigidBody.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btRaycastVehicle.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btVehicleRaycaster.h
+ ../external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btWheelInfo.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btAabbUtil2.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btAlignedAllocator.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btAlignedObjectArray.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btDefaultMotionState.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btHashMap.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btIDebugDraw.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btMatrix3x3.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btMinMax.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btMotionState.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btQuadWord.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btQuaternion.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btQuickprof.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btScalar.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btSerializer.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btStackAlloc.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btTransform.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btTransformUtil.h
+ ../external/bullet-2.81-rev2613/src/LinearMath/btVector3.h
+ ../external/bullet-2.81-rev2613/src/btBulletCollisionCommon.h
+ ../external/bullet-2.81-rev2613/src/btBulletDynamicsCommon.h
+ ../external/glew-1.9.0/include/GL/glew.h
+ ../external/glm-0.9.4.0/glm/./core/_detail.hpp
+ ../external/glm-0.9.4.0/glm/./core/_fixes.hpp
+ ../external/glm-0.9.4.0/glm/./core/_swizzle.hpp
+ ../external/glm-0.9.4.0/glm/./core/_swizzle_func.hpp
+ ../external/glm-0.9.4.0/glm/./core/_vectorize.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_common.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_common.inl
+ ../external/glm-0.9.4.0/glm/./core/func_exponential.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_exponential.inl
+ ../external/glm-0.9.4.0/glm/./core/func_geometric.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_geometric.inl
+ ../external/glm-0.9.4.0/glm/./core/func_integer.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_integer.inl
+ ../external/glm-0.9.4.0/glm/./core/func_matrix.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_matrix.inl
+ ../external/glm-0.9.4.0/glm/./core/func_noise.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_noise.inl
+ ../external/glm-0.9.4.0/glm/./core/func_packing.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_packing.inl
+ ../external/glm-0.9.4.0/glm/./core/func_trigonometric.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_trigonometric.inl
+ ../external/glm-0.9.4.0/glm/./core/func_vector_relational.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_vector_relational.inl
+ ../external/glm-0.9.4.0/glm/./core/setup.hpp
+ ../external/glm-0.9.4.0/glm/./core/type.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_float.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_gentype.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_half.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_half.inl
+ ../external/glm-0.9.4.0/glm/./core/type_int.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x4.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x4.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x4.inl
+ ../external/glm-0.9.4.0/glm/./core/type_size.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec1.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec1.inl
+ ../external/glm-0.9.4.0/glm/./core/type_vec2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_vec3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_vec4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec4.inl
+ ../external/glm-0.9.4.0/glm/core/_fixes.hpp
+ ../external/glm-0.9.4.0/glm/core/setup.hpp
+ ../external/glm-0.9.4.0/glm/glm.hpp
+ /home/alexander/projects/natural_editor/common/environment/debug_frame.cpp
 CMakeFiles/natural.dir/common/environment/world.cpp.o
  .././common/controls.hpp
  .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/handle.hpp
  .././common/input/menu.hpp
  .././common/shader.hpp
@@ -415,6 +581,7 @@ CMakeFiles/natural.dir/common/environment/world.cpp.o
  /home/alexander/projects/natural_editor/common/environment/world.hpp
 CMakeFiles/natural.dir/common/filesystem/directory.cpp.o
  .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/environment/world.hpp
  .././common/filesystem/directory.hpp
  .././common/filesystem/disk.hpp
@@ -600,6 +767,7 @@ CMakeFiles/natural.dir/common/filesystem/directory.cpp.o
  /home/alexander/projects/natural_editor/common/filesystem/directory.cpp
 CMakeFiles/natural.dir/common/filesystem/disk.cpp.o
  .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/environment/world.hpp
  .././common/filesystem/directory.hpp
  .././common/filesystem/disk.hpp
@@ -789,6 +957,8 @@ CMakeFiles/natural.dir/common/handle.cpp.o
  /home/alexander/projects/natural_editor/common/handle.cpp
  /home/alexander/projects/natural_editor/common/handle.hpp
 CMakeFiles/natural.dir/common/input/menu.cpp.o
+ .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/handle.hpp
  .././common/input/menu.hpp
  .././common/shader.hpp
@@ -975,7 +1145,82 @@ CMakeFiles/natural.dir/common/shader.cpp.o
 CMakeFiles/natural.dir/common/shader_utils.cpp.o
  ../external/glew-1.9.0/include/GL/glew.h
  /home/alexander/projects/natural_editor/common/shader_utils.cpp
+CMakeFiles/natural.dir/common/space/grid.cpp.o
+ .././common/shader.hpp
+ .././common/space/grid.hpp
+ ../external/glew-1.9.0/include/GL/glew.h
+ ../external/glm-0.9.4.0/glm/./core/_detail.hpp
+ ../external/glm-0.9.4.0/glm/./core/_fixes.hpp
+ ../external/glm-0.9.4.0/glm/./core/_swizzle.hpp
+ ../external/glm-0.9.4.0/glm/./core/_swizzle_func.hpp
+ ../external/glm-0.9.4.0/glm/./core/_vectorize.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_common.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_common.inl
+ ../external/glm-0.9.4.0/glm/./core/func_exponential.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_exponential.inl
+ ../external/glm-0.9.4.0/glm/./core/func_geometric.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_geometric.inl
+ ../external/glm-0.9.4.0/glm/./core/func_integer.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_integer.inl
+ ../external/glm-0.9.4.0/glm/./core/func_matrix.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_matrix.inl
+ ../external/glm-0.9.4.0/glm/./core/func_noise.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_noise.inl
+ ../external/glm-0.9.4.0/glm/./core/func_packing.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_packing.inl
+ ../external/glm-0.9.4.0/glm/./core/func_trigonometric.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_trigonometric.inl
+ ../external/glm-0.9.4.0/glm/./core/func_vector_relational.hpp
+ ../external/glm-0.9.4.0/glm/./core/func_vector_relational.inl
+ ../external/glm-0.9.4.0/glm/./core/setup.hpp
+ ../external/glm-0.9.4.0/glm/./core/type.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_float.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_gentype.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_half.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_half.inl
+ ../external/glm-0.9.4.0/glm/./core/type_int.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat2x4.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat3x4.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_mat4x4.inl
+ ../external/glm-0.9.4.0/glm/./core/type_size.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec1.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec1.inl
+ ../external/glm-0.9.4.0/glm/./core/type_vec2.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec2.inl
+ ../external/glm-0.9.4.0/glm/./core/type_vec3.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec3.inl
+ ../external/glm-0.9.4.0/glm/./core/type_vec4.hpp
+ ../external/glm-0.9.4.0/glm/./core/type_vec4.inl
+ ../external/glm-0.9.4.0/glm/core/_fixes.hpp
+ ../external/glm-0.9.4.0/glm/core/setup.hpp
+ ../external/glm-0.9.4.0/glm/glm.hpp
+ ../external/glm-0.9.4.0/glm/gtc/half_float.hpp
+ ../external/glm-0.9.4.0/glm/gtc/half_float.inl
+ ../external/glm-0.9.4.0/glm/gtc/quaternion.hpp
+ ../external/glm-0.9.4.0/glm/gtc/quaternion.inl
+ ../external/glm-0.9.4.0/glm/gtc/type_ptr.hpp
+ ../external/glm-0.9.4.0/glm/gtc/type_ptr.inl
+ /home/alexander/projects/natural_editor/common/space/grid.cpp
 CMakeFiles/natural.dir/common/space/object3d.cpp.o
+ .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/handle.hpp
  .././common/space/helper.hpp
  .././common/space/object3d.hpp
@@ -1317,6 +1562,7 @@ CMakeFiles/natural.dir/common/space/physics.cpp.o
  /home/alexander/projects/natural_editor/common/space/physics.hpp
 CMakeFiles/natural.dir/common/space/scene.cpp.o
  .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/environment/world.hpp
  .././common/handle.hpp
  .././common/input/menu.hpp
@@ -1493,10 +1739,11 @@ CMakeFiles/natural.dir/common/space/scene.cpp.o
  ../external/glm-0.9.4.0/glm/gtc/quaternion.inl
  ../external/glm-0.9.4.0/glm/gtc/type_ptr.hpp
  ../external/glm-0.9.4.0/glm/gtc/type_ptr.inl
- /home/alexander/projects/natural_editor/common/space/object3d.hpp
  /home/alexander/projects/natural_editor/common/space/scene.cpp
  /home/alexander/projects/natural_editor/common/space/scene.hpp
 CMakeFiles/natural.dir/common/text/canvas.cpp.o
+ .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/handle.hpp
  .././common/shader.hpp
  .././common/space/helper.hpp
@@ -1674,6 +1921,7 @@ CMakeFiles/natural.dir/common/text/canvas.cpp.o
  /home/alexander/projects/natural_editor/common/text/canvas.cpp
 CMakeFiles/natural.dir/common/text/text.cpp.o
  .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/environment/world.hpp
  .././common/handle.hpp
  .././common/input/menu.hpp
@@ -1856,6 +2104,8 @@ CMakeFiles/natural.dir/common/text/text.cpp.o
  ../external/glm-0.9.4.0/glm/gtc/type_ptr.inl
  /home/alexander/projects/natural_editor/common/text/text.cpp
 CMakeFiles/natural.dir/common/text/word.cpp.o
+ .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/handle.hpp
  .././common/shader.hpp
  .././common/space/helper.hpp
@@ -2039,6 +2289,7 @@ CMakeFiles/natural.dir/common/texture.cpp.o
 CMakeFiles/natural.dir/main.cpp.o
  .././common/controls.hpp
  .././common/debug.hpp
+ .././common/environment/debug_frame.hpp
  .././common/environment/world.hpp
  .././common/filesystem/directory.hpp
  .././common/filesystem/disk.hpp
@@ -2046,6 +2297,7 @@ CMakeFiles/natural.dir/main.cpp.o
  .././common/input/menu.hpp
  .././common/shader.hpp
  .././common/shader_utils.hpp
+ .././common/space/grid.hpp
  .././common/space/helper.hpp
  .././common/space/object3d.hpp
  .././common/space/physics.hpp

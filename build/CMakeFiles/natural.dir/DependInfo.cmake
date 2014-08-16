@@ -6,6 +6,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/alexander/projects/natural_editor/common/controls.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/controls.cpp.o"
   "/home/alexander/projects/natural_editor/common/debug.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/debug.cpp.o"
+  "/home/alexander/projects/natural_editor/common/environment/debug_frame.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/environment/debug_frame.cpp.o"
   "/home/alexander/projects/natural_editor/common/environment/world.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/environment/world.cpp.o"
   "/home/alexander/projects/natural_editor/common/filesystem/directory.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/filesystem/directory.cpp.o"
   "/home/alexander/projects/natural_editor/common/filesystem/disk.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/filesystem/disk.cpp.o"
@@ -13,6 +14,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/alexander/projects/natural_editor/common/input/menu.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/input/menu.cpp.o"
   "/home/alexander/projects/natural_editor/common/shader.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/shader.cpp.o"
   "/home/alexander/projects/natural_editor/common/shader_utils.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/shader_utils.cpp.o"
+  "/home/alexander/projects/natural_editor/common/space/grid.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/space/grid.cpp.o"
   "/home/alexander/projects/natural_editor/common/space/object3d.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/space/object3d.cpp.o"
   "/home/alexander/projects/natural_editor/common/space/physics.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/space/physics.cpp.o"
   "/home/alexander/projects/natural_editor/common/space/scene.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/space/scene.cpp.o"

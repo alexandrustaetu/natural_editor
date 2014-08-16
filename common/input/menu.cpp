@@ -56,6 +56,7 @@ void Menu::create(glm::vec3 * coords){
     Object3dProperties props;
     props.coords = * coords;
     props.dimension.width = 0.10;
+    props.scale.x = 0.10;
     props.color = glm::vec3(111,111,111);
     this->spatial_construct = std::make_shared<Object3dExpanded>(&props);
     this->scene.AddElement(this->spatial_construct);

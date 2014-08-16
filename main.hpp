@@ -22,7 +22,44 @@
 // Include GLFW
 #include <GL/glfw.h>
 
-
+std::vector<GLfloat> cube_shape({
+    -1.0f, -1.0f, -1.0f,
+    -1.0f, -1.0f, 1.0f,
+    -1.0f, 1.0f, 1.0f,
+    1.0f, 1.0f, -1.0f,
+    -1.0f, -1.0f, -1.0f,
+    -1.0f, 1.0f, -1.0f,
+    1.0f, -1.0f, 1.0f,
+    -1.0f, -1.0f, -1.0f,
+    1.0f, -1.0f, -1.0f,
+    1.0f, 1.0f, -1.0f,
+    1.0f, -1.0f, -1.0f,
+    -1.0f, -1.0f, -1.0f,
+    -1.0f, -1.0f, -1.0f,
+    -1.0f, 1.0f, 1.0f,
+    -1.0f, 1.0f, -1.0f,
+    1.0f, -1.0f, 1.0f,
+    -1.0f, -1.0f, 1.0f,
+    -1.0f, -1.0f, -1.0f,
+    -1.0f, 1.0f, 1.0f,
+    -1.0f, -1.0f, 1.0f,
+    1.0f, -1.0f, 1.0f,
+    1.0f, 1.0f, 1.0f,
+    1.0f, -1.0f, -1.0f,
+    1.0f, 1.0f, -1.0f,
+    1.0f, -1.0f, -1.0f,
+    1.0f, 1.0f, 1.0f,
+    1.0f, -1.0f, 1.0f,
+    1.0f, 1.0f, 1.0f,
+    1.0f, 1.0f, -1.0f,
+    -1.0f, 1.0f, -1.0f,
+    1.0f, 1.0f, 1.0f,
+    -1.0f, 1.0f, -1.0f,
+    -1.0f, 1.0f, 1.0f,
+    1.0f, 1.0f, 1.0f,
+    -1.0f, 1.0f, 1.0f,
+    1.0f, -1.0f, 1.0f
+});
 
 // Include GLM
 #include <glm/glm.hpp>
@@ -38,17 +75,28 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
-
 #include <common/handle.hpp>
+
+#include <common/space/object3d.hpp>
+#include <common/space/grid.hpp>
+
+Object3dProperties props;
+std::shared_ptr<Object3dExpanded> DebugFrame = std::make_shared<Object3dExpanded>(&props);
+
+
 #include <common/debug.hpp>
 NEGLDebugDrawer * physicsdebug = new NEGLDebugDrawer();
 #include <common/space/physics.hpp>
 #include <common/space/scene.hpp>
 #include <common/input/menu.hpp>
+//#include <common/environment/debug_frame.hpp>
+//DebugFrame * debugFrame = new DebugFrame();
+
 #include <common/environment/world.hpp>
 World * world = new World();
 #include <common/text/word.cpp>
 #include <common/text/text.hpp>
+Letter * z = new Letter(55);
 TextRenderer * text = new TextRenderer();
 Menu * menu = new Menu();
 //#include <common/filesystem/file.hpp>

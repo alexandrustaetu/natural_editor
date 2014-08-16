@@ -39,8 +39,20 @@ struct Object3dProperties{
     margins margin;
     position_type position;
     dimensions dimension;
+    glm::vec3 scale;
     bool has_physics, visible,show_children ;
-    Object3dProperties() : color(glm::vec3(255,255,255)),position(ABSOLUTE), has_physics(true),visible(true), show_children(false),orientation(glm::normalize(glm::quat(glm::vec3(0.0f, 0.0f, 0.0f)))) {}
+    Object3dProperties() : 
+        color(glm::vec3(255,255,255)),
+        position(ABSOLUTE), 
+        has_physics(true),
+        visible(true), 
+        show_children(false),
+        orientation(glm::normalize(glm::quat(glm::vec3(0.0f, 0.0f, 0.0f)))),
+        destination(glm::vec3(0.0,0.0,0.0)),
+        origin(glm::vec3(0.0,0.0,0.0)),
+        scale(glm::vec3(0.03,0.01,0.003)),
+        coords(glm::vec3(0.0,0.0,0.0))
+    {}
 };
 
 
