@@ -1,16 +1,16 @@
 #include <common/space/grid.hpp>
 #include <iostream>
 Grid::Grid(){
-//std::cout << "Grid Build";exit(0);
     this->shader = LoadShaders("box.vertexshader", "box.fragmentshader");
 
     //x direction
-    for(float i = -1; i < 1.1; i+=.1){
+    //Real size of the line spacing is .1 . The points will be declared from +1 to -1, so the total width is 2. This system works with bullet too.We will increment by .2 in order to have real .1 sizes
+    for(float i = -2; i < 2.1; i+=.2){
 
-                this->points.push_back(glm::vec3(i,-10,0));
-                this->points.push_back(glm::vec3(i,10,0));
-                this->points.push_back( glm::vec3(i,0,-10));
-                this->points.push_back( glm::vec3(i,0,10));
+        this->points.push_back(glm::vec3(i,-10,0));
+        this->points.push_back(glm::vec3(i,10,0));
+        this->points.push_back( glm::vec3(i,0,-10));
+        this->points.push_back( glm::vec3(i,0,10));
 
         this->points.push_back(glm::vec3(-10,i,0));
         this->points.push_back(glm::vec3(10,i,0));
@@ -21,8 +21,6 @@ Grid::Grid(){
         this->points.push_back(glm::vec3(10,0,i));
         this->points.push_back( glm::vec3(0,-10,i));
         this->points.push_back( glm::vec3(0,10,i));
-
-
     };
 
     glGenBuffers(1, &this->buffer);

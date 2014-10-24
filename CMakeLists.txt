@@ -79,7 +79,9 @@ add_executable(natural
 	common/handle.hpp
 #	common/filesystem/file.hpp
 #	common/filesystem/file.cpp
-	common/text/word.cpp
+        common/text/strings.cpp
+        common/text/strings.hpp
+        common/text/word.cpp
 	common/text/word.hpp
 	common/filesystem/disk.hpp
 	common/filesystem/disk.cpp
@@ -107,9 +109,11 @@ add_executable(natural
 	common/space/scene.hpp
 	common/text/canvas.cpp
 	common/text/canvas.hpp
-	common/text/text.cpp
-	common/text/text.hpp
-	common/texture.cpp
+        common/text/letter.cpp
+        common/text/letter.hpp
+        common/text/text.cpp
+        common/text/text.hpp
+        common/texture.cpp
 	common/texture.hpp
 	
 	common/shader_utils.cpp

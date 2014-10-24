@@ -257,7 +257,6 @@ TextRenderer::TextRenderer(const char character) {
 extern int gtest;
 void TextRenderer::create_letter_faces(const char letter) {
     FT_GlyphSlot g = this->face->glyph;
-    //std::cout << gtest;exit(0);
     int end_point;
     CDT cdt;
 

@@ -80,6 +80,9 @@ std::vector<GLfloat> cube_shape({
 #include <common/space/object3d.hpp>
 #include <common/space/grid.hpp>
 
+#include <common/text/strings.hpp>
+std::shared_ptr<StringsExpanded> strings = std::make_shared<StringsExpanded>();
+
 Object3dProperties props;
 std::shared_ptr<Object3dExpanded> DebugFrame = std::make_shared<Object3dExpanded>(&props);
 
@@ -96,7 +99,7 @@ NEGLDebugDrawer * physicsdebug = new NEGLDebugDrawer();
 World * world = new World();
 #include <common/text/word.cpp>
 #include <common/text/text.hpp>
-Letter * z = new Letter(55);
+//Letter * z = new Letter(55);
 TextRenderer * text = new TextRenderer();
 Menu * menu = new Menu();
 //#include <common/filesystem/file.hpp>

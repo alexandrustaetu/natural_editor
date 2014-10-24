@@ -282,13 +282,13 @@ X11_XShm_INCLUDE_PATH:PATH=/usr/include
 X11_XSync_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a file.
-X11_XTest_INCLUDE_PATH:PATH=X11_XTest_INCLUDE_PATH-NOTFOUND
+X11_XTest_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a library.
-X11_XTest_LIB:FILEPATH=X11_XTest_LIB-NOTFOUND
+X11_XTest_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXtst.so
 
 //Path to a file.
-X11_Xaccessrules_INCLUDE_PATH:PATH=X11_Xaccessrules_INCLUDE_PATH-NOTFOUND
+X11_Xaccessrules_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a file.
 X11_Xaccessstr_INCLUDE_PATH:PATH=/usr/include
@@ -360,10 +360,10 @@ X11_Xinput_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libXi.so
 X11_Xkb_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a file.
-X11_Xkbfile_INCLUDE_PATH:PATH=X11_Xkbfile_INCLUDE_PATH-NOTFOUND
+X11_Xkbfile_INCLUDE_PATH:PATH=/usr/include
 
 //Path to a library.
-X11_Xkbfile_LIB:FILEPATH=X11_Xkbfile_LIB-NOTFOUND
+X11_Xkbfile_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libxkbfile.so
 
 //Path to a file.
 X11_Xkblib_INCLUDE_PATH:PATH=/usr/include

@@ -57,7 +57,7 @@ void disk_node::open(std::string filePath) {
     canvas->handle = canvas->shared_from_this();
     
     Word3dProperties * wordToCanvas = new Word3dProperties();
-    wordToCanvas->parent = canvas->handle;
+//    wordToCanvas->parent = canvas->handle;
     
     std::string line;
 
@@ -65,39 +65,49 @@ void disk_node::open(std::string filePath) {
     if (myfile.is_open()) {
         GLfloat posy = 0;
         while (getline(myfile, line)) {
-            
+
+            canvas->addLine(line);
+
             posy -= 0.005;
-            
+
             std::cout << line << '\n';
-            
+
             std::vector<std::string> strs;
             boost::split(strs, line, boost::is_any_of("\t "));
             GLfloat posx = 0;
             bool first = true;
             for(std::string & wordstring : strs){
+                continue;
+
+
                 std::cout << wordstring << std::endl;
                 posx += 0.1;
-                
-                std::shared_ptr<Word> word = std::shared_ptr<Word>(new Word(wordToCanvas));
+
+                //This is only a temporary object. Will pass the position, the name, etc to the word constructor
+
+//                std::shared_ptr<Word> temp = std::make_shared<Word>(wordToCanvas);
+                Word3dProperties * props = new Word3dProperties();
+                props->string = wordstring;
+//                props->parent = canvas->handle;;
+                //Create the real world. Pass the text renderer here as a template parameter. Not available in the word class.
+                std::shared_ptr<Word> word = std::make_shared<Word>(props,text);
+
+                word->coords.x += 0.1;
                 word->next_line = first;
                 first = false;
                 word->handle = word->shared_from_this();
                 word->name = wordstring;
                 std::cout << word->parent->coords.x << std::endl;
-                
-                
-//                std::cout << word->parent->coords.y << std::endl;
-//                std::cout << word->parent->coords.z << std::endl;
-//                exit(0);
-//                word->coords.y = posy;
-//                word->coords.x = posx;
-                std::cout << "{" << word->dimension.width << "}" << std::endl;
+
+                /*
                 text->addElement(word);
                 word->update();
-                text->addElement(word);
+                text->addElement(word);*/
             }
+            //exit(0);
             
             std::cout << strs.size() << std::endl;
+
         }
 //        exit(0);
         myfile.close();

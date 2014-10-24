@@ -17,21 +17,23 @@ struct margins {
     GLfloat right;
     GLfloat front;
     GLfloat back;
-    margins(): top(0.03f),bottom(0.03f),left(0.03f),right(0.03f),front(0.03f),back(0.03f){}
+    bool is_null;
+    margins(){}
 };
 
 struct dimensions {
     GLfloat width;
     GLfloat height;
     GLfloat depth;
-    dimensions() : width(.03f), height(.01f), depth(.003f) {
-    }
+    bool is_null;
+    dimensions(){}
 };
 struct position {
     GLfloat x;
     GLfloat y;
     GLfloat z;
-    position(): x(0.0f), y(0.0f), z(0.0f){}
+    bool is_null;
+    position(){}
 };
 struct Object3dProperties{
     glm::vec3 origin,destination,coords, color;
@@ -45,13 +47,9 @@ struct Object3dProperties{
         color(glm::vec3(255,255,255)),
         position(ABSOLUTE), 
         has_physics(true),
-        visible(true), 
+        visible(true),
         show_children(false),
-        orientation(glm::normalize(glm::quat(glm::vec3(0.0f, 0.0f, 0.0f)))),
-        destination(glm::vec3(0.0,0.0,0.0)),
-        origin(glm::vec3(0.0,0.0,0.0)),
-        scale(glm::vec3(0.03,0.01,0.003)),
-        coords(glm::vec3(0.0,0.0,0.0))
+        orientation(glm::normalize(glm::quat(glm::vec3(0.0f, 0.0f, 0.0f))))
     {}
 };
 

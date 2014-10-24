@@ -1,5 +1,5 @@
 #version 330
-layout(location = 0) in vec3 vertexPosition_modelspace;
+layout(location = 4) in vec3 vertexPosition_modelspace;
 layout(location = 1) in vec3 position;
 layout(location = 2) in vec3 scale;
 layout(location = 3) in vec3 color;
@@ -12,10 +12,7 @@ void main(){
         col  = color;
         vec3 point;
 
-        point.x = vertexPosition_modelspace.x * scale.x;
-        point.y = vertexPosition_modelspace.y * scale.y;
-        point.z = vertexPosition_modelspace.z * scale.z;
-
-	gl_Position =  MVP * vec4(point.xyz+position.xyz,1);
+        point.xyz = vertexPosition_modelspace.xyz * scale.xyz;
+        gl_Position =  MVP * vec4(point.xyz+position.xyz,1);
 }
 

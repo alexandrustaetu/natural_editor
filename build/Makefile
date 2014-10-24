@@ -552,6 +552,54 @@ common/text/canvas.cpp.s:
 	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/canvas.cpp.s
 .PHONY : common/text/canvas.cpp.s
 
+common/text/letter.o: common/text/letter.cpp.o
+.PHONY : common/text/letter.o
+
+# target to build an object file
+common/text/letter.cpp.o:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/letter.cpp.o
+.PHONY : common/text/letter.cpp.o
+
+common/text/letter.i: common/text/letter.cpp.i
+.PHONY : common/text/letter.i
+
+# target to preprocess a source file
+common/text/letter.cpp.i:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/letter.cpp.i
+.PHONY : common/text/letter.cpp.i
+
+common/text/letter.s: common/text/letter.cpp.s
+.PHONY : common/text/letter.s
+
+# target to generate assembly for a file
+common/text/letter.cpp.s:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/letter.cpp.s
+.PHONY : common/text/letter.cpp.s
+
+common/text/strings.o: common/text/strings.cpp.o
+.PHONY : common/text/strings.o
+
+# target to build an object file
+common/text/strings.cpp.o:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/strings.cpp.o
+.PHONY : common/text/strings.cpp.o
+
+common/text/strings.i: common/text/strings.cpp.i
+.PHONY : common/text/strings.i
+
+# target to preprocess a source file
+common/text/strings.cpp.i:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/strings.cpp.i
+.PHONY : common/text/strings.cpp.i
+
+common/text/strings.s: common/text/strings.cpp.s
+.PHONY : common/text/strings.s
+
+# target to generate assembly for a file
+common/text/strings.cpp.s:
+	$(MAKE) -f CMakeFiles/natural.dir/build.make CMakeFiles/natural.dir/common/text/strings.cpp.s
+.PHONY : common/text/strings.cpp.s
+
 common/text/text.o: common/text/text.cpp.o
 .PHONY : common/text/text.o
 
@@ -708,6 +756,12 @@ help:
 	@echo "... common/text/canvas.o"
 	@echo "... common/text/canvas.i"
 	@echo "... common/text/canvas.s"
+	@echo "... common/text/letter.o"
+	@echo "... common/text/letter.i"
+	@echo "... common/text/letter.s"
+	@echo "... common/text/strings.o"
+	@echo "... common/text/strings.i"
+	@echo "... common/text/strings.s"
 	@echo "... common/text/text.o"
 	@echo "... common/text/text.i"
 	@echo "... common/text/text.s"

@@ -1,10 +1,10 @@
 #include <main.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-extern World * world;
-extern TextRenderer * text;
-extern Menu * menu;
-extern Directory * project_directory;
+//extern World * world;
+//extern TextRenderer * text;
+//extern Menu * menu;
+//extern Directory * project_directory;
 
 int main(void) {
 
@@ -13,15 +13,28 @@ int main(void) {
     world->setMenu(menu);
     
     glm::mat4 IModelMatrix = glm::scale(glm::translate(glm::mat4(), glm::vec3(0.0f, 0.0f, 0.0f)), glm::vec3(1.0f, 1.0f, 1.0f)); // A bit to the left
-    
-    
-    do {
 
+    std::string aaaaa =  "technology";
+    strings->add(aaaaa);
+    std::string aaaaaa =  "templar";
+    strings->add(aaaaaa);
+    std::string f =  "test";
+    strings->add(f);
+    std::string l =  "telephone";
+    strings->add(l);
+    std::string g =  "terminal";
+    strings->add(g);
+
+    std::shared_ptr<StringsExpanded> s = strings;
+
+    do {
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0, 0, 0, 0);
-
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
         glEnable(GL_BLEND);
+        glEnable(GL_CULL_FACE);
+
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
         world->update();
@@ -33,11 +46,13 @@ int main(void) {
         }
 
         glm::mat4 MVP = world->ProjectionMatrix * world->ViewMatrix * IModelMatrix;
-        project_directory->scene.draw(&MVP);
-        text->draw(&MVP);
-        menu->scene.draw(&MVP);
 
+        project_directory->draw(&MVP);
+        text->draw(&MVP);
+        menu->draw(&MVP);
         grid->draw(&MVP);
+
+        Menu * aa = menu;
 
         glfwSwapBuffers();
 

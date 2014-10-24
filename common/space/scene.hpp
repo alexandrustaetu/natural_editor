@@ -19,7 +19,7 @@ public:
 class ArraysInstanced {
 public:
     ArraysInstanced();
-    void SetIndices(std::vector<GLfloat> * pattern);
+    void setUp(std::vector<GLfloat> * pattern);
     //    void AddElement(SpatialObjectExpanded) {};
 
     template <class T>
@@ -49,20 +49,21 @@ public:
         GLfloat y = object->coords.y;
         GLfloat z = object->coords.z;
 
-        //width; height; depth
-        GLfloat w = object->dimension.width;
-        GLfloat h = object->dimension.height;
-        GLfloat d = object->dimension.depth;
+        //width; height; depth Because the object is from -1 to +1, we will not divide by two. If we halve the dimensions,
+        // the borders will be half of the displayed object. Bullet is working with -1 -> +1
+        GLfloat half_width = object->dimension.width;
+        GLfloat half_height = object->dimension.height;
+        GLfloat half_depth = object->dimension.depth;
         
-        glm::vec3 P1 = glm::vec3(x+w/2,y-h/2,z+d/2);
-        glm::vec3 P2 = glm::vec3(x+w/2,y-h/2,z-d/2);
-        glm::vec3 P3 = glm::vec3(x+w/2,y+h/2,z-d/2);
-        glm::vec3 P4 = glm::vec3(x+w/2,y+h/2,z+d/2);
+        glm::vec3 P1 = glm::vec3(x+half_width,y-half_height,z+half_depth);
+        glm::vec3 P2 = glm::vec3(x+half_width,y-half_height,z-half_depth);
+        glm::vec3 P3 = glm::vec3(x+half_width,y+half_height,z-half_depth);
+        glm::vec3 P4 = glm::vec3(x+half_width,y+half_height,z+half_depth);
 
-        glm::vec3 P5 = glm::vec3(x-w/2,y-h/2,z+d/2);
-        glm::vec3 P6 = glm::vec3(x-w/2,y-h/2,z-d/2);
-        glm::vec3 P7 = glm::vec3(x-w/2,y+h/2,z-d/2);
-        glm::vec3 P8 = glm::vec3(x-w/2,y+h/2,z+d/2);
+        glm::vec3 P5 = glm::vec3(x-half_width,y-half_height,z+half_depth);
+        glm::vec3 P6 = glm::vec3(x-half_width,y-half_height,z-half_depth);
+        glm::vec3 P7 = glm::vec3(x-half_width,y+half_height,z-half_depth);
+        glm::vec3 P8 = glm::vec3(x-half_width,y+half_height,z+half_depth);
         
         //1:5
         this->borders.push_back(P1);this->borders.push_back(P5);
@@ -99,7 +100,7 @@ public:
         // (scene index - 1) * 2 , with 12 elements alocated
     }
     
-    
+
     template <class T>
     void place(T object) {
         if (object->parent) {
@@ -198,19 +199,20 @@ public:
 
     template <class T >
     void AddElement(T element) {
+
         element->handle = element->shared_from_this();
 
-        this->place(element);
+        place(element);
 //        std::cout << "[void AddElement][common/space/scene.hpp] element coords x" << element->coords.x << std::endl;
-        this->positions.push_back(element->coords);
-        element->sceneIndex = this->positions.size() - 1;
+        positions.push_back(element->coords);
+        element->sceneIndex = positions.size() - 1;
         /*this->scales.push_back(glm::vec3(
                 element->dimension.width,
                 element->dimension.height,
                 element->dimension.depth
                 ));*/
-        this->scales.push_back(element->scale);
-        this->colors.push_back(element->color);
+        scales.push_back(element->scale);
+        colors.push_back(element->color);
         if (element->physics) {
             element->physics->rigidBody->translate(btVector3(element->coords.x, element->coords.y, element->coords.z));
             btTransform pos = element->physics->rigidBody->getWorldTransform();
@@ -220,15 +222,15 @@ public:
             element->physics->rigidBody->setUserPointer(&element->handle);
         }
 
-        this->addBorders(element);
+        addBorders(element);
         
-        this->changed = true;
+        changed = true;
     }
     void draw(glm::mat4 *);
     void updateSceneData();
     void drawBorders(glm::mat4 *);
     //    void setPhysics(btDiscreteDynamicsWorld*);
-    void place(SpatialObjectExpanded);
+    //void place(SpatialObjectExpanded);
     //    void changeElement(SpatialObjectExpanded);
 
     template <class T>
@@ -251,7 +253,7 @@ private:
     btDiscreteDynamicsWorld* physics;
     GLuint shader,borders_shader;
     int points_count;
-    GLuint mvp_uniform, position_uniform, scale_uniform, color_uniform;
+    GLuint borders_mvp_uniform, mvp_uniform, position_uniform, scale_uniform, color_uniform,indices_uniform, borders_uniform;
     GLuint indices_buffer, positions_buffer, colors_buffer, scales_buffer, borders_buffer;
     std::vector<glm::vec3> positions, colors, scales;
     

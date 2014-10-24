@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="Natural" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\external\;CMake Files\external\rpavlik-cmake-modules-1c73e35\;CMake Files\external\rpavlik-cmake-modules-1c73e35\launcher-templates\;CMake Files\external\bullet-2.81-rev2613\;CMake Files\external\bullet-2.81-rev2613\src\;CMake Files\external\bullet-2.81-rev2613\src\BulletSoftBody\;CMake Files\external\bullet-2.81-rev2613\src\BulletCollision\;CMake Files\external\bullet-2.81-rev2613\src\BulletDynamics\;CMake Files\external\bullet-2.81-rev2613\src\LinearMath\;CMake Files\cmake\;CMake Files\cmake\Modules\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/alexander/projects/natural_editor/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/alexander/projects/natural_editor/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="natural">
+         <Option output="/home/alexander/projects/natural_editor/build/natural" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add directory="/home/alexander/projects/natural_editor/." />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/freetype-2.5.2/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glm-0.9.4.0" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 natural" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="natural/fast">
+         <Option output="/home/alexander/projects/natural_editor/build/natural" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add directory="/home/alexander/projects/natural_editor/." />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/freetype-2.5.2/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glm-0.9.4.0" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 natural/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/alexander/projects/natural_editor/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GLEW_190">
+         <Option output="/home/alexander/projects/natural_editor/build/external/libGLEW_190.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 GLEW_190" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GLEW_190/fast">
+         <Option output="/home/alexander/projects/natural_editor/build/external/libGLEW_190.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 GLEW_190/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GLFW_276">
+         <Option output="/home/alexander/projects/natural_editor/build/external/libGLFW_276.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 GLFW_276" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="GLFW_276/fast">
+         <Option output="/home/alexander/projects/natural_editor/build/external/libGLFW_276.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 GLFW_276/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="BulletSoftBody">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/libBulletSoftBody.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 BulletSoftBody" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="BulletSoftBody/fast">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/libBulletSoftBody.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 BulletSoftBody/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletSoftBody/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="BulletCollision">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/libBulletCollision.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 BulletCollision" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="BulletCollision/fast">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/libBulletCollision.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 BulletCollision/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletCollision/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="BulletDynamics">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/libBulletDynamics.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 BulletDynamics" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="BulletDynamics/fast">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/libBulletDynamics.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 BulletDynamics/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/BulletDynamics/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="LinearMath">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/libLinearMath.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 LinearMath" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="LinearMath/fast">
+         <Option output="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/libLinearMath.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DTW_STATIC" />
+            <Add option="-DTW_NO_LIB_PRAGMA" />
+            <Add option="-DTW_NO_DIRECT3D" />
+            <Add option="-DGLEW_STATIC" />
+            <Add option="-D_CRT_SECURE_NO_WARNINGS" />
+            <Add option="-D_GLFW_HAS_DLOPEN" />
+            <Add option="-D_GLFW_HAS_XRANDR" />
+            <Add option="-D_UNIX" />
+            <Add directory="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glew-1.9.0/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/include" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib" />
+            <Add directory="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11" />
+            <Add directory="/src" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 LinearMath/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/alexander/projects/natural_editor/build/external/bullet-2.81-rev2613/src/LinearMath/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/alexander/projects/natural_editor/common/controls.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/debug.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/environment/debug_frame.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/environment/world.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/filesystem/directory.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/filesystem/disk.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/handle.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/input/menu.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/shader.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/shader_utils.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/grid.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/object3d.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/physics.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/scene.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/canvas.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/letter.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/strings.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/text.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/word.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/texture.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvt.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvtBroadphase.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDispatcher.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btOverlappingPairCache.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btQuantizedBvh.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btSimpleBroadphase.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/SphereTriangleDetector.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBoxBoxDetector.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionObject.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionWorld.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btGhostObject.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btInternalEdgeUtility.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btManifoldResult.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSimulationIslandManager.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btUnionFind.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBox2dShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBoxShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCapsuleShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCollisionShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCompoundShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConcaveShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConeShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvex2dShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexHullShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexInternalShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexPointCloudShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexPolyhedron.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCylinderShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btEmptyShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMinkowskiSumShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMultiSphereShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btOptimizedBvh.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btShapeHull.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btSphereShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStaticPlaneShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTetrahedronShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleBuffer.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleCallback.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMesh.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMeshShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btUniformScalingShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btContactProcessing.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactBvh.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactQuantizedBvh.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactShape.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGenericPoolAllocator.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btTriangleShapeEx.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_box_set.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_contact.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_memory.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_tri_collision.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btConvexCast.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkEpa2.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btRaycastCallback.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Character/btKinematicCharacterController.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btContactConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGearConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHinge2Constraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHingeConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSliderConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btTypedConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/Bullet-C-API.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btRigidBody.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btSimpleDynamicsWorld.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btRaycastVehicle.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btWheelInfo.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btDefaultSoftBodySolver.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBody.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyHelpers.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftRigidDynamicsWorld.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btAlignedAllocator.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btConvexHull.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btConvexHullComputer.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btGeometryUtil.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btPolarDecomposition.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btQuickprof.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btSerializer.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btVector3.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glew-1.9.0/src/glew.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/enable.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/fullscreen.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/glext.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/image.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/init.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/input.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/joystick.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/stream.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/tga.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/thread.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/time.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/window.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_enable.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_fullscreen.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_glext.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_init.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_joystick.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_keysym2unicode.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_thread.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_time.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/x11_window.c">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/main.cpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/controls.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/debug.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/environment/debug_frame.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/environment/debug_world_helper.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/environment/world.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/filesystem/directory.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/filesystem/disk.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/handle.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/input/menu.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/shader.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/shader_utils.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/grid.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/object3d.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/physics.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/space/scene.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/canvas.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/letter.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/strings.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/text.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/text/word.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/common/texture.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btAxisSweep3.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvt.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btDispatcher.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btQuantizedBvh.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/SphereTriangleDetector.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btBoxBoxDetector.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionConfiguration.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionCreateFunc.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionDispatcher.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionObject.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCollisionWorld.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btGhostObject.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btInternalEdgeUtility.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btManifoldResult.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSimulationIslandManager.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionDispatch/btUnionFind.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBox2dShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBoxShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCapsuleShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCollisionMargin.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCollisionShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCompoundShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConcaveShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConeShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvex2dShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexHullShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexInternalShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexPointCloudShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexPolyhedron.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btCylinderShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btEmptyShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMaterial.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMinkowskiSumShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMultiSphereShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btOptimizedBvh.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btShapeHull.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btSphereShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStaticPlaneShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btStridingMeshInterface.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTetrahedronShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleBuffer.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleCallback.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleInfoMap.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMesh.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleMeshShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btTriangleShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CollisionShapes/btUniformScalingShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btBoxCollision.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btClipPolygon.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btContactProcessing.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactBvh.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactMassUtil.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactQuantizedBvh.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGImpactShape.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGenericPoolAllocator.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btGeometryOperations.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btQuantization.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/btTriangleShapeEx.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_array.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_basic_geometry_operations.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_bitset.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_box_collision.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_box_set.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_clip_polygon.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_contact.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_geom_types.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_geometry.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_hash_table.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_linear_math.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_math.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_memory.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_radixsort.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/Gimpact/gim_tri_collision.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btConvexCast.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btConvexPenetrationDepthSolver.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkEpa2.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPointCollector.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btRaycastCallback.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Character/btCharacterControllerInterface.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Character/btKinematicCharacterController.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btConstraintSolver.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btContactConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btContactSolverInfo.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGearConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHinge2Constraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btHingeConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btJacobianEntry.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSliderConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSolverBody.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btSolverConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btTypedConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/ConstraintSolver/btUniversalConstraint.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btActionInterface.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btDynamicsWorld.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btRigidBody.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btRaycastVehicle.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btVehicleRaycaster.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/Vehicle/btWheelInfo.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btDefaultSoftBodySolver.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBody.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyData.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyHelpers.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodySolverVertexBuffer.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftBodySolvers.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftRigidCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftRigidDynamicsWorld.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSoftSoftCollisionAlgorithm.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/btSparseSDF.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btAabbUtil2.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btAlignedAllocator.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btAlignedObjectArray.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btConvexHull.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btConvexHullComputer.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btDefaultMotionState.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btGeometryUtil.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btGrahamScan2dConvexHull.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btHashMap.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btIDebugDraw.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btList.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btMatrix3x3.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btMinMax.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btMotionState.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btPolarDecomposition.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btPoolAllocator.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btQuadWord.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btQuaternion.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btQuickprof.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btRandom.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btScalar.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btSerializer.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btStackAlloc.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btTransform.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btTransformUtil.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/btVector3.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/btBulletCollisionCommon.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/btBulletDynamicsCommon.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/internal.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/glfw-2.7.6/lib/x11/platform.h">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/main.hpp">
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\external\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/rpavlik-cmake-modules-1c73e35/CreateLaunchers.cmake">
+          <Option virtualFolder="CMake Files\external\rpavlik-cmake-modules-1c73e35\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/rpavlik-cmake-modules-1c73e35/CleanDirectoryList.cmake">
+          <Option virtualFolder="CMake Files\external\rpavlik-cmake-modules-1c73e35\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/rpavlik-cmake-modules-1c73e35/MSVCMultipleProcessCompile.cmake">
+          <Option virtualFolder="CMake Files\external\rpavlik-cmake-modules-1c73e35\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/rpavlik-cmake-modules-1c73e35/launcher-templates/targetlauncher.sh.in">
+          <Option virtualFolder="CMake Files\external\rpavlik-cmake-modules-1c73e35\launcher-templates\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletSoftBody/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\external\bullet-2.81-rev2613\src\BulletSoftBody\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletCollision/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\external\bullet-2.81-rev2613\src\BulletCollision\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/BulletDynamics/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\external\bullet-2.81-rev2613\src\BulletDynamics\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/external/bullet-2.81-rev2613/src/LinearMath/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\external\bullet-2.81-rev2613\src\LinearMath\" />
+      </Unit>
+      <Unit filename="/home/alexander/projects/natural_editor/cmake/Modules/FindGMP.cmake">
+          <Option virtualFolder="CMake Files\cmake\Modules\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

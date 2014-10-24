@@ -15,6 +15,9 @@ public:
     void update();
     std::string build_path(std::shared_ptr<disk_node>);
     std::string get_path(std::shared_ptr<disk_node>);
+    void draw(glm::mat4 * mvp){
+        scene.draw(mvp);
+    }
 private:
 //    void process_directory(std::shared_ptr<disk_node> directory);
     std::shared_ptr<disk_node> root_directory;

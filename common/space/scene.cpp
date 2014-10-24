@@ -7,136 +7,139 @@ extern World * world;
 Scene::Scene() {
 }
 
-ArraysInstanced::ArraysInstanced() {
+ArraysInstanced::ArraysInstanced():
+    position_uniform(1),
+    scale_uniform(2),
+    color_uniform(3),
+    indices_uniform(4),
+    borders_uniform(0)
+{
     this->physics = world->physics;
 }
 
-void ArraysInstanced::SetIndices(std::vector<GLfloat> * pattern) {
+void ArraysInstanced::setUp(std::vector<GLfloat> * pattern) {
 
-    this->shader = LoadShaders("instancing.vertexshader", "instancing.fragmentshader");
-    this->borders_shader = LoadShaders("box.vertexshader", "box.fragmentshader");
-        
+    points_count = pattern->size();
+
+    shader = LoadShaders("instancing.vertexshader", "instancing.fragmentshader");
+    borders_shader = LoadShaders("box.vertexshader", "box.fragmentshader");
     
-    glUseProgram(this->shader);
+    borders_mvp_uniform = glGetUniformLocation(borders_shader, "MVP");
+    mvp_uniform = glGetUniformLocation(shader, "MVP");
 
-    this->mvp_uniform = glGetUniformLocation(this->shader, "MVP");
-    this->position_uniform = 1; 
-    this->scale_uniform = 2; 
-    this->color_uniform = 3; 
+    glUseProgram(shader);
 
-    glGenBuffers(1, &this->positions_buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, this->positions_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->positions.size(), this->positions.data(), GL_STATIC_DRAW);
+    glGenBuffers(1, &indices_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, indices_buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof (GLfloat) * pattern->size(), pattern->data(), GL_STATIC_DRAW);
 
-    glGenBuffers(1, &this->scales_buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, this->scales_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->scales.size(), this->scales.data(), GL_STATIC_DRAW);
+    glGenBuffers(1, &positions_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, positions_buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * positions.size(), positions.data(), GL_STATIC_DRAW);
 
-    glGenBuffers(1, &this->colors_buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, this->colors_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->colors.size(), this->colors.data(), GL_STATIC_DRAW);
+    glGenBuffers(1, &scales_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, scales_buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * scales.size(), scales.data(), GL_STATIC_DRAW);
 
-    glGenBuffers(1, &this->borders_buffer);
-    glBindBuffer(GL_ARRAY_BUFFER, this->borders_buffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->borders.size(), this->borders.data(), GL_STATIC_DRAW);
+    glGenBuffers(1, &colors_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, colors_buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * colors.size(), colors.data(), GL_STATIC_DRAW);
 
+    glGenBuffers(1, &borders_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, borders_buffer);
+    glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * borders.size(), borders.data(), GL_STATIC_DRAW);
 
-    glGenVertexArrays(1, &this->vao);
-    glBindVertexArray(this->vao);
+    glBindBuffer(GL_ARRAY_BUFFER, indices_buffer);
+    glEnableVertexAttribArray(indices_uniform);
+    glVertexAttribPointer(indices_uniform,3, GL_FLOAT, GL_FALSE, 0, (void*) 0);
+
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
 
     GLsizei datasize = sizeof ( glm::vec3);
     char* pointer = 0; //no other components
     GLuint divisor = 1; //instanced
     //positions
-    glBindBuffer(GL_ARRAY_BUFFER, this->positions_buffer);
-    glEnableVertexAttribArray(this->position_uniform);
-    glVertexAttribPointer(this->position_uniform,
+    glBindBuffer(GL_ARRAY_BUFFER, positions_buffer);
+    glEnableVertexAttribArray(position_uniform);
+    glVertexAttribPointer(position_uniform,
             3, GL_FLOAT, GL_FALSE,
             datasize, pointer);
-    glVertexAttribDivisor(this->position_uniform, divisor);
-
+    glVertexAttribDivisor(position_uniform, divisor);
 
     //scales
-    glBindBuffer(GL_ARRAY_BUFFER, this->scales_buffer);
-    glEnableVertexAttribArray(this->scale_uniform);
-    glVertexAttribPointer(this->scale_uniform,
+    glBindBuffer(GL_ARRAY_BUFFER, scales_buffer);
+    glEnableVertexAttribArray(scale_uniform);
+    glVertexAttribPointer(scale_uniform,
             3, GL_FLOAT, GL_FALSE,
             datasize, pointer);
-    glVertexAttribDivisor(this->scale_uniform, divisor);
+    glVertexAttribDivisor(scale_uniform, divisor);
 
     //colors
-    glBindBuffer(GL_ARRAY_BUFFER, this->colors_buffer);
-    glEnableVertexAttribArray(this->color_uniform);
-    glVertexAttribPointer(this->color_uniform,
+    glBindBuffer(GL_ARRAY_BUFFER, colors_buffer);
+    glEnableVertexAttribArray(color_uniform);
+    glVertexAttribPointer(color_uniform,
             3, GL_FLOAT, GL_FALSE,
             datasize, pointer);
-    glVertexAttribDivisor(this->color_uniform, divisor);
-
-
-    glGenBuffers(1, &this->indices_buffer);
-
-    glBindBuffer(GL_ARRAY_BUFFER, this->indices_buffer);
-
-    glBufferData(GL_ARRAY_BUFFER, pattern->size() * sizeof (GLfloat), pattern->data(), GL_STATIC_DRAW);
-
-    this->points_count = pattern->size();
+    glVertexAttribDivisor(color_uniform, divisor);
 }
 
 void ArraysInstanced::draw(glm::mat4 * mvp) {
     
-    this->updateSceneData();
+    updateSceneData();
 
-    glUseProgram(this->shader);
+    glUseProgram(shader);
 
-    glBindVertexArray(this->vao);
+    glBindVertexArray(vao);
 
-    glBindBuffer(GL_ARRAY_BUFFER, this->indices_buffer);
+    glUniformMatrix4fv(mvp_uniform, 1, GL_FALSE, glm::value_ptr(*mvp));
 
-    glUniformMatrix4fv(this->mvp_uniform, 1, GL_FALSE, glm::value_ptr(*mvp));
-    glEnableVertexAttribArray(this->mvp_uniform);
-    glVertexAttribPointer(
-            this->mvp_uniform,
-            3, GL_FLOAT, GL_FALSE, 0, (void*) 0);
-    glDrawArraysInstanced(GL_TRIANGLES, 0, this->points_count/3, this->positions.size());
-    glDisableVertexAttribArray(this->mvp_uniform);
-    
-    this->drawBorders(mvp);
+    glDrawArraysInstanced(GL_TRIANGLES, 0, points_count/3, positions.size());
+
+    glDisableVertexAttribArray(mvp_uniform);
+
+    //Does not work, the cubes shapes will disappear
+//    glDisableVertexAttribArray(position_uniform);
+//    glDisableVertexAttribArray(scale_uniform);
+//    glDisableVertexAttribArray(color_uniform);
+//    glDisableVertexAttribArray(indices_uniform);
+
+    drawBorders(mvp);
 }
 
 void ArraysInstanced::updateSceneData() {
-    if (this->changed) {
-        glBindBuffer(GL_ARRAY_BUFFER, this->borders_buffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->borders.size(), this->borders.data(), GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, this->positions_buffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->positions.size(), this->positions.data(), GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, this->scales_buffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->scales.size(), this->scales.data(), GL_STATIC_DRAW);
-        glBindBuffer(GL_ARRAY_BUFFER, this->colors_buffer);
-        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * this->colors.size(), this->colors.data(), GL_STATIC_DRAW);
-        this->changed = false;
+    if (changed) {
+        glBindBuffer(GL_ARRAY_BUFFER, borders_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * borders.size(), borders.data(), GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, positions_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * positions.size(), positions.data(), GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, scales_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * scales.size(), scales.data(), GL_STATIC_DRAW);
+        glBindBuffer(GL_ARRAY_BUFFER, colors_buffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof ( glm::vec3) * colors.size(), colors.data(), GL_STATIC_DRAW);
+        changed = false;
     }
 }
 
 void ArraysInstanced::drawBorders(glm::mat4 * mvp) {
         
-        GLuint mvp_uniform = glGetUniformLocation(this->borders_shader, "MVP");
-        glUseProgram(this->borders_shader);
+        glUseProgram(borders_shader);
 
-        glBindBuffer(GL_ARRAY_BUFFER, this->borders_buffer);
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(
-                0, 3, GL_FLOAT, GL_FALSE, 0, (void*) 0);
+        glBindBuffer(GL_ARRAY_BUFFER, borders_buffer);
+        glEnableVertexAttribArray(borders_uniform);
+        glVertexAttribPointer(borders_uniform, 3, GL_FLOAT, GL_FALSE, 0, (void*) 0);
 
-        glUniformMatrix4fv(mvp_uniform, 1, GL_FALSE, glm::value_ptr(*mvp) );
+        glUniformMatrix4fv(borders_mvp_uniform, 1, GL_FALSE, glm::value_ptr(*mvp) );
       
-        glDrawArrays(GL_LINES, 0, this->borders.size() );
-        glDisableVertexAttribArray(0);
+        glDrawArrays(GL_LINES, 0, borders.size() );
+        glDisableVertexAttribArray(borders_uniform);
 }
 
 //void ArraysInstanced::setPhysics(btDiscreteDynamicsWorld* physics) {
 //    this->physics = physics;
 //}
 
+/*
 void ArraysInstanced::place(SpatialObjectExpanded object) {
     if (object->parent) {
 
@@ -231,6 +234,7 @@ void ArraysInstanced::place(SpatialObjectExpanded object) {
 
     ////////// end test if requested space is empty
 }
+*/
 
 //void ArraysInstanced::changeElement(SpatialObjectExpanded element) {
 //    this->positions[element->sceneIndex] = element->coords;

@@ -10,7 +10,8 @@
 #include <common/types.hpp>
 #include <GL/glew.h>
 #include <fstream>
-
+#include <common/text/word.hpp>
+#include <common/text/letter.hpp>
 #include <common/space/scene.hpp>
 
 #define MIN_FACTOR 200000
@@ -25,7 +26,7 @@
 
 
 
-
+/*
 class Letter {
 public:
     Letter(const char);
@@ -33,7 +34,7 @@ public:
     ArraysInstanced scene;
     int thickness;
     int triangles;
-    GLfloat width, height, offsetx;
+    GLfloat width, height, offsetx, offsety;
     void create_letter_faces(const char);
     std::vector<int> letter_indices;
     std::vector<GLfloat> letter_points;
@@ -44,7 +45,7 @@ private:
     FT_Face face;
     void Line(float x1, float y1, float x2, float y2);
 };
-
+*/
 
 // Include GLEW
 
@@ -54,8 +55,13 @@ public:
 
     template <class has_text >
     void addElement(std::shared_ptr<has_text> obj) {
+        //////////////WORD
+        Word3dProperties * word_props = new Word3dProperties();
+        word_props->string =obj->name;
+        //Word * element_word = new Word(obj);
+        //////////////
         glm::vec3 position = obj->coords;
-
+        GLfloat letter_posx =obj->coords.x;
         Object3dProperties props;
         props.has_physics = false;
         props.coords = obj->coords;
@@ -88,14 +94,18 @@ public:
 
             Letter * letter =this->letters[static_cast<int> (c)];
 
-            props.coords.x += letter->width - letter->offsetx;
+            Object3dProperties letterprops = props;
 
-            props.dimension.width = letter->width;
-            props.dimension.height = letter->height;
-            props.scale = glm::vec3(1,1,1);
+            letterprops.coords.x += letter->width - letter->offsetx;
 
-            SpatialObjectExpanded obj1 = std::make_shared<Object3dExpanded>(&props);
+            letterprops.dimension.width = letter->width;
+            letterprops.dimension.height = letter->height;
+            letterprops.scale = glm::vec3(1,1,1);
+            letterprops.coords.y -= letter->offsety;
+            letterprops.coords.x = letter_posx;
+            SpatialObjectExpanded obj1 = std::make_shared<Object3dExpanded>(&letterprops);
             letter->scene.AddElement(obj1);
+            letter_posx += letter->width;
         }
     };
     void draw(glm::mat4 * mvp);

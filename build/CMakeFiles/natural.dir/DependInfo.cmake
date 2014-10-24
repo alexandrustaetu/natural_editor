@@ -19,6 +19,8 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/alexander/projects/natural_editor/common/space/physics.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/space/physics.cpp.o"
   "/home/alexander/projects/natural_editor/common/space/scene.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/space/scene.cpp.o"
   "/home/alexander/projects/natural_editor/common/text/canvas.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/text/canvas.cpp.o"
+  "/home/alexander/projects/natural_editor/common/text/letter.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/text/letter.cpp.o"
+  "/home/alexander/projects/natural_editor/common/text/strings.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/text/strings.cpp.o"
   "/home/alexander/projects/natural_editor/common/text/text.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/text/text.cpp.o"
   "/home/alexander/projects/natural_editor/common/text/word.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/text/word.cpp.o"
   "/home/alexander/projects/natural_editor/common/texture.cpp" "/home/alexander/projects/natural_editor/build/CMakeFiles/natural.dir/common/texture.cpp.o"

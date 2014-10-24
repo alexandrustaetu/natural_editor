@@ -5,9 +5,9 @@ Physics::Physics(Object3dProperties * props) {
     if (props->has_physics) {
 
         this->boxCollisionShape = new btBoxShape(btVector3(
-                props->dimension.width * 1.2,
-                props->dimension.height * 1.2,
-                props->dimension.depth * 1.2
+                props->dimension.width * 1,
+                props->dimension.height * 1,
+                props->dimension.depth * 1
                 ));
 
         btDefaultMotionState* motionstate = new btDefaultMotionState(btTransform(

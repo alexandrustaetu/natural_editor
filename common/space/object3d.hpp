@@ -19,6 +19,9 @@ public:
 
     Object3d() {
     };
+    int getWidth(){
+        return dimension.width + margin.left + margin.right;
+    }
     bool has_physics, visible, show_children, clicked;
     std::shared_ptr<Object3d> handle;
     glm::vec3 origin, destination, coords, color, scale;
@@ -31,17 +34,22 @@ public:
     std::shared_ptr<Object3d> parent;
     std::shared_ptr<Object3d> group;
 
+    void showChildren(){
+        show_children = true;
+    };
+
     void setCoords(glm::vec3 * coords) {
-        this->coords = coords;
+        coords = coords;
     };
 
     template <class T2>
     void update(std::shared_ptr<T2>) {
         if (parent) {
-            this->origin = parent->origin;
-            this->destination.x = this->origin.x + 2;
-            this->destination.y = this->origin.y + 2;
-            this->destination.z = this->origin.z + 2;
+            origin = parent->origin;
+            //TODO why +2
+            destination.x = origin.x + 2;
+            destination.y = origin.y + 2;
+            destination.z = origin.z + 2;
         }
     };
 
@@ -49,7 +57,7 @@ public:
     void setGroup(std::shared_ptr<T2>);
 
     void changeColor(glm::vec3 color) {
-        this->color = color;
+        color = color;
         std::cout << "[common/space/object3d.cpp][Object3d::changeColor] color changed" << std::endl;
     };
 
@@ -59,55 +67,84 @@ public:
     };
 
     void rightclick() {
-        std::cout << this->handle << std::endl;
+        std::cout << handle << std::endl;
     };
 
     virtual void doubleclick() {
-        this->show_children = true;
+        show_children = true;
         std::cout << "show children" << std::endl;
     };
 
     template <class T2>
-    void addChildren(std::shared_ptr<T2> children) {
-        if (children->position == RELATIVE) {
+    void addChild(std::shared_ptr<T2> child){
+        if (child->position == RELATIVE) {
             std::cout << "children added to 3d object\n";
             std::shared_ptr<Object3d> last_child;
-            for (auto child : this->children) {
+
+            //Get last relative child for parent
+            for (auto child : children) {
                 if (child->position == RELATIVE) {
                     last_child = child;
                 }
             }
+            //If
             if (last_child) {
-                if (children->dimension.width + last_child->dimension.width < this->dimension.width) {
-                    children->coords.x = last_child->coords.x + last_child->margin.right + children->margin.left;
-                    children->coords.y = last_child->coords.y;
+                if (child->dimension.width + last_child->dimension.width < this->dimension.width) {
+                    child->coords.x = last_child->coords.x + last_child->margin.right + child->margin.left;
+                    child->coords.y = last_child->coords.y;
                 } else {
-                    children->coords.y = last_child->coords.y;
-                    children->coords.x = this->coords.x - this->dimension.width / 2;
+                    child->coords.y = last_child->coords.y;
+                    child->coords.x = coords.x - dimension.width / 2;
                 }
             } else {
-                children->coords.x = this->coords.x - this->dimension.width / 2;
-                children->coords.y = this->coords.y - this->dimension.height / 2;
+                child->coords.x = coords.x;// - dimension.width / 2;// - child->dimension.width/2;
+                child->coords.y = coords.y - dimension.height / 2 - child->dimension.height/2;
             }
+            child->coords.z = coords.z;
+
+            addMargins(child);
+
         }
     };
 
+    template <class T2>
+    void addMargins(std::shared_ptr<T2> object) {
+        if(object->margin.left > 0){
+            object->coords.x -= object->margin.left;
+        } else if (object->margin.right > 0){
+            object->coords.x += object->margin.right;
+        }
+
+        if(object->margin.top > 0){
+            object->coords.y -= object->margin.top;
+        } else if (object->margin.bottom > 0){
+            object->coords.y += object->margin.bottom;
+        }
+
+        if(object->margin.front > 0){
+            object->coords.z -= object->margin.front;
+        } else if (object->margin.back > 0){
+            object->coords.z += object->margin.back;
+        }
+    }
+
     Object3d(Object3dProperties * props) : siblings_count(0), visible(true), position(ABSOLUTE) {
 
-        this->coords = props->coords;
-        this->destination = props->destination;
+        coords = props->coords;
+        destination = props->destination;
 
-        this->position = props->position;
+        position = props->position;
 
-        this->origin = props->origin;
+        origin = props->origin;
 
-        this->color = props->color;
+        color = props->color;
         if (props->has_physics) {
-            this->physics = std::shared_ptr<Physics>(new Physics(props));
+            physics = std::shared_ptr<Physics>(new Physics(props));
         }
-        this->dimension = props->dimension;
-        this->scale = props->scale;
-        this->show_children = props->show_children;
+        dimension = props->dimension;
+        scale = props->scale;
+        show_children = props->show_children;
+        margin = props->margin;
     };
 //    template <class T2>
     std::shared_ptr<T> shared_from_this();
